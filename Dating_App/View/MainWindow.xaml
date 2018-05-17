@@ -1,0 +1,101 @@
+﻿<Window x:Class="Dating_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dating_App"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1200">
+    <Grid>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="1194" Margin="0,0,-0.4,0" Background="#FFBCB5AC"/>
+
+        <Image HorizontalAlignment="Left" Height="722" Margin="445,218,-19.4,-169.6" VerticalAlignment="Top" Width="768" Source="datingPicture.jpg">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="datingPicture.jpg"/>
+            </Image.OpacityMask>
+        </Image>
+        <Button Content="Log ind" HorizontalAlignment="Left" Margin="1100,10,0,0" VerticalAlignment="Top" Width="75" Height="35" Foreground="Black" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontWeight="Bold" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="692,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="199" Background="#FFFCEFDF"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="896,22,0,0" VerticalAlignment="Top" Width="199" Height="23" Background="#FFFCEFDF"/>
+        <Label Content="Brugernavn" HorizontalAlignment="Left" Margin="692,0,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy"/>
+        <Label Content="Kodeord" HorizontalAlignment="Left" Margin="896,0,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy"/>
+        <TextBox Name="Fornavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
+        <TextBox Name="Efternavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,340,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
+        <DatePicker Name="Birthday_DatePicker" HorizontalAlignment="Left" Margin="34,390,0,0" VerticalAlignment="Top" Width="196"/>
+        <RadioButton Name="Køn_Mand_RadioButton" Content="Mand" HorizontalAlignment="Left" Margin="34,440,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" Foreground="Black"/>
+        <RadioButton Name="Køn_Kvinde_RadioButton" Content="Kvinde" HorizontalAlignment="Left" Margin="145,440,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" Foreground="Black"/>
+        <ComboBox Name="Seeking_Combobox" HorizontalAlignment="Left" Margin="34,490,0,0" VerticalAlignment="Top" Width="196">
+            <ComboBoxItem IsSelected="True">Date</ComboBoxItem>
+            <ComboBoxItem>Ægteskab</ComboBoxItem>
+            <ComboBoxItem>Bolleven</ComboBoxItem>
+            <ComboBoxItem>Kæreste</ComboBoxItem>
+        </ComboBox>
+        <TextBox Name="Email_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,540,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
+        <ComboBox Name="Status_TextBox" HorizontalAlignment="Left" Margin="34,590,0,0" VerticalAlignment="Top" Width="196">
+            <ComboBoxItem IsSelected="True">Single</ComboBoxItem>
+            <ComboBoxItem>Forhold</ComboBoxItem>
+            <ComboBoxItem>Gift</ComboBoxItem>
+            <ComboBoxItem>Kompliceret</ComboBoxItem>
+        </ComboBox>
+        <CheckBox Name="InteresseretI_Man_CheckBox" Content="Mænd" HorizontalAlignment="Left" Margin="34,640,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" Foreground="Black"/>
+        <CheckBox Name="InteresseretI_Kvinde_CheckBox" Content="Kvinder" HorizontalAlignment="Left" Margin="145,640,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" Foreground="Black"/>
+        <TextBox Name="Height_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,690,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
+        <TextBox Name="Weight_TextBox" HorizontalAlignment="Left" Height="23" Margin="278,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
+        <ComboBox Name="EyeColor_ComboBox" HorizontalAlignment="Left" Margin="277,190,0,0" VerticalAlignment="Top" Width="196">
+            <ComboBoxItem IsSelected="True">Brune</ComboBoxItem>
+            <ComboBoxItem>Grøne</ComboBoxItem>
+            <ComboBoxItem>Blå</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="HairColor_Combobox" HorizontalAlignment="Left" Margin="277,240,0,0" VerticalAlignment="Top" Width="196">
+            <ComboBoxItem IsSelected="True">Sort</ComboBoxItem>
+            <ComboBoxItem>Lyst</ComboBoxItem>
+            <ComboBoxItem>Mørkt</ComboBoxItem>
+            <ComboBoxItem>Hvidt</ComboBoxItem>
+            <ComboBoxItem>Gråt</ComboBoxItem>
+            <ComboBoxItem>Rødt</ComboBoxItem>
+            <ComboBoxItem>Andet</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="KropsType_Combobox" HorizontalAlignment="Left" Margin="279,340,0,0" VerticalAlignment="Top" Width="194">
+            <ComboBoxItem IsSelected="True">Gennemsnitlig</ComboBoxItem>
+            <ComboBoxItem>Kraftig</ComboBoxItem>
+            <ComboBoxItem>Atletisk</ComboBoxItem>
+            <ComboBoxItem>Spinkel</ComboBoxItem>
+            <ComboBoxItem>Muskuløs</ComboBoxItem>
+            <ComboBoxItem>Buttet</ComboBoxItem>
+        </ComboBox>
+        <TextBox Name="BeskrivDigSelv_Textbox" HorizontalAlignment="Left" Height="245" Margin="277,440,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="194"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="34,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" Name="Profil_Navn_TextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="34,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" Name="Kodeord_TextBox"/>
+        <TextBox Name="Bekræft_Kodeord_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
+        <Label Content="Profil Navn" HorizontalAlignment="Left" Margin="34,115,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Kodeord" HorizontalAlignment="Left" Margin="34,165,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Bekræft Kodeord" HorizontalAlignment="Left" Margin="34,215,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Fornavn" HorizontalAlignment="Left" Margin="34,265,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Efternavn" HorizontalAlignment="Left" Margin="34,315,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Fødselsdag" HorizontalAlignment="Left" Margin="34,365,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Køn" HorizontalAlignment="Left" Margin="34,415,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Søger" HorizontalAlignment="Left" Margin="34,465,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="34,515,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Status" HorizontalAlignment="Left" Margin="34,565,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Lucida Calligraphy" Foreground="Black"/>
+        <Label Content="Interesseret i" HorizontalAlignment="Left" Margin="34,615,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Lucida Calligraphy" Foreground="Black"/>
+        <Label Content="Højde" HorizontalAlignment="Left" Margin="34,665,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Vægt" HorizontalAlignment="Left" Margin="279,115,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Øjenfarve" HorizontalAlignment="Left" Margin="279,165,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Hårfrave" HorizontalAlignment="Left" Margin="279,215,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Børn" HorizontalAlignment="Left" Margin="279,265,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Krops Type" HorizontalAlignment="Left" Margin="279,315,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Beskriv dig selv" HorizontalAlignment="Left" Margin="278,415,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Opret Bruger" HorizontalAlignment="Left" Margin="34,69,0,0" VerticalAlignment="Top" Width="497" Height="37" FontSize="20" FontWeight="Bold" Background="White" Foreground="Black" FontFamily="Lucida Calligraphy"/>
+        <ComboBox HorizontalAlignment="Left" Margin="277,290,0,0" VerticalAlignment="Top" Width="196">
+            <ComboBoxItem IsSelected="True">Ja udeboende</ComboBoxItem>
+            <ComboBoxItem>Ja hjemmeboende</ComboBoxItem>
+            <ComboBoxItem>Nej</ComboBoxItem>
+            <ComboBoxItem>Kompliceret</ComboBoxItem>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="277,390,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
+        <Label Content="Post Nummer" HorizontalAlignment="Left" Margin="279,365,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+        <Button Content="Opret Bruger" HorizontalAlignment="Left" Margin="279,690,0,0" VerticalAlignment="Top" Width="192" Height="23" FontFamily="Lucida Calligraphy" Background="#FFF0E3D3" FontWeight="Bold"/>
+        <Frame Name="Frame" NavigationUIVisibility="Hidden"/>
+        
+    </Grid>
+</Window>

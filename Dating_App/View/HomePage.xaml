@@ -1,0 +1,20 @@
+﻿<Page x:Class="Dating_App.View.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Dating_App.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="HomePage" Width="1200" Height="800">
+
+    <Grid Background="White" Margin="0,0,10,0">
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="1190" Background="#FFBCB5AC"/>
+        <Button Content="Log af" HorizontalAlignment="Left" Margin="1100,10,0,0" VerticalAlignment="Top" Width="75" Height="35" Foreground="Black" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontWeight="Bold" Click="Button_Click"/>
+        <Image HorizontalAlignment="Left" Height="213" Margin="500,82,0,0" VerticalAlignment="Top" Width="210" Source="images211838BD.jpg"/>
+        <Label Content="Welkommen User" HorizontalAlignment="Left" Margin="0,350,0,0" VerticalAlignment="Top" Width="1190" Height="72" FontSize="48" FontFamily="Lucida Calligraphy" HorizontalContentAlignment="Center"/>
+        <Button Content="Hjem" HorizontalAlignment="Left" Margin="63,17,0,0" VerticalAlignment="Top" Width="47" Height="28" FontSize="16" Background="#FFBCB5AC" BorderThickness="0,0,0,0" Foreground="#FF5A0303" FontStyle="Italic" FontFamily="Lucida Calligraphy"/>
+        <Button Content="Profil" HorizontalAlignment="Left" Margin="138,17,0,0" VerticalAlignment="Top" Width="57" Height="28" FontSize="16" FontStyle="Italic" Background="#FFBCB5AC" BorderThickness="0,0,0,0" FontFamily="Lucida Calligraphy" Foreground="#FF5A0303"/>
+        
+    </Grid>
+</Page>
