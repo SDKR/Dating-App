@@ -49,10 +49,13 @@ create table User_Information(
 
 create table [Message](
 PK_MessageID int identity PRIMARY KEY not null,
-Sender int not null,
-Reciver int not null,
-Message nvarchar(50) not null
+FK_Sender int not null,
+FK_Reciver int not null,
+Message nvarchar(1000) not null
 )
+
+insert into [Message] Values
+()
 
 create table Picture(
 PK_Picture_ID int identity PRIMARY KEY not null,
@@ -61,6 +64,11 @@ FOREIGN KEY (FK_InfoID) REFERENCES User_Information(PK_InfoID),
 Picture image not null
 )
 go
+
+--insert into Picture (FK_InfoID, Picture)
+--SELECT 1,*
+--FROM OPENROWSET (BULK N'C:\Program Files\Microsoft SQL Server\87878c509d0beaf112c4487ccffe6627.jpg', SINGLE_BLOB) as image
+--go
 
 INSERT INTO [User] VALUES
 ('Frækfyr42','Password',getdate(), 1),
@@ -1339,6 +1347,11 @@ insert into User_Information values
 ('Emil','Carlsen','1987-07-02','Mand','Forhold',3000,'emilcarlsen@gmail.com','Single','Hertroseksuel',169,85,'Brunne','Gråt','Nej','Buttet','Leder en sød dame jeg gerne vil stifte en familie med.',16),
 ('Alma','Ahmad','1984-08-03','Kvinde','Forhold',3100,'almaahmad@gmail.com','Single','Hertroseksuel',164,81,'Brunne','Sort','Nej','Kraftig','Hej mit navn er alma og jeg vil gerne have børn ja.',17)
 go
+
+insert into Picture (FK_InfoID, Picture)
+SELECT 1,*
+FROM OPENROWSET (BULK N'C:\Program Files\Microsoft SQL Server\87878c509d0beaf112c4487ccffe6627.jpg', SINGLE_BLOB) as image
+go
 --Bulk insert Postcode_city
 --from 'C:\Program Files\Microsoft SQL Server\Postnummer.txt'
 --with
@@ -1355,6 +1368,7 @@ go
 select * from [User]
 select * from [Postcode_City]
 select * from [User_Information]
+select * from [Picture]
 
 
 create index User_information_Index_
