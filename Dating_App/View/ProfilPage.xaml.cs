@@ -13,28 +13,26 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Dating_App
+namespace Dating_App.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ProfilPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ProfilPage : Page
     {
-        public MainWindow()
+        public ProfilPage()
         {
             InitializeComponent();
         }
 
-        
-
-        private void OpretBruger_Button_Click(object sender, RoutedEventArgs e)
+        private void LogAf_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = null;
         }
 
-        private void LogInd_Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Frame.Content = new Dating_App.View.HomePage();
+            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.HomePage();
         }
     }
 }
