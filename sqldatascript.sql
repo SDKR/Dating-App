@@ -1354,11 +1354,6 @@ insert into User_Information values
 ('Alma','Ahmad','1984-08-03','Kvinde','Forhold',3100,'almaahmad@gmail.com','Single','Hertroseksuel',164,81,'Brunne','Sort','Nej','Kraftig','Hej mit navn er alma og jeg vil gerne have børn ja.',17)
 go
 
---insert into Picture (FK_InfoID, Picture)
---SELECT 1,2,*
---FROM OPENROWSET (BULK N'C:\Program Files\Microsoft SQL Server\87878c509d0beaf112c4487ccffe6627.jpg', SINGLE_BLOB) as image
---go
-
 insert into Picture(FK_InfoID, Picture) Values
 (1,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_1.jpg', SINGLE_BLOB) as image)),
 (2,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_2.jpg', SINGLE_BLOB) as image)),
@@ -1407,11 +1402,9 @@ select * from [User_Information]
 select * from [Picture]
 select * from [Message]
 
-
-create index User_information_Index_
-on dbo.User_Information (Birthdate,Gender,Seeking,Status,Sexual_orientation,Children);
-go
-
+--create index User_information_Index_
+--on dbo.User_Information (Birthdate,Gender,Seeking,Status,Sexual_orientation,Children);
+--go
 
 drop PROCEDURE spGetAll_user_information
 go
@@ -1420,39 +1413,38 @@ as
 begin
 	set NOCOUNT ON;
 	select * from User_information
-	where First_name like 'Hans'
-
-	declare @searchword nvarchar(30)
-	set @searchword =N'and'
-	select * from dbo.User_Information
-	where contains ([Gender], @searchword);
-
+	where First_name like '%an%'
 end
 go
 spGetAll_user_information
 go
 
-SELECT  OBJECT_SCHEMA_NAME(ind.object_id) AS SchemaName
-      , OBJECT_NAME(ind.object_id) AS ObjectName
-      , ind.name AS IndexName
-      , ind.is_primary_key AS IsPrimaryKey
-      , ind.is_unique AS IsUniqueIndex
-      , col.name AS ColumnName
-      , ic.is_included_column AS IsIncludedColumn
-      , ic.key_ordinal AS ColumnOrder
-FROM    sys.indexes ind
-        INNER JOIN sys.index_columns ic
-            ON ind.object_id = ic.object_id
-               AND ind.index_id = ic.index_id
-        INNER JOIN sys.columns col
-            ON ic.object_id = col.object_id
-               AND ic.column_id = col.column_id
-        INNER JOIN sys.tables t
-            ON ind.object_id = t.object_id
-WHERE   t.is_ms_shipped = 0
-ORDER BY OBJECT_SCHEMA_NAME(ind.object_id) --SchemaName
-      , OBJECT_NAME(ind.object_id) --ObjectName
-      , ind.is_primary_key DESC
-      , ind.is_unique DESC
-      , ind.name --IndexName
-      , ic.key_ordinal
+
+-- Få alle schemanames Objectnames indexnames med keys og indexs
+--
+--
+--SELECT  OBJECT_SCHEMA_NAME(ind.object_id) AS SchemaName
+--      , OBJECT_NAME(ind.object_id) AS ObjectName
+--      , ind.name AS IndexName
+--      , ind.is_primary_key AS IsPrimaryKey
+--      , ind.is_unique AS IsUniqueIndex
+--      , col.name AS ColumnName
+--      , ic.is_included_column AS IsIncludedColumn
+--      , ic.key_ordinal AS ColumnOrder
+--FROM    sys.indexes ind
+--        INNER JOIN sys.index_columns ic
+--            ON ind.object_id = ic.object_id
+--               AND ind.index_id = ic.index_id
+--        INNER JOIN sys.columns col
+--            ON ic.object_id = col.object_id
+--               AND ic.column_id = col.column_id
+--        INNER JOIN sys.tables t
+--            ON ind.object_id = t.object_id
+--WHERE   t.is_ms_shipped = 0
+--ORDER BY OBJECT_SCHEMA_NAME(ind.object_id) --SchemaName
+--      , OBJECT_NAME(ind.object_id) --ObjectName
+--      , ind.is_primary_key DESC
+--      , ind.is_unique DESC
+--      , ind.name --IndexName
+--      , ic.key_ordinal
+--go
