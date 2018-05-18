@@ -25,7 +25,12 @@ namespace Dating_App.View
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.ProfilPage();
+        }
+
+        private void LogAf_Button_Click(object sender, RoutedEventArgs e)
         {
             (Application.Current.MainWindow.FindName("Frame") as Frame).Content = null;
         }
