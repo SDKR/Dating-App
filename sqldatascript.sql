@@ -19,8 +19,8 @@ create table [User](
 	)
 
 create table Postcode_City(
-PK_Post_code int PRIMARY KEY not null,
-City nvarchar(50) not null
+	PK_Post_code int PRIMARY KEY not null,
+	City nvarchar(50) not null
 )
 
 create table User_Information(
@@ -47,19 +47,19 @@ create table User_Information(
 )
 
 create table [Message](
-PK_MessageID int identity PRIMARY KEY not null,
-FK_Sender int not null,
-FOREIGN KEY (FK_Sender) REFERENCES [User](PK_ID),
-FK_Reciver int not null,
-FOREIGN KEY (FK_Reciver) REFERENCES [User](PK_ID),
-Message nvarchar(1000) not null
+	PK_MessageID int identity PRIMARY KEY not null,
+	FK_Sender int not null,
+	FOREIGN KEY (FK_Sender) REFERENCES [User](PK_ID),
+	FK_Reciver int not null,
+	FOREIGN KEY (FK_Reciver) REFERENCES [User](PK_ID),
+	Message nvarchar(1000) not null
 )
 
 create table Picture(
-PK_Picture_ID int identity PRIMARY KEY not null,
-FK_InfoID int not null,
-FOREIGN KEY (FK_InfoID) REFERENCES User_Information(PK_InfoID),
-Picture image not null
+	PK_Picture_ID int identity PRIMARY KEY not null,
+	FK_InfoID int not null,
+	FOREIGN KEY (FK_InfoID) REFERENCES User_Information(PK_InfoID),
+	Picture image not null
 )
 go
 
@@ -1406,6 +1406,20 @@ select * from [Postcode_City]
 select * from [User_Information]
 select * from [Picture]
 select * from [Message]
+
+drop PROCEDURE spGetAll_user_information
+go
+CREATE PROCEDURE spGetAll_user_information
+as
+begin
+	set NOCOUNT ON;
+	select * from User_Information
+	where First_name like 'Hans'
+end
+go
+spGetAll_user_information
+go
+
 
 create index User_information_Index_
 on dbo.User_Information (Birthdate,Gender,Seeking,Status,Sexual_orientation,Children);
