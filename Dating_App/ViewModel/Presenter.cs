@@ -56,7 +56,7 @@ namespace Dating_App.ViewModel
             // Login Button Press
         public void CreateUser()
         {
-            User user = new User(_user.Profile_name,_user.Password);
+            User user = new User(_user.Profile_name,_user.Password,_user.First_name, _user.Last_name, _user.Date, _user.Gender, _user.Seeking, _user.Postcode, _user.Email, _user.Status, _user.SexualOrientation, _user.Height, _user.Weight, _user.Eyecolor, _user.Haircolor, _user.Children, _user.Body_Type, _user.About_yourself, _user.FK_ID);
 
             if (_user.CreateUser(user))
             {

@@ -29,38 +29,35 @@
 
         <Button Name="LogInd_Button" Content="Log ind" HorizontalAlignment="Left" Margin="1100,10,0,0" VerticalAlignment="Top" Width="75" Height="35" Foreground="Black" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontWeight="Bold" Click="LogInd_Button_Click" />
         <TextBox Name="Brugernavn_Textbox" HorizontalAlignment="Left" Height="23" Margin="692,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Background="#FFFCEFDF" />
-            <PasswordBox HorizontalAlignment="Left" Margin="896,22,0,0" VerticalAlignment="Top" Width="199" Height="23" Background="#FFFCEFDF"/>
-            <Label Content= "Brugernavn" HorizontalAlignment="Left" Margin="692,0,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="896,22,0,0" VerticalAlignment="Top" Width="199" Height="23" Background="#FFFCEFDF"/>
+        <Label Content= "Brugernavn" HorizontalAlignment="Left" Margin="692,0,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy"/>
 
         <Label Content="Kodeord" HorizontalAlignment="Left" Margin="896,0,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy"/>
-        <TextBox Name="Fornavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Text="{Binding _User.Profile_name,  StringFormat=1 {0}}" PreviewKeyDown="Fornavn_TextBox_PreviewKeyDown"/>
-        <TextBox Name="Efternavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,340,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" PreviewKeyDown="Efternavn_TextBox_PreviewKeyDown"/>
-        <DatePicker Name="Birthday_DatePicker" HorizontalAlignment="Left" Margin="34,390,0,0" VerticalAlignment="Top" Width="196"/>
-        <RadioButton Name="Køn_Mand_RadioButton" Content="Mand" HorizontalAlignment="Left" Margin="34,440,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" Foreground="Black"/>
-        <RadioButton Name="Køn_Kvinde_RadioButton" Content="Kvinde" HorizontalAlignment="Left" Margin="145,440,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" Foreground="Black"/>
-        <ComboBox Name="Seeking_Combobox" HorizontalAlignment="Left" Margin="34,490,0,0" VerticalAlignment="Top" Width="196">
+        <TextBox Name="Fornavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Text="{Binding _User.First_name, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="Fornavn_TextBox_PreviewKeyDown"/>
+        <TextBox Name="Efternavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,340,0,0" TextWrapping="Wrap" Text="{Binding _User.Last_name, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Top" Width="196" PreviewKeyDown="Efternavn_TextBox_PreviewKeyDown"/>
+        <DatePicker Name="Birthday_DatePicker" HorizontalAlignment="Left" Margin="34,390,0,0" VerticalAlignment="Top" Width="196" Text="{Binding _User.Date, UpdateSourceTrigger=PropertyChanged}" />
+         
+        <ComboBox Name="Seeking_Combobox" HorizontalAlignment="Left" Margin="34,490,0,0" VerticalAlignment="Top" Width="196" Text="{Binding _User.Seeking, UpdateSourceTrigger=PropertyChanged}" >
             <ComboBoxItem IsSelected="True">Date</ComboBoxItem>
             <ComboBoxItem>Ægteskab</ComboBoxItem>
             <ComboBoxItem>Bolleven</ComboBoxItem>
             <ComboBoxItem>Kæreste</ComboBoxItem>
         </ComboBox>
-        <TextBox Name="Email_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,540,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
-        <ComboBox Name="Status_TextBox" HorizontalAlignment="Left" Margin="34,590,0,0" VerticalAlignment="Top" Width="196">
+        <TextBox Name="Email_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,540,0,0" TextWrapping="Wrap" Text="{Binding _User.Email, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Top" Width="196"/>
+        <ComboBox Name="Status_TextBox" HorizontalAlignment="Left" Margin="34,590,0,0" VerticalAlignment="Top" Width="196" Text="{Binding _User.Status, UpdateSourceTrigger=PropertyChanged}" >
             <ComboBoxItem IsSelected="True">Single</ComboBoxItem>
             <ComboBoxItem>Forhold</ComboBoxItem>
             <ComboBoxItem>Gift</ComboBoxItem>
             <ComboBoxItem>Kompliceret</ComboBoxItem>
         </ComboBox>
-        <CheckBox Name="InteresseretI_Man_CheckBox" Content="Mænd" HorizontalAlignment="Left" Margin="34,640,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" Foreground="Black"/>
-        <CheckBox Name="InteresseretI_Kvinde_CheckBox" Content="Kvinder" HorizontalAlignment="Left" Margin="145,640,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" Foreground="Black"/>
-        <TextBox Name="Height_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,690,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
-        <TextBox Name="Weight_TextBox" HorizontalAlignment="Left" Height="23" Margin="278,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
-        <ComboBox Name="EyeColor_ComboBox" HorizontalAlignment="Left" Margin="277,190,0,0" VerticalAlignment="Top" Width="196">
+        <TextBox Name="Height_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,690,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Text="{Binding _User.Height, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Name="Weight_TextBox" HorizontalAlignment="Left" Height="23" Margin="278,140,0,0" TextWrapping="Wrap" Text="{Binding _User.Weight, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Top" Width="196"/>
+        <ComboBox Name="EyeColor_ComboBox" HorizontalAlignment="Left" Margin="277,190,0,0" VerticalAlignment="Top" Width="196" Text="{Binding _User.Eyecolor, UpdateSourceTrigger=PropertyChanged}" >
             <ComboBoxItem IsSelected="True">Brune</ComboBoxItem>
             <ComboBoxItem>Grøne</ComboBoxItem>
             <ComboBoxItem>Blå</ComboBoxItem>
         </ComboBox>
-        <ComboBox Name="HairColor_Combobox" HorizontalAlignment="Left" Margin="277,240,0,0" VerticalAlignment="Top" Width="196">
+        <ComboBox Name="HairColor_Combobox" HorizontalAlignment="Left" Margin="277,240,0,0" VerticalAlignment="Top" Width="196" Text="{Binding _User.Haircolor, UpdateSourceTrigger=PropertyChanged}" >
             <ComboBoxItem IsSelected="True">Sort</ComboBoxItem>
             <ComboBoxItem>Lyst</ComboBoxItem>
             <ComboBoxItem>Mørkt</ComboBoxItem>
@@ -69,7 +66,7 @@
             <ComboBoxItem>Rødt</ComboBoxItem>
             <ComboBoxItem>Andet</ComboBoxItem>
         </ComboBox>
-        <ComboBox Name="KropsType_Combobox" HorizontalAlignment="Left" Margin="279,340,0,0" VerticalAlignment="Top" Width="194">
+        <ComboBox Name="KropsType_Combobox" HorizontalAlignment="Left" Margin="279,340,0,0" VerticalAlignment="Top" Width="194" Text="{Binding _User.Body_Type, UpdateSourceTrigger=PropertyChanged}" >
             <ComboBoxItem IsSelected="True">Gennemsnitlig</ComboBoxItem>
             <ComboBoxItem>Kraftig</ComboBoxItem>
             <ComboBoxItem>Atletisk</ComboBoxItem>
@@ -77,11 +74,11 @@
             <ComboBoxItem>Muskuløs</ComboBoxItem>
             <ComboBoxItem>Buttet</ComboBoxItem>
         </ComboBox>
-        <TextBox Name="BeskrivDigSelv_Textbox" HorizontalAlignment="Left" Height="245" Margin="277,440,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="194"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="34,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Name="Profil_Navn_TextBox" Text="{Binding _User.Profile_name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <TextBox Name="BeskrivDigSelv_Textbox" HorizontalAlignment="Left" Height="245" Margin="277,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" Text="{Binding _User.About_yourself, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="34,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Name="Profil_Navn_TextBox" Text="{Binding _User.Profile_name, UpdateSourceTrigger=PropertyChanged}" />
         <TextBox HorizontalAlignment="Left" Height="23" Margin="34,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Name="Kodeord_TextBox" Text="{Binding _User.Password, UpdateSourceTrigger=PropertyChanged}" />
-        <TextBox Name="Bekræft_Kodeord_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
-        <Label Content="Profil Navn" HorizontalAlignment="Left" Margin="34,115,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black" />
+        <TextBox Name="Bekræft_Kodeord_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Text="{Binding _User.Confirm_Password, UpdateSourceTrigger=PropertyChanged}" />
+        <Label Content="Profil Navn" HorizontalAlignment="Left" Margin="34,115,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
         <Label Content="Kodeord" HorizontalAlignment="Left" Margin="34,165,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
         <Label Content="Bekræft Kodeord" HorizontalAlignment="Left" Margin="34,215,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
         <Label Content="Fornavn" HorizontalAlignment="Left" Margin="34,265,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
@@ -100,16 +97,25 @@
         <Label Content="Krops Type" HorizontalAlignment="Left" Margin="279,315,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
         <Label Content="Beskriv dig selv" HorizontalAlignment="Left" Margin="278,415,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
         <Label Content="Opret Bruger" HorizontalAlignment="Left" Margin="34,69,0,0" VerticalAlignment="Top" Width="497" Height="37" FontSize="20" FontWeight="Bold" Background="White" Foreground="Black" FontFamily="Lucida Calligraphy"/>
-        <ComboBox HorizontalAlignment="Left" Margin="277,290,0,0" VerticalAlignment="Top" Width="196">
+        <ComboBox HorizontalAlignment="Left" Margin="277,290,0,0" VerticalAlignment="Top" Width="196" Text="{Binding _User.Children, UpdateSourceTrigger=PropertyChanged}" >
             <ComboBoxItem IsSelected="True">Ja udeboende</ComboBoxItem>
             <ComboBoxItem>Ja hjemmeboende</ComboBoxItem>
             <ComboBoxItem>Nej</ComboBoxItem>
             <ComboBoxItem>Kompliceret</ComboBoxItem>
         </ComboBox>
-        <TextBox Name="PostNummer_TextBox" HorizontalAlignment="Left" Height="23" Margin="277,390,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" PreviewKeyDown="PostNummer_TextBox_PreviewKeyDown"/>
+        <TextBox Name="PostNummer_TextBox" HorizontalAlignment="Left" Height="23" Margin="277,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" PreviewKeyDown="PostNummer_TextBox_PreviewKeyDown" Text="{Binding _User.Postcode, UpdateSourceTrigger=PropertyChanged}" />
         <Label Content="Post Nummer" HorizontalAlignment="Left" Margin="279,365,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         <Button Name="OpretBruger_Button" Content="Opret Bruger" HorizontalAlignment="Left" Margin="279,690,0,0" VerticalAlignment="Top" Width="192" Height="23" FontFamily="Lucida Calligraphy" Background="#FFF0E3D3" FontWeight="Bold" Click="OpretBruger_Button_Click" Command="{Binding Command}"/>
         <Frame Name="Frame" NavigationUIVisibility="Hidden"/>
-         
+        <ComboBox HorizontalAlignment="Left" Margin="34,440,0,0" VerticalAlignment="Top" Width="196" Text="{Binding _User.Gender, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem IsSelected="True">Mand</ComboBoxItem>
+            <ComboBoxItem>Kvinde</ComboBoxItem>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Margin="34,640,0,0" VerticalAlignment="Top" Width="196" Text="{Binding _User.SexualOrientation, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem IsSelected="True">Mænd</ComboBoxItem>
+            <ComboBoxItem>Kvinder</ComboBoxItem>
+            <ComboBoxItem>Mænd og Kvinder</ComboBoxItem>
+        </ComboBox>
+
     </Grid>
 </Window>
