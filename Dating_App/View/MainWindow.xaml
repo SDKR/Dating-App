@@ -27,8 +27,8 @@
             </Image.OpacityMask>
         </Image>
 
-        <Button Name="LogInd_Button" Content="Log ind" HorizontalAlignment="Left" Margin="1100,10,0,0" VerticalAlignment="Top" Width="75" Height="35" Foreground="Black" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontWeight="Bold" Click="LogInd_Button_Click" Command="{Binding Command}" />
-        <TextBox Name="Brugernavn_Textbox" HorizontalAlignment="Left" Height="23" Margin="692,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Background="#FFFCEFDF" Text="{Binding _User.Profile_name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <Button Name="LogInd_Button" Content="Log ind" HorizontalAlignment="Left" Margin="1100,10,0,0" VerticalAlignment="Top" Width="75" Height="35" Foreground="Black" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontWeight="Bold" Click="LogInd_Button_Click" />
+        <TextBox Name="Brugernavn_Textbox" HorizontalAlignment="Left" Height="23" Margin="692,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Background="#FFFCEFDF" />
         <PasswordBox HorizontalAlignment="Left" Margin="896,22,0,0" VerticalAlignment="Top" Width="199" Height="23" Background="#FFFCEFDF"/>
         <Label Content= "Brugernavn" HorizontalAlignment="Left" Margin="692,0,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy"/>
 
@@ -78,10 +78,10 @@
             <ComboBoxItem>Buttet</ComboBoxItem>
         </ComboBox>
         <TextBox Name="BeskrivDigSelv_Textbox" HorizontalAlignment="Left" Height="245" Margin="277,440,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="194"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="34,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" Name="Profil_Navn_TextBox"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="34,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" Name="Kodeord_TextBox"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="34,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Name="Profil_Navn_TextBox" Text="{Binding _User.Profile_name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="34,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Name="Kodeord_TextBox" Text="{Binding _User.Password, UpdateSourceTrigger=PropertyChanged}" />
         <TextBox Name="Bekræft_Kodeord_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
-        <Label Content="Profil Navn" HorizontalAlignment="Left" Margin="34,115,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
+        <Label Content="Profil Navn" HorizontalAlignment="Left" Margin="34,115,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black" />
         <Label Content="Kodeord" HorizontalAlignment="Left" Margin="34,165,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
         <Label Content="Bekræft Kodeord" HorizontalAlignment="Left" Margin="34,215,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
         <Label Content="Fornavn" HorizontalAlignment="Left" Margin="34,265,0,0" VerticalAlignment="Top" FontStyle="Italic" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="Black"/>
@@ -108,7 +108,7 @@
         </ComboBox>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="277,390,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
         <Label Content="Post Nummer" HorizontalAlignment="Left" Margin="279,365,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
-        <Button Name="OpretBruger_Button" Content="Opret Bruger" HorizontalAlignment="Left" Margin="279,690,0,0" VerticalAlignment="Top" Width="192" Height="23" FontFamily="Lucida Calligraphy" Background="#FFF0E3D3" FontWeight="Bold" Click="OpretBruger_Button_Click"/>
+        <Button Name="OpretBruger_Button" Content="Opret Bruger" HorizontalAlignment="Left" Margin="279,690,0,0" VerticalAlignment="Top" Width="192" Height="23" FontFamily="Lucida Calligraphy" Background="#FFF0E3D3" FontWeight="Bold" Click="OpretBruger_Button_Click" Command="{Binding Command}"/>
         <Frame Name="Frame" NavigationUIVisibility="Hidden"/>
          
     </Grid>
