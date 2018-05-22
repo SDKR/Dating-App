@@ -231,6 +231,34 @@ namespace Dating_App.Model
             this._CreationDate = CreationDate;
         }
 
+        public User(string Profilename, string Password, string Firstname, string lastname, DateTime birthdate, string gender, string seeking, int postcode, string email, string status, string sexualorientation, int height, int weight, string eyecolor, string haircolor, string children, string BodyType, string aboutyourself, int FK_ID)
+        {
+            //this._PK_ID = PK_ID;
+            this._Profile_name = Profilename;
+            this._Password = Password;
+            //this._CreationDate = CreationDate;
+            //this._infoID = PK_InfoID;
+            this._First_name = Firstname;
+            this._Last_name = Last_name;
+            this._Last_name = lastname;
+            this._Date = birthdate;
+            this._gender = gender;
+            this._seeking = seeking;
+            this._Post_Code = postcode;
+            this._email = email;
+            this._Status = status;
+            this._sexual_orientation = sexualorientation;
+            this._Height = height;
+            this._Weight = weight;
+            this._Eyecolor = eyecolor;
+            this._Haircolor = haircolor;
+            this._Children = children;
+            this._Body_type = BodyType;
+            this._About_yourself = aboutyourself;
+            this.FK_ID = FK_ID;
+
+        }
+
         public Boolean CreateUser(User user)
         {
             //Console.WriteLine(this._Profile_name);
