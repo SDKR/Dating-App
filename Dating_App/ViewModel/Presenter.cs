@@ -54,10 +54,10 @@ namespace Dating_App.ViewModel
         //}
 
             // Login Button Press
-        public void login()
+        public void CreateUser()
         {
 
-            if (_user.ConfirmUserCredentials(_user.Profile_name))
+            if (_user.CreateUser(_user.Profile_name))
             {
                 MessageBox.Show("Login Successful");
             }

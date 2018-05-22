@@ -35,7 +35,7 @@ namespace Dating_App
         private void LogInd_Button_Click(object sender, RoutedEventArgs e)
         {
             
-            //Frame.Content = new Dating_App.View.HomePage();
+            Frame.Content = new Dating_App.View.HomePage();
         }
     }
 }

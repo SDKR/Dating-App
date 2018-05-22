@@ -9,7 +9,7 @@ namespace Dating_App.DBConnect
     class FrontPageDBConnector
     {
         // Totally real database connector
-        public Boolean ConfirmCredentials(string Profile_Name)
+        public Boolean CreateUser(string Profile_Name)
         {
             return true;
         }
