@@ -4,8 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dating_App"
+        xmlns:vm="clr-namespace:Dating_App.ViewModel"
+        xmlns:Views="clr-namespace:Dating_App.View"
+        xmlns:ViewModels="clr-namespace:Dating_App.ViewModel"
+        xmlns:viewmodel="clr-namespace:Dating_App.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1200">
+
+    <Window.DataContext>
+        <viewmodel:Presenter></viewmodel:Presenter>
+    </Window.DataContext>
+
     <Grid>
         <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="1194" Margin="0,0,-0.4,0" Background="#FFBCB5AC"/>
 
@@ -14,12 +23,12 @@
                 <ImageBrush ImageSource="datingPicture.jpg"/>
             </Image.OpacityMask>
         </Image>
-        <Button Content="Log ind" HorizontalAlignment="Left" Margin="1100,10,0,0" VerticalAlignment="Top" Width="75" Height="35" Foreground="Black" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontWeight="Bold" Click="Button_Click"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="692,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="199" Background="#FFFCEFDF"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="896,22,0,0" VerticalAlignment="Top" Width="199" Height="23" Background="#FFFCEFDF"/>
+        <Button Content="Log ind" HorizontalAlignment="Left" Margin="1100,10,0,0" VerticalAlignment="Top" Width="75" Height="35" Foreground="Black" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontWeight="Bold" Click="Button_Click" Command="{Binding Command}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="692,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Background="#FFFCEFDF" Text="{Binding _User.Profile_name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="896,22,0,0" VerticalAlignment="Top" Width="199" Height="23" Background="#FFFCEFDF"  />
         <Label Content="Brugernavn" HorizontalAlignment="Left" Margin="692,0,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy"/>
         <Label Content="Kodeord" HorizontalAlignment="Left" Margin="896,0,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy"/>
-        <TextBox Name="Fornavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
+        <TextBox Name="Fornavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Text="{Binding _User.Profile_name,  StringFormat=1 {0}}"/>
         <TextBox Name="Efternavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,340,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
         <DatePicker Name="Birthday_DatePicker" HorizontalAlignment="Left" Margin="34,390,0,0" VerticalAlignment="Top" Width="196"/>
         <RadioButton Name="Køn_Mand_RadioButton" Content="Mand" HorizontalAlignment="Left" Margin="34,440,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" Foreground="Black"/>
