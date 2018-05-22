@@ -19,6 +19,7 @@ namespace Dating_App.DBConnect
         // Totally real database connector
         public Boolean CreateUser(User user)
         {
+
             // Creates todays date for fussy Mr. database
             String formatsdate = @"MM\/dd\/yyyy HH:mm";
             DateTime localDate = DateTime.Now;

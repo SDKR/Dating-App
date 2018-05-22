@@ -68,9 +68,6 @@ namespace Dating_App.Model
         {
             this._Profile_name = Profilename;
             this._Password = Password;
-
-            Console.WriteLine(_Profile_name);
-            Console.WriteLine(_Password);
         }
 
         public User(int ID, string Profilename, string Password, string CreationDate)
@@ -79,8 +76,6 @@ namespace Dating_App.Model
             this._Profile_name = Profilename;
             this._Password = Password;
             this._CreationDate = CreationDate;
-
-            Console.WriteLine(_Profile_name, _Password, _CreationDate);
         }
 
         public Boolean CreateUser(User user)
