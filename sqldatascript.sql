@@ -19,13 +19,12 @@ create table [User](
 	)
 
 create table Postcode_City(
-PK_Post_code int PRIMARY KEY not null,
-City nvarchar(50) not null
+	PK_Post_code int PRIMARY KEY not null,
+	City nvarchar(50) not null
 )
 
 create table User_Information(
 	PK_InfoID int Identity PRIMARY KEY not null,
-	--FOREIGN KEY (PK_InfoID) REFERENCES [User](PK_ID),
 	First_name nvarchar(50) not null,
 	Last_name nvarchar(50) not null,
 	Birthdate date not null,
@@ -48,17 +47,19 @@ create table User_Information(
 )
 
 create table [Message](
-PK_MessageID int identity PRIMARY KEY not null,
-Sender int not null,
-Reciver int not null,
-Message nvarchar(50) not null
+	PK_MessageID int identity PRIMARY KEY not null,
+	FK_Sender int not null,
+	FOREIGN KEY (FK_Sender) REFERENCES [User](PK_ID),
+	FK_Reciver int not null,
+	FOREIGN KEY (FK_Reciver) REFERENCES [User](PK_ID),
+	Message nvarchar(1000) not null
 )
 
 create table Picture(
-PK_Picture_ID int identity PRIMARY KEY not null,
-FK_InfoID int not null,
-FOREIGN KEY (FK_InfoID) REFERENCES User_Information(PK_InfoID),
-Picture image not null
+	PK_Picture_ID int identity PRIMARY KEY not null,
+	FK_InfoID int not null,
+	FOREIGN KEY (FK_InfoID) REFERENCES User_Information(PK_InfoID),
+	Picture image not null
 )
 go
 
@@ -1320,6 +1321,19 @@ INSERT [dbo].[Postcode_City] ([PK_Post_code], [City]) VALUES (9982, N'Ålbæk')
 INSERT [dbo].[Postcode_City] ([PK_Post_code], [City]) VALUES (9990, N'Skagen')
 go
 
+--Bulk insert Postcode_city
+--from 'C:\Program Files\Microsoft SQL Server\Postnummer.txt'
+--with
+--(
+--  codepage = 'ACP',
+--  batchsize = 250,
+--  datafiletype = 'char',
+--  fieldterminator = ',',
+--  rowterminator = '\n',
+--  maxerrors = 50,
+--  tablock )
+--  go
+
 insert into User_Information values
 ('Hans','Lassen','1992-02-22','Mand','Sexpartner',1100,'Hanslassen@gmail.com','Gift','Homoseksuel',180,90,'Grønne','Brunt','Ja, udebornde','Muskuløs','Jeg vil udforske min sexualitiy i mit kedelig gifte liv.',1),
 ('Erna','Eriksen','1980-03-24','Kvinde','Forhold',1700,'minernamail@hotmail.com','Skildt','Heteroseksuel',165,80,'Brunne','Lyst','Nej','Slank','Søger en mand som gerne vil have børn.',2),
@@ -1339,26 +1353,98 @@ insert into User_Information values
 ('Emil','Carlsen','1987-07-02','Mand','Forhold',3000,'emilcarlsen@gmail.com','Single','Hertroseksuel',169,85,'Brunne','Gråt','Nej','Buttet','Leder en sød dame jeg gerne vil stifte en familie med.',16),
 ('Alma','Ahmad','1984-08-03','Kvinde','Forhold',3100,'almaahmad@gmail.com','Single','Hertroseksuel',164,81,'Brunne','Sort','Nej','Kraftig','Hej mit navn er alma og jeg vil gerne have børn ja.',17)
 go
---Bulk insert Postcode_city
---from 'C:\Program Files\Microsoft SQL Server\Postnummer.txt'
---with
---(
---  codepage = 'ACP',
---  batchsize = 250,
---  datafiletype = 'char',
---  fieldterminator = ',',
---  rowterminator = '\n',
---  maxerrors = 50,
---  tablock )
---  go
+
+insert into Picture(FK_InfoID, Picture) Values
+(1,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_1.jpg', SINGLE_BLOB) as image)),
+(2,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_2.jpg', SINGLE_BLOB) as image)),
+(3,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_3.png', SINGLE_BLOB) as image)),
+(4,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_4.jpg', SINGLE_BLOB) as image)),
+(5,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_5.jpg', SINGLE_BLOB) as image)),
+(6,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_6.jpg', SINGLE_BLOB) as image)),
+(7,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_7.jpg', SINGLE_BLOB) as image)),
+(8,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_8.jpg', SINGLE_BLOB) as image)),
+(9,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_9.jpg', SINGLE_BLOB) as image)),
+(10,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_10.jpg', SINGLE_BLOB) as image)),
+(11,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_11.jpg', SINGLE_BLOB) as image)),
+(12,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_12.jpg', SINGLE_BLOB) as image)),
+(13,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_13.jpg', SINGLE_BLOB) as image)),
+(14,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_14.jpg', SINGLE_BLOB) as image)),
+(15,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_15.jpg', SINGLE_BLOB) as image)),
+(16,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_16.jpg', SINGLE_BLOB) as image)),
+(17,(SELECT * FROM OPENROWSET(BULK N'C:\Program Files\Microsoft SQL Server\Person_17.jpg', SINGLE_BLOB) as image))
+go
+
+insert into [Message] Values
+(12,1,'Hej'),
+(1,12,'Hej'),
+(12,1,'magisk sød besked'),
+(3,5,'Hej'),
+(3,5,'Ser godt ud :)'),
+(5,3,'Mange tak, du ser heller ikke værst ud'),
+(6,13,'Hej du :) '),
+(13,6,'How are you doing ? :)'),
+(12,11,'Hej'),
+(12,11,'Hvad laver du ? '),
+(11,12,'Står på min profil :)'),
+(9,15,'Davs ser du også søger nogle venner, hvad kan du lide at lave og sådan ?'),
+(15,9,'Jeg kan lide at tage i byen og ude at spise.'),
+(4,10,'Hej'),
+(10,4,'Hej, tænkte på om en sød pige som dig ville mødes.'),
+(2,11,'Hej'),
+(2,11,'Jeg er lidt genert og har ikke prøvet at skrive om sådan her nogle sider før, men synes du så sød ud og tænkte om du ville skrive lidt med mig.'),
+(11,2,'Hej Erna, det vil jeg meget gerne. Jeg tænkte på om vi måske skulle mødes over en kopkaffe så vi bedre kan lære hinanden at kende.'),
+(7,9,'hej')
+go
 
 select * from [User]
 select * from [Postcode_City]
 select * from [User_Information]
+select * from [Picture]
+select * from [Message]
 
+--create index User_information_Index_
+--on dbo.User_Information (Birthdate,Gender,Seeking,Status,Sexual_orientation,Children);
+--go
 
-create index User_information_Index_
-on dbo.User_Information (Birthdate,Gender,Seeking,Status,Sexual_orientation,Children);
-
-select * from sys.indexes
+drop PROCEDURE spGetAll_user_information
 go
+CREATE PROCEDURE spGetAll_user_information
+as
+begin
+	set NOCOUNT ON;
+	select * from User_information
+	where First_name like '%an%'
+end
+go
+spGetAll_user_information
+go
+
+
+-- Få alle schemanames Objectnames indexnames med keys og indexs
+--
+--
+--SELECT  OBJECT_SCHEMA_NAME(ind.object_id) AS SchemaName
+--      , OBJECT_NAME(ind.object_id) AS ObjectName
+--      , ind.name AS IndexName
+--      , ind.is_primary_key AS IsPrimaryKey
+--      , ind.is_unique AS IsUniqueIndex
+--      , col.name AS ColumnName
+--      , ic.is_included_column AS IsIncludedColumn
+--      , ic.key_ordinal AS ColumnOrder
+--FROM    sys.indexes ind
+--        INNER JOIN sys.index_columns ic
+--            ON ind.object_id = ic.object_id
+--               AND ind.index_id = ic.index_id
+--        INNER JOIN sys.columns col
+--            ON ic.object_id = col.object_id
+--               AND ic.column_id = col.column_id
+--        INNER JOIN sys.tables t
+--            ON ind.object_id = t.object_id
+--WHERE   t.is_ms_shipped = 0
+--ORDER BY OBJECT_SCHEMA_NAME(ind.object_id) --SchemaName
+--      , OBJECT_NAME(ind.object_id) --ObjectName
+--      , ind.is_primary_key DESC
+--      , ind.is_unique DESC
+--      , ind.name --IndexName
+--      , ic.key_ordinal
+--go
