@@ -83,10 +83,10 @@ namespace Dating_App.Model
             Console.WriteLine(_Profile_name, _Password, _CreationDate);
         }
 
-        public Boolean CreateUser(string profile_name)
+        public Boolean CreateUser(User user)
         {
             //Console.WriteLine(this._Profile_name);
-            return FPDB.CreateUser(profile_name);
+            return FPDB.CreateUser(user);
 
         }
 

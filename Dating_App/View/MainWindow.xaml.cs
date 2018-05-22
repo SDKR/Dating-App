@@ -29,7 +29,7 @@ namespace Dating_App
 
         private void OpretBruger_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            // Uses MVVM
         }
 
         private void LogInd_Button_Click(object sender, RoutedEventArgs e)
