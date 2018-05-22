@@ -1401,23 +1401,77 @@ select * from [Postcode_City]
 select * from [User_Information]
 select * from [Picture]
 select * from [Message]
-
+go
 --create index User_information_Index_
 --on dbo.User_Information (Birthdate,Gender,Seeking,Status,Sexual_orientation,Children);
 --go
 
-drop PROCEDURE spGetAll_user_information
+DROP PROCEDURE spCreate_New_User
 go
-CREATE PROCEDURE spGetAll_user_information
+create PROCEDURE spCreate_New_User
+(
+	@Profile_name nvarchar(50),
+	@Password nvarchar(50),
+	@Creation_Date datetime,
+	@User_aktiv bit 
+)
 as
 begin
-	set NOCOUNT ON;
-	select * from User_information
-	where First_name like '%an%'
+	insert into [User] values(@Profile_name,@Password,@Creation_Date,1)
+	RETURN
 end
 go
-spGetAll_user_information
+
+DROP PROCEDURE spCreate_User_information
 go
+
+CREATE PROCEDURE spCreate_User_information
+(
+	@First_name nvarchar(50),
+	@Last_name nvarchar(50),
+	@Birthdate date,
+	@Gender nvarchar(50),
+	@Seeking nvarchar(50),
+	@FK_Post_Code int,
+	@Email nvarchar(100),
+	@Status nvarchar(50),
+	@Sexual_orientation nvarchar(50),
+	@Height int,
+	@Weight int,
+	@Eyecolor nvarchar(50),
+	@Haircolor nvarchar(50),
+	@Children nvarchar(50),
+	@Body_Type nvarchar(50),
+	@About_Yourself nvarchar(400),
+	@FK_ID int output 
+)
+as
+begin
+	insert into [User_Information] values 	
+	(@First_name,
+	@Last_name,
+	@Birthdate,
+	@Gender,
+	@Seeking,
+	@FK_Post_Code,
+	@Email,
+	@Status,
+	@Sexual_orientation,
+	@Height,
+	@Weight,
+	@Eyecolor, 
+	@Haircolor,
+	@Children, 
+	@Body_Type,
+	@About_Yourself,
+	@FK_ID);
+
+	set @FK_ID = Scope_Identity();
+end;
+go
+
+
+
 
 
 -- Få alle schemanames Objectnames indexnames med keys og indexs
