@@ -7,8 +7,6 @@
              xmlns:ViewModel="clr-namespace:Dating_App.ViewModel"
              xmlns:View="clr-namespace:Dating_App.View"
              >
-             <!-- Namespace definitions above-->
-
 
     <Application.Resources>
 

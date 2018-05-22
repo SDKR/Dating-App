@@ -1,0 +1,21 @@
+﻿<Page x:Class="Dating_App.View.ProfilPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Dating_App.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="ProfilPage" Width="1200" Height="800">
+
+    <Grid Background="White" Margin="0,0,10,10">
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="1190" Background="#FFBCB5AC"/>
+        <Button Name="LogAf_Button" Content="Log af" HorizontalAlignment="Left" Margin="1100,10,0,0" VerticalAlignment="Top" Width="75" Height="35" Foreground="Black" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontWeight="Bold" Click="LogAf_Button_Click"/>
+        <Image HorizontalAlignment="Left" Height="312" Margin="37,85,0,0" VerticalAlignment="Top" Width="300" Source="images211838BD.jpg"/>
+        <Label Content="User Name" HorizontalAlignment="Left" Margin="337,85,0,0" VerticalAlignment="Top" Width="853" Height="72" FontSize="48" FontFamily="Lucida Calligraphy" HorizontalContentAlignment="Center"/>
+        <Button Content="Hjem" HorizontalAlignment="Left" Margin="63,17,0,0" VerticalAlignment="Top" Width="51" Height="28" FontSize="16" Background="#FFBCB5AC" BorderThickness="0,0,0,0" Foreground="#FF5A0303" FontStyle="Italic" FontFamily="Lucida Calligraphy" Click="Button_Click_1"/>
+        <Button Content="Profil" HorizontalAlignment="Left" Margin="138,17,0,0" VerticalAlignment="Top" Width="57" Height="28" FontSize="16" FontStyle="Italic" Background="#FFBCB5AC" BorderThickness="0,0,0,0" FontFamily="Lucida Calligraphy" Foreground="#FF5A0303"/>
+        <Image HorizontalAlignment="Left" Height="306" Margin="860,559,0,-75" VerticalAlignment="Top" Width="330" Source="datingPicture.jpg"/>
+
+    </Grid>
+</Page>
