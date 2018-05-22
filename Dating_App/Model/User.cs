@@ -197,6 +197,15 @@ namespace Dating_App.Model
             set { _FK_ID = value; }
         }
 
+        private string _Confirm_Password;
+
+        public string Confirm_Password
+        {
+            get { return _Confirm_Password; }
+            set { _Confirm_Password = value; }
+        }
+
+
 
         /*
          * Methods n' stuff
