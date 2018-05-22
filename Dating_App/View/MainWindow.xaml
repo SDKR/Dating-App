@@ -18,9 +18,9 @@
             </Image.OpacityMask>
         </Image>
         <Button Name="LogInd_Button" Content="Log ind" HorizontalAlignment="Left" Margin="1100,10,0,0" VerticalAlignment="Top" Width="75" Height="35" Foreground="Black" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontWeight="Bold" Click="LogInd_Button_Click" />
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="692,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="199" Background="#FFFCEFDF"/>
+        <TextBox Name="Brugernavn_Textbox" HorizontalAlignment="Left" Height="23" Margin="692,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Background="#FFFCEFDF"/>
         <PasswordBox HorizontalAlignment="Left" Margin="896,22,0,0" VerticalAlignment="Top" Width="199" Height="23" Background="#FFFCEFDF"/>
-        <Label Content="Brugernavn" HorizontalAlignment="Left" Margin="692,0,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy"/>
+        <Label Content= "Brugernavn" HorizontalAlignment="Left" Margin="692,0,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy"/>
         <Label Content="Kodeord" HorizontalAlignment="Left" Margin="896,0,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy"/>
         <TextBox Name="Fornavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
         <TextBox Name="Efternavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,340,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
