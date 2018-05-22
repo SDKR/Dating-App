@@ -29,12 +29,12 @@
 
         <Button Name="LogInd_Button" Content="Log ind" HorizontalAlignment="Left" Margin="1100,10,0,0" VerticalAlignment="Top" Width="75" Height="35" Foreground="Black" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontWeight="Bold" Click="LogInd_Button_Click" Command="{Binding Command}" />
         <TextBox Name="Brugernavn_Textbox" HorizontalAlignment="Left" Height="23" Margin="692,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Background="#FFFCEFDF" Text="{Binding _User.Profile_name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="896,22,0,0" VerticalAlignment="Top" Width="199" Height="23" Background="#FFFCEFDF"/>
+        <TextBox Name="Password_Textbox" HorizontalAlignment="Left" Height="23" Margin="692,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Background="#FFFCEFDF"/>
         <Label Content= "Brugernavn" HorizontalAlignment="Left" Margin="692,0,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy"/>
 
         <Label Content="Kodeord" HorizontalAlignment="Left" Margin="896,0,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy"/>
-        <TextBox Name="Fornavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Text="{Binding _User.Profile_name,  StringFormat=1 {0}}"/>
-        <TextBox Name="Efternavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,340,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
+        <TextBox Name="Fornavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Text="{Binding _User.Profile_name,  StringFormat=1 {0}}" PreviewKeyDown="Fornavn_TextBox_PreviewKeyDown"/>
+        <TextBox Name="Efternavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,340,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" PreviewKeyDown="Efternavn_TextBox_PreviewKeyDown"/>
         <DatePicker Name="Birthday_DatePicker" HorizontalAlignment="Left" Margin="34,390,0,0" VerticalAlignment="Top" Width="196"/>
         <RadioButton Name="Køn_Mand_RadioButton" Content="Mand" HorizontalAlignment="Left" Margin="34,440,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" Foreground="Black"/>
         <RadioButton Name="Køn_Kvinde_RadioButton" Content="Kvinde" HorizontalAlignment="Left" Margin="145,440,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" Foreground="Black"/>
@@ -106,7 +106,7 @@
             <ComboBoxItem>Nej</ComboBoxItem>
             <ComboBoxItem>Kompliceret</ComboBoxItem>
         </ComboBox>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="277,390,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196"/>
+        <TextBox Name="PostNummer_TextBox" HorizontalAlignment="Left" Height="23" Margin="277,390,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="196" PreviewKeyDown="PostNummer_TextBox_PreviewKeyDown"/>
         <Label Content="Post Nummer" HorizontalAlignment="Left" Margin="279,365,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         <Button Name="OpretBruger_Button" Content="Opret Bruger" HorizontalAlignment="Left" Margin="279,690,0,0" VerticalAlignment="Top" Width="192" Height="23" FontFamily="Lucida Calligraphy" Background="#FFF0E3D3" FontWeight="Bold" Click="OpretBruger_Button_Click"/>
         <Frame Name="Frame" NavigationUIVisibility="Hidden"/>

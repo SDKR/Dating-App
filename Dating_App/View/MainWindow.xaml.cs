@@ -35,7 +35,34 @@ namespace Dating_App
         private void LogInd_Button_Click(object sender, RoutedEventArgs e)
         {
             
-            //Frame.Content = new Dating_App.View.HomePage();
+            Frame.Content = new Dating_App.View.HomePage();
+        }
+
+        private void Fornavn_TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (Char.IsDigit((char)KeyInterop.VirtualKeyFromKey(e.Key)) & e.Key != Key.Back | e.Key == Key.Space)
+            {
+                e.Handled = true;
+                MessageBox.Show("Ingen tal i Fornavn", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void Efternavn_TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (Char.IsDigit((char)KeyInterop.VirtualKeyFromKey(e.Key)) & e.Key != Key.Back | e.Key == Key.Space)
+            {
+                e.Handled = true;
+                MessageBox.Show("Ingen tal i Efternavn", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void PostNummer_TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (!Char.IsDigit((char)KeyInterop.VirtualKeyFromKey(e.Key)) & e.Key != Key.Back | e.Key == Key.Space)
+            {
+                e.Handled = true;
+                MessageBox.Show("Post nummeret kan kun bestå af tal.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
