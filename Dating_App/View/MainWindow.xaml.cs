@@ -29,13 +29,14 @@ namespace Dating_App
 
         private void OpretBruger_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            // Uses MVVM
         }
 
         private void LogInd_Button_Click(object sender, RoutedEventArgs e)
         {
             
             Frame.Content = new Dating_App.View.HomePage();
+<<<<<<< HEAD
         }
 
         private void Fornavn_TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -63,6 +64,8 @@ namespace Dating_App
                 e.Handled = true;
                 MessageBox.Show("Post nummeret kan kun bestå af tal.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+=======
+>>>>>>> 57fa5e9b2b632aac238fe5cb3eb08ac0b372b892
         }
     }
 }

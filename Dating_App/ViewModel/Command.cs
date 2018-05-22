@@ -25,7 +25,7 @@ namespace Dating_App.ViewModel
 
         public void Execute(object parameter)
         {
-            this.ViewModel.login();
+            this.ViewModel.CreateUser();
         }
 
     }

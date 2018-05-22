@@ -18,6 +18,7 @@ namespace Dating_App.Model
         private string _Profile_name;
         private string _Password;
         private string _CreationDate;
+        private int _bit;
 
         public int PK_ID
         {
@@ -45,6 +46,13 @@ namespace Dating_App.Model
             get { return _CreationDate; }
             set { _CreationDate = value; }
         }
+
+        public int bit
+        {
+            get { return _bit; }
+            set { _bit = value; }
+        }
+
 
         /*
          * Methods n' stuff
@@ -75,10 +83,10 @@ namespace Dating_App.Model
             Console.WriteLine(_Profile_name, _Password, _CreationDate);
         }
 
-        public Boolean ConfirmUserCredentials(string profile_name)
+        public Boolean CreateUser(User user)
         {
             //Console.WriteLine(this._Profile_name);
-            return FPDB.ConfirmCredentials(profile_name);
+            return FPDB.CreateUser(user);
 
         }
 
