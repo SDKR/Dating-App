@@ -56,10 +56,15 @@ namespace Dating_App.ViewModel
             // Login Button Press
         public void CreateUser()
         {
+            User user = new User(_user.Profile_name,_user.Password);
 
-            if (_user.CreateUser(_user.Profile_name))
+            if (_user.CreateUser(user))
             {
-                MessageBox.Show("Login Successful");
+                MessageBox.Show("User Creation Successful");
+            }
+            else
+            {
+                MessageBox.Show("An Error occurred creating a new user");
             }
         }
 

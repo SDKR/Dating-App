@@ -5,6 +5,9 @@ using System.Web;
 using System.Globalization;
 using System.Configuration;
 using System.Data;
+using System.Text;
+using System.Threading.Tasks;
+using Dating_App.Model;
 using System.Data.SqlClient;
 
 namespace Dating_App.DBConnect
@@ -12,11 +15,10 @@ namespace Dating_App.DBConnect
     class FrontPageDBConnector
     {
         SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
-        //public static string constring = @"server=SKAB4-PC-01\KIM;database=dateingappDatabase;UID=sa;password=Pa$$w0rd";
-        // Totally real database connector
-        public Boolean CreateUser(string Profile_Name)
-        {
 
+        // Totally real database connector
+        public Boolean CreateUser(User user)
+        {
             // Creates todays date for fussy Mr. database
             String formatsdate = @"MM\/dd\/yyyy HH:mm";
             DateTime localDate = DateTime.Now;
@@ -34,10 +36,8 @@ namespace Dating_App.DBConnect
             int k = cmd.ExecuteNonQuery();
             connection.Close();
 
-
             return true;
-
-            
+       
         }
 
     }
