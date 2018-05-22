@@ -93,14 +93,109 @@ namespace Dating_App.Model
             set { _gender = value; }
         }
 
-        private int myVar;
+        private string _seeking;
 
-        public int MyProperty
+        public string Seeking
         {
-            get { return myVar; }
-            set { myVar = value; }
+            get { return _seeking; }
+            set { _seeking = value; }
         }
 
+        private int _Post_Code;
+
+        public int Postcode
+        {
+            get { return _Post_Code; }
+            set { _Post_Code = value; }
+        }
+
+        private string _email;
+
+        public string Email
+        {
+            get { return _email; }
+            set { _email = value; }
+        }
+
+        private string _Status;
+
+        public string Status
+        {
+            get { return _Status; }
+            set { _Status = value; }
+        }
+
+        private string _sexual_orientation;
+
+        public string SexualOrientation
+        {
+            get { return _sexual_orientation; }
+            set { _sexual_orientation = value; }
+        }
+
+        private int _Height;
+
+        public int Height
+        {
+            get { return _Height; }
+            set { _Height = value; }
+        }
+
+        private int _Weight;
+
+        public int Weight
+        {
+            get { return _Weight; }
+            set { _Weight = value; }
+        }
+
+        private string _Eyecolor;
+
+        public string Eyecolor
+        {
+            get { return _Eyecolor; }
+            set { _Eyecolor = value; }
+        }
+
+        private string _Haircolor;
+
+        public string Haircolor
+        {
+            get { return _Haircolor; }
+            set { _Haircolor = value; }
+        }
+
+        private string _Children;
+
+        public string Children
+        {
+            get { return _Children; }
+            set { _Children = value; }
+        }
+
+        private string _Body_type;
+
+        public string Body_Type
+        {
+            get { return _Body_type; }
+            set { _Body_type = value; }
+        }
+
+        private string _About_yourself;
+
+        public string About_yourself
+        {
+            get { return _About_yourself; }
+            set { _About_yourself = value; }
+        }
+
+        private int _FK_ID;
+
+        public int FK_ID
+        {
+            get { return _FK_ID; }
+            set { _FK_ID = value; }
+        }
 
 
         /*
