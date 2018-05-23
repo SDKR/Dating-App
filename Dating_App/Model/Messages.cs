@@ -65,6 +65,7 @@ namespace Dating_App.Model
             return MDBC.getMessages(user1, user2);
         }
 
+        // Saves message and returns boolean to say wether it was successful
         public Boolean saveMessage (Messages message)
         {
             return MDBC.saveMessage(message);
