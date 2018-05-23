@@ -12,7 +12,7 @@
         <Grid Background="White" Margin="0,0,10,10">
             <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="1190" Background="#FFBCB5AC"/>
             <Button Name="LogAf_ProfilPage_Button" Content="Log af" HorizontalAlignment="Left" Margin="1100,10,0,0" VerticalAlignment="Top" Width="75" Height="35" Foreground="Black" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontWeight="Bold" Click="LogAf_ProfilPage_Button_Click"/>
-            <Image HorizontalAlignment="Left" Height="312" Margin="37,85,0,0" VerticalAlignment="Top" Width="300" Source="images211838BD.jpg"/>
+            <Image Name="ProfilBillede_RedigerProfilPage_Image" HorizontalAlignment="Left" Height="312" Margin="37,85,0,0" VerticalAlignment="Top" Width="300" Source="images211838BD.jpg"/>
             <Label Content="User Name" HorizontalAlignment="Left" Margin="337,85,0,0" VerticalAlignment="Top" Width="853" Height="72" FontSize="48" FontFamily="Lucida Calligraphy" HorizontalContentAlignment="Center"/>
             <Button Name="Hjem_ProfilPage_Button" Content="Hjem" HorizontalAlignment="Left" Margin="63,17,0,0" VerticalAlignment="Top" Width="51" Height="28" FontSize="16" Background="#FFBCB5AC" BorderThickness="0,0,0,0" Foreground="#FF5A0303" FontStyle="Italic" FontFamily="Lucida Calligraphy" Click="Hjem_ProfilPage_Button_Click"/>
             <Button Name="Profil_ProfilPage_Button" Content="Profil" HorizontalAlignment="Left" Margin="138,17,0,0" VerticalAlignment="Top" Width="57" Height="28" FontSize="16" FontStyle="Italic" Background="#FFBCB5AC" BorderThickness="0,0,0,0" FontFamily="Lucida Calligraphy" Foreground="#FF5A0303" Click="Profil_ProfilPage_Button_Click"/>
