@@ -37,6 +37,28 @@ namespace Dating_App.DBConnect
             int k = cmd.ExecuteNonQuery();
             connection.Close();
 
+            SqlCommand User_information = new SqlCommand("spCreate_User_information", connection);
+            User_information.CommandType = CommandType.StoredProcedure;
+            User_information.Parameters.AddWithValue("First_name", 1);
+            User_information.Parameters.AddWithValue("Last_name", 1);
+            User_information.Parameters.AddWithValue("Birthdate", 1);
+            User_information.Parameters.AddWithValue("Gender", 1);
+            User_information.Parameters.AddWithValue("Seeking", 1);
+            User_information.Parameters.AddWithValue("FK_Post_Code", 1);
+            User_information.Parameters.AddWithValue("Email", 1);
+            User_information.Parameters.AddWithValue("Status", 1);
+            User_information.Parameters.AddWithValue("Sexual_orientation", 1);
+            User_information.Parameters.AddWithValue("Height", 1);
+            User_information.Parameters.AddWithValue("Eyecolor", 1);
+            User_information.Parameters.AddWithValue("Haircolor", 1);
+            User_information.Parameters.AddWithValue("Children", 1);
+            User_information.Parameters.AddWithValue("Body_Type", 1);
+            User_information.Parameters.AddWithValue("About_Yourself", 1);
+            connection.Open();
+            k = User_information.ExecuteNonQuery();
+            connection.Close();
+
+
             return true;
        
         }
