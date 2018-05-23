@@ -68,7 +68,7 @@ namespace Dating_App.DBConnect
         // Check login information
         public List<User> login(User user)
         {
-            SqlCommand cmd = new SqlCommand("Select * from [User] where PK_Profile_name ="+user.Profile_name+ "and Password = "+user.Password, connection);
+            SqlCommand cmd = new SqlCommand("select * from [User], User_Information where PK_Profile_name = '" + user.Profile_name + "' and Password = '" + user.Password + "' ", connection);
             cmd.Parameters.AddWithValue("PK_Profile_name", user.Profile_name);
             cmd.Parameters.AddWithValue("Password", user.Password);
             connection.Open();
@@ -81,7 +81,7 @@ namespace Dating_App.DBConnect
             {
                 Profile_name = dataRow.Field<string>("PK_Profile_name"),
                 Password = dataRow.Field<string>("Password"),
-                creationDate = dataRow.Field<string>("Creation_Date"),
+                //creationDate = dataRow.Field<DateTime>("Creation_Date").ToString(),
                 bit = dataRow.Field<int>("User_aktiv"),
                 First_name = dataRow.Field<string>("First_Name"),
                 Last_name = dataRow.Field<string>("Last_Name"),

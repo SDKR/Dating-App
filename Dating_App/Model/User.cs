@@ -224,7 +224,7 @@ namespace Dating_App.Model
 
         public User()
         {
-            this.Profile_name = "";
+            //this.Profile_name = "";
             //this._Password = "";
         }
 
