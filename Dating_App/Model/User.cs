@@ -280,7 +280,6 @@ namespace Dating_App.Model
         public void updateUser(User user)
         {
             MessageBox.Show("Brugerinformation er opdateret");
-            return FPDB.updateUser(user);
         }
 
     }
