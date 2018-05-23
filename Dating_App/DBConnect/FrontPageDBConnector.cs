@@ -41,5 +41,13 @@ namespace Dating_App.DBConnect
        
         }
 
+        public User login(User user)
+        {
+
+            // KIIIM her skal returneres et helt user object med den bruger der logger ind. 
+
+        }
+
+
     }
 }
