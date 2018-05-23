@@ -47,6 +47,7 @@
             <TextBox Name="BørnData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="1020,280,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
             <TextBox Name="KropsTypeData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="1020,310,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
             <TextBox Name="PostNummerData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="1020,340,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
+            <Button Name="Gem_PrilePage_Button" Content="Gem" HorizontalAlignment="Left" Margin="728,402,0,0" VerticalAlignment="Top" Width="134" Height="40" FontFamily="Lucida Calligraphy" FontWeight="Bold" Background="#FFF0E3D3"/>
 
 
         </Grid>
