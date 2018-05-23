@@ -1425,8 +1425,9 @@ go
 DROP PROCEDURE spCreate_User_information
 go
 
+set quoted_idenitifier on
+
 CREATE PROCEDURE spCreate_User_information
-(
 	@First_name nvarchar(50),
 	@Last_name nvarchar(50),
 	@Birthdate date,
@@ -1444,9 +1445,9 @@ CREATE PROCEDURE spCreate_User_information
 	@Body_Type nvarchar(50),
 	@About_Yourself nvarchar(400),
 	@FK_ID int output 
-)
 as
 begin
+	set nocount on;
 	insert into [User_Information] values 	
 	(@First_name,
 	@Last_name,
@@ -1464,10 +1465,11 @@ begin
 	@Children, 
 	@Body_Type,
 	@About_Yourself,
-	@FK_ID);
-
-	set @FK_ID = Scope_Identity();
-end;
+	@FK_ID)
+	--select @FK_ID = coalesce(max(@FK_ID),0) + 1 from [User](updlock);
+	set @FK_ID = SCOPE_IDENTITY()
+	Return @FK_ID
+end
 go
 
 
