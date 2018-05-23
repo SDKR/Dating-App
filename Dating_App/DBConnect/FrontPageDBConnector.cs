@@ -66,10 +66,43 @@ namespace Dating_App.DBConnect
         }
 
         // Check login information
-        public User login(User user)
+        public List<User> login(User user)
         {
-            // KIIIM her skal returneres et helt user object med den bruger der logger ind. 
-            return user;
+            SqlCommand cmd = new SqlCommand("Select * from [User] where PK_Profile_name ="+user.Profile_name+ "and Password = "+user.Password, connection);
+            cmd.Parameters.AddWithValue("PK_Profile_name", user.Profile_name);
+            cmd.Parameters.AddWithValue("Password", user.Password);
+            connection.Open();
+            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adapt.Fill(ds);
+            connection.Close();
+
+            var User_list = ds.Tables[0].AsEnumerable().Select(dataRow => new User
+            {
+                Profile_name = dataRow.Field<string>("PK_Profile_name"),
+                Password = dataRow.Field<string>("Password"),
+                creationDate = dataRow.Field<string>("Creation_Date"),
+                bit = dataRow.Field<int>("User_aktiv"),
+                First_name = dataRow.Field<string>("First_Name"),
+                Last_name = dataRow.Field<string>("Last_Name"),
+                Date = dataRow.Field<DateTime>("Birthdate"),
+                Gender = dataRow.Field<string>("Gender"),
+                Seeking = dataRow.Field<string>("Seeking"),
+                Postcode = dataRow.Field<int>("FK_Post_Code"),
+                Email = dataRow.Field<string>("Email"),
+                Status = dataRow.Field<string>("Status"),
+                SexualOrientation = dataRow.Field<string>("Sexual_orientation"),
+                Height = dataRow.Field<int>("Height"),
+                Weight = dataRow.Field<int>("Weight"),
+                Eyecolor = dataRow.Field<string>("Eyecolor"),
+                Haircolor = dataRow.Field<string>("Haircolor"),
+                Children = dataRow.Field<string>("Children"),
+                Body_Type = dataRow.Field<string>("Body_Type"),
+                About_yourself = dataRow.Field<string>("About_Yourself"),
+                FK_profile_name = dataRow.Field<string>("FK_Profile_name")
+            }).ToList();
+
+          return User_list;
         }
 
         // Returns list of reccomened users based on age

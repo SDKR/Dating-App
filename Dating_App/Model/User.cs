@@ -201,8 +201,16 @@ namespace Dating_App.Model
             set { _FK_ID = value; }
         }
 
-        private string _Confirm_Password;
+        private string _FK_Profile_name;
 
+        public string FK_profile_name
+        {
+            get { return _FK_Profile_name; }
+            set { _FK_Profile_name = value; }
+        }
+
+
+        private string _Confirm_Password;
         public string Confirm_Password
         {
             get { return _Confirm_Password; }
@@ -272,7 +280,7 @@ namespace Dating_App.Model
 
         }
 
-        public User login(User user)
+        public List<User> login(User user)
         {
             return FPDB.login(user);
         }
