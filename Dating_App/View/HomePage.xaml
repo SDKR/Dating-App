@@ -10,6 +10,7 @@
 
     <Grid Background="White" Margin="0,0,10,10">
         <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="1190" Background="#FFBCB5AC"/>
+        <Button Name="Rediger_ProfilPage_Button" Content="Rediger profil" HorizontalAlignment="Left" Margin="940,17,0,0" VerticalAlignment="Top" Width="137" Height="28" FontSize="16" FontStyle="Italic" Background="#FFBCB5AC" BorderThickness="0,0,0,0" FontFamily="Lucida Calligraphy" Foreground="#FF5A0303" Click="Rediger_ProfilPage_Button_Click"/>
         <Button Name="LogAf_HomePage_Button" Content="Log af" HorizontalAlignment="Left" Margin="1100,10,0,0" VerticalAlignment="Top" Width="75" Height="35" Foreground="Black" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontWeight="Bold" Click="LogAf_Button_Click" />
         <Image HorizontalAlignment="Left" Height="312" Margin="37,85,0,0" VerticalAlignment="Top" Width="300" Source="images211838BD.jpg"/>
         <Label Content="Welkommen User" HorizontalAlignment="Left" Margin="337,85,0,0" VerticalAlignment="Top" Width="853" Height="72" FontSize="48" FontFamily="Lucida Calligraphy" HorizontalContentAlignment="Center"/>

@@ -16,11 +16,8 @@
     </Window.DataContext>
 
     <Grid>
-      
-           
 
         <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="1194" Margin="0,0,-0.4,0" Background="#FFBCB5AC"/>
-
         <Image HorizontalAlignment="Left" Height="722" Margin="445,218,-19.4,-169.6" VerticalAlignment="Top" Width="768" Source="datingPicture.jpg">
             <Image.OpacityMask>
                 <ImageBrush ImageSource="datingPicture.jpg"/>
@@ -106,7 +103,6 @@
         <TextBox Name="PostNummer_TextBox" HorizontalAlignment="Left" Height="23" Margin="277,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" PreviewKeyDown="PostNummer_TextBox_PreviewKeyDown" Text="{Binding _User.Postcode, UpdateSourceTrigger=PropertyChanged}" />
         <Label Content="Post Nummer" HorizontalAlignment="Left" Margin="279,365,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         <Button Name="OpretBruger_Button" Content="Opret Bruger" HorizontalAlignment="Left" Margin="279,690,0,0" VerticalAlignment="Top" Width="192" Height="23" FontFamily="Lucida Calligraphy" Background="#FFF0E3D3" FontWeight="Bold" Click="OpretBruger_Button_Click" Command="{Binding Command}"/>
-        <Frame Name="Frame" NavigationUIVisibility="Hidden"/>
         <ComboBox HorizontalAlignment="Left" Margin="34,440,0,0" VerticalAlignment="Top" Width="196" Text="{Binding _User.Gender, UpdateSourceTrigger=PropertyChanged}">
             <ComboBoxItem IsSelected="True">Mand</ComboBoxItem>
             <ComboBoxItem>Kvinde</ComboBoxItem>
@@ -116,6 +112,9 @@
             <ComboBoxItem>Kvinder</ComboBoxItem>
             <ComboBoxItem>Mænd og Kvinder</ComboBoxItem>
         </ComboBox>
+
+        <Frame Name="Frame" NavigationUIVisibility="Hidden"/>
+        
 
     </Grid>
 </Window>
