@@ -21,7 +21,9 @@ namespace Dating_App
     /// </summary>
     public partial class MainWindow : Window
     {
-        User user = new User();
+        User userobject = new User();
+        Messages message = new Messages();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -32,15 +34,25 @@ namespace Dating_App
         private void OpretBruger_Button_Click(object sender, RoutedEventArgs e)
         {
             // Uses MVVM
-            
         }
 
         private void LogInd_Button_Click(object sender, RoutedEventArgs e)
         {
-            user.Profile_name = Brugernavn_Textbox.Text;
-            user.Password = Password_PasswordBox.Password;
-            user.login(user);
-            Console.WriteLine(user.First_name); // til test, slet senere
+
+            // Jannik du kan bare slette alt indenfor disse comments
+            Messages send = new Messages();
+            send.Sender = "KristyHoney";
+            send.Reciver = "Flottefyr";
+            send.Message = "Leder efter en mega diller";
+            Boolean bob = message.saveMessage(send);
+            // Jannik du kan bare slette alt indenfor disse comments
+
+            User user = new User();
+            userobject.Profile_name = Brugernavn_Textbox.Text;
+            userobject.Password = Password_PasswordBox.Password;
+            user = userobject.login(userobject)[0];
+            //Console.WriteLine(user.First_name); // til test, slet senere
+            //Console.WriteLine(user);
             if (user.First_name != null)
             {
                 MessageBox.Show("Logget ind ");

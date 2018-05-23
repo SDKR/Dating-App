@@ -14,7 +14,7 @@ create table [User](
 	PK_Profile_name nvarchar(50) PRIMARY KEY not null,
 	[Password] nvarchar(50) not null, 
 	Creation_Date datetime not null,
-	User_aktiv bit not null
+	User_aktiv int not null
 	)
 
 create table Postcode_City(
@@ -47,10 +47,10 @@ create table User_Information(
 
 create table [Message](
 	PK_MessageID int identity PRIMARY KEY not null,
-	FK_User1 nvarchar(50) not null,
-	FOREIGN KEY (FK_User1) REFERENCES [User](PK_Profile_name),
-	FK_User2 nvarchar(50) not null,
-	FOREIGN KEY (FK_User2) REFERENCES [User](PK_Profile_name),
+	FK_Sender nvarchar(50) not null,
+	FOREIGN KEY (FK_Sender) REFERENCES [User](PK_Profile_name),
+	FK_Reciver nvarchar(50) not null,
+	FOREIGN KEY (FK_Reciver) REFERENCES [User](PK_Profile_name),
 	[Message] nvarchar(1000) not null
 )
 
