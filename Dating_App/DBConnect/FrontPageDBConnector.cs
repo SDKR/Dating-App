@@ -15,7 +15,6 @@ namespace Dating_App.DBConnect
     class FrontPageDBConnector
     {
         SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
-
         // Totally real database connector
         public Boolean CreateUser(User user)
         {
@@ -39,21 +38,23 @@ namespace Dating_App.DBConnect
 
             SqlCommand User_information = new SqlCommand("spCreate_User_information", connection);
             User_information.CommandType = CommandType.StoredProcedure;
-            User_information.Parameters.AddWithValue("First_name", 1);
-            User_information.Parameters.AddWithValue("Last_name", 1);
-            User_information.Parameters.AddWithValue("Birthdate", 1);
-            User_information.Parameters.AddWithValue("Gender", 1);
-            User_information.Parameters.AddWithValue("Seeking", 1);
-            User_information.Parameters.AddWithValue("FK_Post_Code", 1);
-            User_information.Parameters.AddWithValue("Email", 1);
-            User_information.Parameters.AddWithValue("Status", 1);
-            User_information.Parameters.AddWithValue("Sexual_orientation", 1);
-            User_information.Parameters.AddWithValue("Height", 1);
-            User_information.Parameters.AddWithValue("Eyecolor", 1);
-            User_information.Parameters.AddWithValue("Haircolor", 1);
-            User_information.Parameters.AddWithValue("Children", 1);
-            User_information.Parameters.AddWithValue("Body_Type", 1);
-            User_information.Parameters.AddWithValue("About_Yourself", 1);
+            User_information.Parameters.AddWithValue("First_name", user.First_name);
+            User_information.Parameters.AddWithValue("Last_name", user.Last_name);
+            User_information.Parameters.AddWithValue("Birthdate", "2000-04-05");
+            User_information.Parameters.AddWithValue("Gender", user.Gender);
+            User_information.Parameters.AddWithValue("Seeking", user.Seeking);
+            User_information.Parameters.AddWithValue("FK_Post_Code", user.Postcode);
+            User_information.Parameters.AddWithValue("Email", user.Email);
+            User_information.Parameters.AddWithValue("Status", user.Status);
+            User_information.Parameters.AddWithValue("Sexual_orientation", user.SexualOrientation);
+            User_information.Parameters.AddWithValue("Height", user.Height);
+            User_information.Parameters.AddWithValue("Weight", user.Weight);
+            User_information.Parameters.AddWithValue("Eyecolor", user.Eyecolor);
+            User_information.Parameters.AddWithValue("Haircolor", user.Haircolor);
+            User_information.Parameters.AddWithValue("Children", user.Children);
+            User_information.Parameters.AddWithValue("Body_Type", user.Body_Type);
+            User_information.Parameters.AddWithValue("About_Yourself", user.About_yourself);
+            User_information.Parameters.AddWithValue("FK_Profile_name", user.Profile_name);
             connection.Open();
             k = User_information.ExecuteNonQuery();
             connection.Close();
