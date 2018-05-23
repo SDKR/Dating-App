@@ -32,7 +32,7 @@
             <Label Name="Børn_ProfilPage_label" Content="Børn" HorizontalAlignment="Left" Margin="830,280,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
             <Label Name="KropsType_ProfilPage_label" Content="Krops Type" HorizontalAlignment="Left" Margin="830,310,0,0" VerticalAlignment="Top" Width="95" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
             <Label Name="PostNummer_ProfilPage_label" Content="Post Nummer" HorizontalAlignment="Left" Margin="830,340,0,0" VerticalAlignment="Top" Width="110" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
-            <TextBox Name="BeskrivDigSelv_ProfilPage_TextBox" HorizontalAlignment="Left" Height="352" Margin="37,402,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
+            <TextBox Name="BeskrivDigSelv_ProfilPage_TextBox" HorizontalAlignment="Left" Height="308" Margin="37,446,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
             <TextBox Name="FornavnData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="570,160,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
             <TextBox Name="EfternavnData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="570,190,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
             <TextBox Name="FødselsdagData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="570,220,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
@@ -48,7 +48,7 @@
             <TextBox Name="KropsTypeData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="1020,310,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
             <TextBox Name="PostNummerData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="1020,340,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
             <Button Name="Gem_PrilePage_Button" Content="Gem" HorizontalAlignment="Left" Margin="728,402,0,0" VerticalAlignment="Top" Width="134" Height="40" FontFamily="Lucida Calligraphy" FontWeight="Bold" Background="#FFF0E3D3"/>
-
+            <Label Name="OmMig_RedigerPage_Label" Content="Om User" HorizontalAlignment="Left" Margin="37,402,0,0" VerticalAlignment="Top" Width="300" Height="44" Background="#FFD4CDC5" HorizontalContentAlignment="Center" FontSize="22" FontFamily="Lucida Calligraphy"/>
 
         </Grid>
     </Grid>
