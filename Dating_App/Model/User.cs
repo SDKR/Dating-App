@@ -14,6 +14,10 @@ namespace Dating_App.Model
     {
         FrontPageDBConnector FPDB = new FrontPageDBConnector();
 
+        /*
+         * Getters og setters
+         */
+
         private int _PK_ID;
         private string _Profile_name;
         private string _Password;
@@ -206,7 +210,6 @@ namespace Dating_App.Model
         }
 
 
-
         /*
          * Methods n' stuff
          */
@@ -259,11 +262,25 @@ namespace Dating_App.Model
 
         }
 
+        /*
+         * Methods 
+         */
+
         public Boolean CreateUser(User user)
         {
-            //Console.WriteLine(this._Profile_name);
             return FPDB.CreateUser(user);
 
+        }
+
+        public User login(User user)
+        {
+            return FPDB.login(user);
+        }
+
+        public void updateUser(User user)
+        {
+            MessageBox.Show("Brugerinformation er opdateret");
+            return FPDB.updateUser(user);
         }
 
     }

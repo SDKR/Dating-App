@@ -16,7 +16,7 @@ namespace Dating_App.DBConnect
     {
         SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
 
-        // Totally real database connector
+        // Create User DBconnection
         public Boolean CreateUser(User user)
         {
 
@@ -63,13 +63,26 @@ namespace Dating_App.DBConnect
        
         }
 
+        // Check login information
         public User login(User user)
         {
-
             // KIIIM her skal returneres et helt user object med den bruger der logger ind. 
             return user;
         }
 
+        // Returns list of reccomened users based on age
+        public List<User> getReccomendedUsers(User user)
+        {
+            // KIIM! her skal databasen finde 5 brugere i ca samme alder som brugeren du får tilsendt i user.Birthdate
+            List<User> userList = getReccomendedUsers(user);
+            return userList;
+        }
+
+        // Updates user informaiton 
+        public void updateUser(User user)
+        {
+            /// KIIM Her skal der laves en update. Der skal opdateres i brugerens information.
+        }
 
     }
 }
