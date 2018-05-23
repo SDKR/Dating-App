@@ -1,0 +1,55 @@
+﻿<Page x:Class="Dating_App.View.RedigerProfil"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Dating_App.View"
+      mc:Ignorable="d" 
+       d:DesignHeight="300" d:DesignWidth="300"
+      Title="RedigerProfil" Width="1200" Height="800" Background="White">
+
+    <Grid>
+        <Grid Background="White" Margin="0,0,10,10">
+            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="1190" Background="#FFBCB5AC"/>
+            <Button Name="LogAf_ProfilPage_Button" Content="Log af" HorizontalAlignment="Left" Margin="1100,10,0,0" VerticalAlignment="Top" Width="75" Height="35" Foreground="Black" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontWeight="Bold" Click="LogAf_ProfilPage_Button_Click"/>
+            <Image HorizontalAlignment="Left" Height="312" Margin="37,85,0,0" VerticalAlignment="Top" Width="300" Source="images211838BD.jpg"/>
+            <Label Content="User Name" HorizontalAlignment="Left" Margin="337,85,0,0" VerticalAlignment="Top" Width="853" Height="72" FontSize="48" FontFamily="Lucida Calligraphy" HorizontalContentAlignment="Center"/>
+            <Button Name="Hjem_ProfilPage_Button" Content="Hjem" HorizontalAlignment="Left" Margin="63,17,0,0" VerticalAlignment="Top" Width="51" Height="28" FontSize="16" Background="#FFBCB5AC" BorderThickness="0,0,0,0" Foreground="#FF5A0303" FontStyle="Italic" FontFamily="Lucida Calligraphy" Click="Hjem_ProfilPage_Button_Click"/>
+            <Button Name="Profil_ProfilPage_Button" Content="Profil" HorizontalAlignment="Left" Margin="138,17,0,0" VerticalAlignment="Top" Width="57" Height="28" FontSize="16" FontStyle="Italic" Background="#FFBCB5AC" BorderThickness="0,0,0,0" FontFamily="Lucida Calligraphy" Foreground="#FF5A0303" Click="Profil_ProfilPage_Button_Click"/>
+
+            <Image HorizontalAlignment="Left" Height="306" Margin="860,559,0,-75" VerticalAlignment="Top" Width="330" Source="datingPicture.jpg"/>
+            <Label Name="Fornavn_ProfilPage_label" Content="Fornavn" HorizontalAlignment="Left" Margin="380,160,0,0" VerticalAlignment="Top" Width="78" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="Efternavn_ProfilPage_label" Content="Efternavn" HorizontalAlignment="Left" Margin="380,190,0,0" VerticalAlignment="Top" Width="91" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="Fødselsdag_ProfilPage_label" Content="Fødselsdag" HorizontalAlignment="Left" Margin="380,220,0,0" VerticalAlignment="Top" Width="91" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="Køn_ProfilPage_label" Content="Køn" HorizontalAlignment="Left" Margin="380,250,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="Søger_ProfilPage_label" Content="Søger" HorizontalAlignment="Left" Margin="380,310,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="Status_ProfilPage_label" Content="Status" HorizontalAlignment="Left" Margin="380,280,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="InteresseretI_ProfilPage_label" Content="Interesseret i" HorizontalAlignment="Left" Margin="380,340,0,0" VerticalAlignment="Top" Width="111" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="Højde_ProfilPage_label" Content="Højde" HorizontalAlignment="Left" Margin="830,160,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="Vægt_ProfilPage_label" Content="Vægt" HorizontalAlignment="Left" Margin="830,190,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="ØjenFarve_ProfilPage_label" Content="Øjenfarve" HorizontalAlignment="Left" Margin="830,220,0,0" VerticalAlignment="Top" Width="83" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="Hårfarve_ProfilPage_label" Content="Hårfarve" HorizontalAlignment="Left" Margin="830,250,0,0" VerticalAlignment="Top" Width="95" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="Børn_ProfilPage_label" Content="Børn" HorizontalAlignment="Left" Margin="830,280,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="KropsType_ProfilPage_label" Content="Krops Type" HorizontalAlignment="Left" Margin="830,310,0,0" VerticalAlignment="Top" Width="95" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="PostNummer_ProfilPage_label" Content="Post Nummer" HorizontalAlignment="Left" Margin="830,340,0,0" VerticalAlignment="Top" Width="110" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <TextBox Name="BeskrivDigSelv_ProfilPage_TextBox" HorizontalAlignment="Left" Height="352" Margin="37,402,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
+            <TextBox Name="FornavnData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="570,160,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="EfternavnData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="570,190,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="FødselsdagData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="570,220,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="KønData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="570,250,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="StatusData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="570,280,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="SøgerData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="570,310,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="InteresseretIData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="570,340,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="HøjdeData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="1020,160,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="VægtData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="1020,190,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="ØjenfarveData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="1020,220,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="HårfarveData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="1020,250,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="BørnData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="1020,280,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="KropsTypeData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="1020,310,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="PostNummerData_ProfilPage_label" Text="" HorizontalAlignment="Left" Margin="1020,340,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
+            <Button Name="Gem_PrilePage_Button" Content="Gem" HorizontalAlignment="Left" Margin="728,402,0,0" VerticalAlignment="Top" Width="134" Height="40" FontFamily="Lucida Calligraphy" FontWeight="Bold" Background="#FFF0E3D3"/>
+
+
+        </Grid>
+    </Grid>
+</Page>
