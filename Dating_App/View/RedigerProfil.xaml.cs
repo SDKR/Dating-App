@@ -16,30 +16,28 @@ using System.Windows.Shapes;
 namespace Dating_App.View
 {
     /// <summary>
-    /// Interaction logic for HomePage.xaml
+    /// Interaction logic for RedigerProfil.xaml
     /// </summary>
-    public partial class HomePage : Page
+    public partial class RedigerProfil : Page
     {
-        public HomePage()
+        public RedigerProfil()
         {
             InitializeComponent();
         }
 
-       
-
-        private void LogAf_Button_Click(object sender, RoutedEventArgs e)
+        private void LogAf_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
         {
             (Application.Current.MainWindow.FindName("Frame") as Frame).Content = null;
         }
 
-        private void Profil_HomePage_Button_Click(object sender, RoutedEventArgs e)
+        private void Profil_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
         {
             (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.ProfilPage();
         }
 
-        private void Rediger_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
+        private void Hjem_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
         {
-            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.RedigerProfil();
+            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.HomePage();
         }
     }
 }
