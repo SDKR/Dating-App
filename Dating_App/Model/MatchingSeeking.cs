@@ -14,8 +14,7 @@ namespace Dating_App.Model
         // Takes a user and returns reccomened users based on age.
         public List<User> getReccomendedUsers(User user)
         {
-            List<User> userList = MDBC.getReccomendedUsers(user);
-            return userList;
+            return MDBC.getReccomendedUsers(user);
         }
 
     }

@@ -61,9 +61,8 @@ namespace Dating_App.DBConnect
             }).ToList();
 
 
-            // KIIM! her skal databasen finde 5 brugere i ca samme alder som brugeren du får tilsendt i user.Birthdate
-            List<User> userList = getReccomendedUsers(user);
-            return userList;
+
+            return User_list;
         }
 
     }

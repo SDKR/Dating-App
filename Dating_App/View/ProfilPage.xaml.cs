@@ -54,5 +54,9 @@ namespace Dating_App.View
             (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.HomePage();
         }
 
+        private void Søg_HomePage_Button_Click(object sender, RoutedEventArgs e)
+        {
+            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.SøgPage();
+        }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Dating_App.Model;
 
 namespace Dating_App.View
 {
@@ -20,11 +21,12 @@ namespace Dating_App.View
     /// </summary>
     public partial class HomePage : Page
     {
+        MatchingSeeking MS = new MatchingSeeking();
         public HomePage()
         {
             InitializeComponent();
             Velkommen_Label.Content = "Velkommen " + Dating_App.Model.User.CurrentUser.First_name;
-
+            ForslagTilDig_Datagrid.ItemsSource = MS.getReccomendedUsers(Dating_App.Model.User.CurrentUser);
         }
 
        
@@ -42,6 +44,11 @@ namespace Dating_App.View
         private void Rediger_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
         {
             (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.RedigerProfil();
+        }
+
+        private void Søg_HomePage_Button_Click(object sender, RoutedEventArgs e)
+        {
+            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.SøgPage();
         }
     }
 }

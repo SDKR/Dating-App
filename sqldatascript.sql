@@ -48,9 +48,9 @@ create table User_Information(
 create table [Message](
 	PK_MessageID int identity PRIMARY KEY not null,
 	FK_Sender nvarchar(50) not null,
-	FOREIGN KEY (FK_User1) REFERENCES [User](PK_Profile_name),
+	FOREIGN KEY (FK_Sender) REFERENCES [User](PK_Profile_name),
 	FK_Reciver nvarchar(50) not null,
-	FOREIGN KEY (FK_User2) REFERENCES [User](PK_Profile_name),
+	FOREIGN KEY (FK_Reciver) REFERENCES [User](PK_Profile_name),
 	[Message] nvarchar(1000) not null
 )
 
