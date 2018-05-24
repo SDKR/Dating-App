@@ -23,6 +23,8 @@ namespace Dating_App.View
         public HomePage()
         {
             InitializeComponent();
+            Velkommen_Label.Content = "Velkommen " + Dating_App.Model.User.CurrentUser.First_name;
+
         }
 
        
