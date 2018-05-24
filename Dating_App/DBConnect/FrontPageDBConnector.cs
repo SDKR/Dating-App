@@ -105,14 +105,6 @@ namespace Dating_App.DBConnect
           return User_list;
         }
 
-        // Returns list of reccomened users based on age
-        public List<User> getReccomendedUsers(User user)
-        {
-            // KIIM! her skal databasen finde 5 brugere i ca samme alder som brugeren du får tilsendt i user.Birthdate
-            List<User> userList = getReccomendedUsers(user);
-            return userList;
-        }
-
         // Updates user informaiton 
         public void updateUser(User user)
         {
