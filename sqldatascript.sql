@@ -1400,6 +1400,9 @@ select * from [Postcode_City]
 select * from [User_Information]
 select * from [Picture]
 select * from [Message]
+
+select DISTINCT FK_Reciver, FK_Sender from [Message] where FK_sender = 'Flottefyr' or FK_Reciver = 'Flottefyr';
+
 go
 --create index User_information_Index_
 --on dbo.User_Information (Birthdate,Gender,Seeking,Status,Sexual_orientation,Children);
@@ -1463,7 +1466,7 @@ CREATE PROCEDURE spSearch_User
 	@Gender nvarchar(50)
 as
 begin
-select b.FK_Profile_name, b.First_name as bTable_First_name, b.Last_name, b.Birthdate, b.Gender,b.Seeking,b.FK_Post_Code,b.Email,b.[Status], b.Sexual_orientation,b.Height,b.[Height],b.[Weight],b.Eyecolor,b.Haircolor,b.Children,b.Body_Type,b.About_Yourself,b.FK_Profile_name 
+select b.FK_Profile_name, b.First_name, b.Last_name, b.Birthdate, b.Gender,b.Seeking,b.FK_Post_Code,b.Email,b.[Status], b.Sexual_orientation,b.Height,b.[Height],b.[Weight],b.Eyecolor,b.Haircolor,b.Children,b.Body_Type,b.About_Yourself,b.FK_Profile_name 
 from User_Information a, User_Information b
 where a.FK_Profile_name = @FK_Profile_name
 AND a.Sexual_orientation = b.Sexual_orientation
@@ -1476,6 +1479,8 @@ where b.FK_Profile_name = @FK_Profile_name
 end
 go
 
+
+--as bTable_First_name
 
 select b.FK_Profile_name, b.First_name as bTable_First_name, b.Last_name, b.Birthdate, b.Gender,b.Seeking,b.FK_Post_Code,b.Email,b.[Status], b.Sexual_orientation,b.Height,b.[Height],b.[Weight],b.Eyecolor,b.Haircolor,b.Children,b.Body_Type,b.About_Yourself,b.FK_Profile_name 
 from User_Information a, User_Information b
