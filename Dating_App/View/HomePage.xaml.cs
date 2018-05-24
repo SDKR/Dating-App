@@ -29,6 +29,7 @@ namespace Dating_App.View
             Velkommen_Label.Content = "Velkommen " + Dating_App.Model.User.CurrentUser.First_name;
             ForslagTilDig_Datagrid.ItemsSource = MS.getReccomendedUsers(Dating_App.Model.User.CurrentUser);
             CurrentChat.ItemsSource = Chat.CurrentConversationList(Dating_App.Model.User.CurrentUser);
+
         }
 
        
