@@ -1463,13 +1463,14 @@ go
 
 CREATE PROCEDURE spSearch_User
 	@FK_Profile_name nvarchar(50),
-	@Gender nvarchar(50)
+	@Gender nvarchar(50),
+	@Sexual_orientationSynd nvarchar(50)
 as
 begin
 select b.FK_Profile_name, b.First_name, b.Last_name, b.Birthdate, b.Gender,b.Seeking,b.FK_Post_Code,b.Email,b.[Status], b.Sexual_orientation,b.Height,b.[Height],b.[Weight],b.Eyecolor,b.Haircolor,b.Children,b.Body_Type,b.About_Yourself,b.FK_Profile_name 
 from User_Information a, User_Information b
 where a.FK_Profile_name = @FK_Profile_name
-AND a.Sexual_orientation = b.Sexual_orientation
+AND (a.Sexual_orientation = b.Sexual_orientation or b.Sexual_orientation = @Sexual_orientationSynd)
 AND a.Seeking = b.Seeking
 AND b.Gender like @Gender
 except 
