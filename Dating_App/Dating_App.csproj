@@ -62,6 +62,9 @@
     <Compile Include="DBConnect\MessageDBConnector.cs" />
     <Compile Include="Model\MatchingSeeking.cs" />
     <Compile Include="Model\Messages.cs" />
+    <Compile Include="View\BeskederPage.xaml.cs">
+      <DependentUpon>BeskederPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProfilPage.xaml.cs">
       <DependentUpon>ProfilPage.xaml</DependentUpon>
     </Compile>
@@ -71,6 +74,10 @@
     <Compile Include="View\SøgPage.xaml.cs">
       <DependentUpon>SøgPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\BeskederPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
