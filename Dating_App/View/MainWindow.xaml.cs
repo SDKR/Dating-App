@@ -39,24 +39,13 @@ namespace Dating_App
         private void LogInd_Button_Click(object sender, RoutedEventArgs e)
         {
 
-            // Jannik du kan bare slette alt indenfor disse comments
-            Messages send = new Messages();
-            send.Sender = "KristyHoney";
-            send.Reciver = "Flottefyr";
-            send.Message = "Leder efter en mega diller";
-            Boolean bob = message.saveMessage(send);
-            // Jannik du kan bare slette alt indenfor disse comments
-
             User user = new User();
             userobject.Profile_name = Brugernavn_Textbox.Text;
             userobject.Password = Password_PasswordBox.Password;
             user = userobject.login(userobject)[0];
-            //Console.WriteLine(user.First_name); // til test, slet senere
-            //Console.WriteLine(user);
-            if (user.First_name != null)
-            {
-                MessageBox.Show("Logget ind ");
-            }
+
+            Dating_App.Model.User.CurrentUser = user;
+
             Frame.Content = new Dating_App.View.HomePage();
 
         }
