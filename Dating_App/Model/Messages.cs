@@ -71,5 +71,10 @@ namespace Dating_App.Model
             return MDBC.saveMessage(message);
         }
 
+        public List<User> CurrentConversationList(User user)
+        {
+            return MDBC.CurrentConversationList(user);
+        }
+
     }
 }
