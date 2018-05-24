@@ -16,9 +16,17 @@ namespace Dating_App.DBConnect
         // Returns list of reccomened users based on age
         public List<User> getReccomendedUsers(User user)
         {
-            if (user.SexualOrientation == "Homoseksuel" && user.Gender == "Mand")
+            if (user.SexualOrientation == "Heteroseksuel" && user.Gender == "Mand")
             {
-                
+                user.Gender = "Kvinde";
+            }
+            else if (user.SexualOrientation == "Heteroseksuel" && user.Gender == "Kvinde")
+            {
+                user.Gender = "Mand";
+            }
+            else if (user.SexualOrientation == "Biseksuel")
+            {
+                user.Gender = "nd";
             }
 
             SqlCommand cmd = new SqlCommand("spSearch_User", connection);
