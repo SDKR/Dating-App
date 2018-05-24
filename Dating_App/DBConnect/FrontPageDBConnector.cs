@@ -105,6 +105,45 @@ namespace Dating_App.DBConnect
           return User_list;
         }
 
+        // Returns list of reccomened users based on age
+        public List<User> getReccomendedUsers(User user)
+        {
+            SqlCommand cmd = new SqlCommand("spSearch_User", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("FK_Profile_name", user.Profile_name);
+            connection.Open();
+            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adapt.Fill(ds);
+            connection.Close();
+
+            var User_list = ds.Tables[0].AsEnumerable().Select(dataRow => new User
+            {
+                First_name = dataRow.Field<string>("First_Name"),
+                Last_name = dataRow.Field<string>("Last_Name"),
+                Date = dataRow.Field<DateTime>("Birthdate"),
+                Gender = dataRow.Field<string>("Gender"),
+                Seeking = dataRow.Field<string>("Seeking"),
+                Postcode = dataRow.Field<int>("FK_Post_Code"),
+                Email = dataRow.Field<string>("Email"),
+                Status = dataRow.Field<string>("Status"),
+                SexualOrientation = dataRow.Field<string>("Sexual_orientation"),
+                Height = dataRow.Field<int>("Height"),
+                Weight = dataRow.Field<int>("Weight"),
+                Eyecolor = dataRow.Field<string>("Eyecolor"),
+                Haircolor = dataRow.Field<string>("Haircolor"),
+                Children = dataRow.Field<string>("Children"),
+                Body_Type = dataRow.Field<string>("Body_Type"),
+                About_yourself = dataRow.Field<string>("About_Yourself"),
+                FK_profile_name = dataRow.Field<string>("FK_Profile_name")
+            }).ToList();
+
+
+            // KIIM! her skal databasen finde 5 brugere i ca samme alder som brugeren du får tilsendt i user.Birthdate
+            List<User> userList = getReccomendedUsers(user);
+            return userList;
+        }
+
         // Updates user informaiton 
         public void updateUser(User user)
         {

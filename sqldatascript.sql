@@ -1453,7 +1453,19 @@ begin
 end
 go
 
+select b.FK_Profile_name, b.First_name as bTable_First_name, b.Last_name, b.Birthdate, b.Gender,b.Seeking,b.FK_Post_Code,b.Email,b.[Status], b.Sexual_orientation,b.Height,b.[Height],b.[Weight],b.Eyecolor,b.Haircolor,b.Children,b.Body_Type,b.About_Yourself,b.FK_Profile_name 
+from User_Information a, User_Information b
+where a.FK_Profile_name = 'Frækfyr42'
+AND a.Sexual_orientation = b.Sexual_orientation
+AND b.Gender like 'M%'
+except 
+select b.FK_Profile_name, b.First_name as bTable_First_name, b.Last_name, b.Birthdate, b.Gender,b.Seeking,b.FK_Post_Code,b.Email,b.[Status], b.Sexual_orientation,b.Height,b.[Height],b.[Weight],b.Eyecolor,b.Haircolor,b.Children,b.Body_Type,b.About_Yourself,b.FK_Profile_name 
+from User_Information a, User_Information b
+where b.FK_Profile_name = 'Frækfyr42'
 
+--a.Sexual_orientation = b.Sexual_orientation
+--and user = Sexual_orientation
+--and Gender = Gender
 
 
 
