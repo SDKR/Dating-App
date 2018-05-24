@@ -29,17 +29,17 @@ namespace Dating_App.View
 
             FornavnData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.First_name;
             EfternavnData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Last_name;
-            FødselsdagData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Date.ToString();
-            KønData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Gender;
-            StatusData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Status;
-            SøgerData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Seeking;
-            InteresseretIData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.SexualOrientation;
+            fødselsdag_datepicker.Text = Dating_App.Model.User.CurrentUser.Date.ToString();
+            Køn_combobox.Text = Dating_App.Model.User.CurrentUser.Gender;
+            Status_Combobox.Text = Dating_App.Model.User.CurrentUser.Status;
+            Seeking_Combobox.Text = Dating_App.Model.User.CurrentUser.Seeking;
+            IntereseretI_Combobox.Text = Dating_App.Model.User.CurrentUser.SexualOrientation;
             HøjdeData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Height.ToString();
             VægtData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Weight.ToString();
-            ØjenfarveData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Eyecolor;
-            HårfarveData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Haircolor;
-            BørnData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Children;
-            KropsTypeData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Body_Type;
+            EyeColor_ComboBox.Text = Dating_App.Model.User.CurrentUser.Eyecolor;
+            HairColor_Combobox.Text = Dating_App.Model.User.CurrentUser.Haircolor;
+            Børn_Combobox.Text = Dating_App.Model.User.CurrentUser.Children;
+            KropsType_Combobox.Text = Dating_App.Model.User.CurrentUser.Body_Type;
             PostNummerData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Postcode.ToString();
             BeskrivDigSelv_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.About_yourself;
         }
