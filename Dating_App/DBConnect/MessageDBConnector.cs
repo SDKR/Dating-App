@@ -86,7 +86,7 @@ namespace Dating_App.DBConnect
         public List<User> CurrentConversationList(User user)
         {
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("select * from [Message] where FK_Sender = '" + user1 + "' and FK_Reciver = '" + user2 + "' or FK_Sender = '" + user2 + "' and FK_Reciver = '" + user1 + "'  ", connection);
+            SqlCommand cmd = new SqlCommand("Select DISTINCT FK_Reciver from [Message] where FK_sender = '" + user.FK_profile_name + "' or FK_Reciver = '" + user.FK_profile_name + "' Union Select DISTINCT FK_Sender from[Message] where FK_sender = '" + user.FK_profile_name + "' or FK_Reciver = '" + user.FK_profile_name + "'", connection);
             //cmd.Parameters.AddWithValue("PK_Profile_name", user.Profile_name);
             //cmd.Parameters.AddWithValue("Password", user.Password);
             connection.Open();
@@ -97,10 +97,8 @@ namespace Dating_App.DBConnect
 
             var User_Chack_List = ds.Tables[0].AsEnumerable().Select(dataRow => new User
             {
-                MessageID = dataRow.Field<int>("PK_MessageID"),
-                Sender = dataRow.Field<string>("FK_Sender"),
-                Reciver = dataRow.Field<string>("FK_Reciver"),
-                Message = dataRow.Field<string>("Message")
+                FK_profile_name = dataRow.Field<String>("FK_Profile_Name")
+
             }).ToList();
 
             return User_Chack_List;

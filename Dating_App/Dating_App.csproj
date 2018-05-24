@@ -68,6 +68,9 @@
     <Compile Include="View\RedigerProfil.xaml.cs">
       <DependentUpon>RedigerProfil.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SøgPage.xaml.cs">
+      <DependentUpon>SøgPage.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -100,6 +103,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\SøgPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -125,7 +132,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\datingPicture.jpg" />

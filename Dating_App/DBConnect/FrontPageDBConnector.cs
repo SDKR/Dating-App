@@ -68,7 +68,7 @@ namespace Dating_App.DBConnect
         // Check login information
         public List<User> login(User user)
         {
-            SqlCommand cmd = new SqlCommand("select * from [User], User_Information where PK_Profile_name = '" + user.Profile_name + "' and Password = '" + user.Password + "' ", connection);
+            SqlCommand cmd = new SqlCommand("select * from [User], User_Information where PK_Profile_name = '" + user.Profile_name + "' and Password = '" + user.Password + "' " + " and PK_Profile_name = FK_Profile_name", connection);
             cmd.Parameters.AddWithValue("PK_Profile_name", user.Profile_name);
             cmd.Parameters.AddWithValue("Password", user.Password);
             connection.Open();
@@ -104,6 +104,8 @@ namespace Dating_App.DBConnect
 
           return User_list;
         }
+
+        // Returns list of reccomened users based on age
 
         // Updates user informaiton 
         public void updateUser(User user)
