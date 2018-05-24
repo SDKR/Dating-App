@@ -22,11 +22,13 @@ namespace Dating_App.View
     public partial class HomePage : Page
     {
         MatchingSeeking MS = new MatchingSeeking();
+        Messages Chat = new Messages();
         public HomePage()
         {
             InitializeComponent();
             Velkommen_Label.Content = "Velkommen " + Dating_App.Model.User.CurrentUser.First_name;
             ForslagTilDig_Datagrid.ItemsSource = MS.getReccomendedUsers(Dating_App.Model.User.CurrentUser);
+            CurrentChat.ItemsSource = Chat.CurrentConversationList(Dating_App.Model.User.CurrentUser);
         }
 
        
@@ -49,6 +51,11 @@ namespace Dating_App.View
         private void Søg_HomePage_Button_Click(object sender, RoutedEventArgs e)
         {
             (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.SøgPage();
+        }
+
+        private void Beskeder_HomePage_Button_Click(object sender, RoutedEventArgs e)
+        {
+            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.BeskederPage();
         }
     }
 }
