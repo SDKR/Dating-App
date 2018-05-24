@@ -97,6 +97,7 @@ namespace Dating_App.DBConnect
 
             var User_Chack_List = ds.Tables[0].AsEnumerable().Select(dataRow => new User
             {
+
                 Profile_name = dataRow.Field<string>("FK_Reciver")
 
             }).ToList();

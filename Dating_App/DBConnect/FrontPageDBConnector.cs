@@ -29,7 +29,7 @@ namespace Dating_App.DBConnect
             //Your Stored Procedure Command
             SqlCommand cmd = new SqlCommand("spCreate_New_User", connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("Profile_name", user.Profile_name);
+            cmd.Parameters.AddWithValue("PK_Profile_name", user.Profile_name);
             cmd.Parameters.AddWithValue("Password", user.Password);
             cmd.Parameters.AddWithValue("Creation_Date", today);
             cmd.Parameters.AddWithValue("User_aktiv", 1);
@@ -110,6 +110,29 @@ namespace Dating_App.DBConnect
         // Updates user informaiton 
         public void updateUser(User user)
         {
+            SqlCommand User_Info_Update = new SqlCommand("spUpdate_User", connection);
+            User_Info_Update.CommandType = CommandType.StoredProcedure;
+            User_Info_Update.Parameters.AddWithValue("First_name", user.First_name);
+            User_Info_Update.Parameters.AddWithValue("Last_name", user.Last_name);
+            User_Info_Update.Parameters.AddWithValue("Birthdate", "2000-04-05");
+            User_Info_Update.Parameters.AddWithValue("Gender", user.Gender);
+            User_Info_Update.Parameters.AddWithValue("Seeking", user.Seeking);
+            User_Info_Update.Parameters.AddWithValue("FK_Post_Code", user.Postcode);
+            User_Info_Update.Parameters.AddWithValue("Email", user.Email);
+            User_Info_Update.Parameters.AddWithValue("Status", user.Status);
+            User_Info_Update.Parameters.AddWithValue("Sexual_orientation", user.SexualOrientation);
+            User_Info_Update.Parameters.AddWithValue("Height", user.Height);
+            User_Info_Update.Parameters.AddWithValue("Weight", user.Weight);
+            User_Info_Update.Parameters.AddWithValue("Eyecolor", user.Eyecolor);
+            User_Info_Update.Parameters.AddWithValue("Haircolor", user.Haircolor);
+            User_Info_Update.Parameters.AddWithValue("Children", user.Children);
+            User_Info_Update.Parameters.AddWithValue("Body_Type", user.Body_Type);
+            User_Info_Update.Parameters.AddWithValue("About_Yourself", user.About_yourself);
+            User_Info_Update.Parameters.AddWithValue("FK_Profile_name", user.Profile_name);
+            connection.Open();
+            int k = User_Info_Update.ExecuteNonQuery();
+            connection.Close();
+
             /// KIIM Her skal der laves en update. Der skal opdateres i brugerens information.
         }
 
