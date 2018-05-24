@@ -29,7 +29,7 @@ namespace Dating_App.DBConnect
             //Your Stored Procedure Command
             SqlCommand cmd = new SqlCommand("spCreate_New_User", connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("Profile_name", user.Profile_name);
+            cmd.Parameters.AddWithValue("PK_Profile_name", user.Profile_name);
             cmd.Parameters.AddWithValue("Password", user.Password);
             cmd.Parameters.AddWithValue("Creation_Date", today);
             cmd.Parameters.AddWithValue("User_aktiv", 1);
