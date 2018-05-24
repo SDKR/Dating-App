@@ -119,10 +119,6 @@ namespace Dating_App.DBConnect
 
             var User_list = ds.Tables[0].AsEnumerable().Select(dataRow => new User
             {
-                Profile_name = dataRow.Field<string>("PK_Profile_name"),
-                Password = dataRow.Field<string>("Password"),
-                creationDate = dataRow.Field<DateTime>("Creation_Date").ToString(),
-                bit = dataRow.Field<int>("User_aktiv"),
                 First_name = dataRow.Field<string>("First_Name"),
                 Last_name = dataRow.Field<string>("Last_Name"),
                 Date = dataRow.Field<DateTime>("Birthdate"),

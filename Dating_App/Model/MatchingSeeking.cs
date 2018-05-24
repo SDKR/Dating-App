@@ -9,12 +9,12 @@ namespace Dating_App.Model
 {
     class MatchingSeeking
     {
-        FrontPageDBConnector FPDB = new FrontPageDBConnector();
+        MatchingSeekingDBConnector MDBC = new MatchingSeekingDBConnector();
 
         // Takes a user and returns reccomened users based on age.
         public List<User> getReccomendedUsers(User user)
         {
-            List<User> userList = FPDB.getReccomendedUsers(user);
+            List<User> userList = MDBC.getReccomendedUsers(user);
             return userList;
         }
 
