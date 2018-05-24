@@ -31,7 +31,7 @@
         <Label Name="Børn_ProfilPage_label" Content="Børn" HorizontalAlignment="Left" Margin="830,290,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         <Label Name="KropsType_ProfilPage_label" Content="Krops Type" HorizontalAlignment="Left" Margin="830,320,0,0" VerticalAlignment="Top" Width="95" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         <Label Name="PostNummer_ProfilPage_label" Content="Post Nummer" HorizontalAlignment="Left" Margin="830,350,0,0" VerticalAlignment="Top" Width="110" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
-        <TextBox Name="BeskrivDigSelv_ProfilPage_TextBox" HorizontalAlignment="Left" Height="308" Margin="37,446,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontFamily="Lucida Calligraphy" FontSize="16"/>
+        <TextBox Name="BeskrivDigSelv_ProfilPage_TextBox" HorizontalAlignment="Left" Height="308" Margin="37,446,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontFamily="Lucida Calligraphy" FontSize="16" IsEnabled="False"/>
         <Label Name="FornavnData_ProfilPage_label" Content="Label" HorizontalAlignment="Left" Margin="570,170,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
         <Label Name="EfternavnData_ProfilPage_label" Content="Label" HorizontalAlignment="Left" Margin="570,200,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
         <Label Name="FødselsdagData_ProfilPage_label" Content="Label" HorizontalAlignment="Left" Margin="570,230,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
