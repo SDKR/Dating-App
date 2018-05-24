@@ -12,6 +12,8 @@ namespace Dating_App.Model
 
     class User : ObservableObject
     {
+        public static User CurrentUser;
+
         FrontPageDBConnector FPDB = new FrontPageDBConnector();
 
         /*

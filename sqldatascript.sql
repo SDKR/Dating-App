@@ -1400,6 +1400,9 @@ select * from [Postcode_City]
 select * from [User_Information]
 select * from [Picture]
 select * from [Message]
+
+select DISTINCT FK_Reciver, FK_Sender from [Message] where FK_sender = 'Flottefyr' or FK_Reciver = 'Flottefyr';
+
 go
 --create index User_information_Index_
 --on dbo.User_Information (Birthdate,Gender,Seeking,Status,Sexual_orientation,Children);

@@ -79,5 +79,33 @@ namespace Dating_App.DBConnect
             }
         }
 
+        /*
+         * Get list of users chatted to
+         */
+
+        public List<User> CurrentConversationList(User user)
+        {
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("select * from [Message] where FK_Sender = '" + user1 + "' and FK_Reciver = '" + user2 + "' or FK_Sender = '" + user2 + "' and FK_Reciver = '" + user1 + "'  ", connection);
+            //cmd.Parameters.AddWithValue("PK_Profile_name", user.Profile_name);
+            //cmd.Parameters.AddWithValue("Password", user.Password);
+            connection.Open();
+            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adapt.Fill(ds);
+            connection.Close();
+
+            var User_Chack_List = ds.Tables[0].AsEnumerable().Select(dataRow => new User
+            {
+                MessageID = dataRow.Field<int>("PK_MessageID"),
+                Sender = dataRow.Field<string>("FK_Sender"),
+                Reciver = dataRow.Field<string>("FK_Reciver"),
+                Message = dataRow.Field<string>("Message")
+            }).ToList();
+
+            return User_Chack_List;
+        }
+
+
     }
 }
