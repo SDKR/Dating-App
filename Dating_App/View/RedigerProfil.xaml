@@ -39,7 +39,7 @@
             <TextBox Name="HøjdeData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="1020,160,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
             <TextBox Name="VægtData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="1020,190,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
             <TextBox Name="PostNummerData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="1020,340,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
-            <Button Name="Gem_PrilePage_Button" Content="Gem" HorizontalAlignment="Left" Margin="728,402,0,0" VerticalAlignment="Top" Width="134" Height="40" FontFamily="Lucida Calligraphy" FontWeight="Bold" Background="#FFF0E3D3" Click="Gem_PrilePage_Button_Click"/>
+            <Button Name="Gem_PrilePage_Button" Content="Gem" HorizontalAlignment="Left" Margin="728,422,0,0" VerticalAlignment="Top" Width="134" Height="40" FontFamily="Lucida Calligraphy" FontWeight="Bold" Background="#FFF0E3D3" Click="Gem_PrilePage_Button_Click"/>
             <Label Name="OmMig_RedigerPage_Label" Content="Om User" HorizontalAlignment="Left" Margin="37,402,0,0" VerticalAlignment="Top" Width="300" Height="44" Background="#FFD4CDC5" HorizontalContentAlignment="Center" FontSize="22" FontFamily="Lucida Calligraphy"/>
             <DatePicker Name="fødselsdag_datepicker" HorizontalAlignment="Left" Margin="570,220,0,0" VerticalAlignment="Top" Width="158"/>
             <ComboBox Name="Køn_combobox" HorizontalAlignment="Left" Margin="570,250,0,0" VerticalAlignment="Top" Width="158">
@@ -91,6 +91,8 @@
                 <ComboBoxItem>Muskuløs</ComboBoxItem>
                 <ComboBoxItem>Buttet</ComboBoxItem>
             </ComboBox>
+            <TextBox Name="Email_Textbox" HorizontalAlignment="Left" Height="23" Margin="570,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+            <Label x:Name="Email_ProfilPage_label_Copy" Content="Email" HorizontalAlignment="Left" Margin="380,374,0,0" VerticalAlignment="Top" Width="111" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         </Grid>
     </Grid>
 </Page>
