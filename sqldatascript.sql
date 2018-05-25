@@ -1527,6 +1527,7 @@ DROP PROCEDURE spSearch_User_information
 go
 
 CREATE PROCEDURE spSearch_User_information
+	@User_Aktiv int,
 	@First_name nvarchar(50),
 	@Last_name nvarchar(50),
 	@Birthdate1 date,
@@ -1566,8 +1567,8 @@ begin
 	and Body_Type = @Body_Type or @Body_Type is null
 	except 
 	select * 
-	from User_Information
-	where @FK_Profile_name = FK_Profile_name
+	from User_Information, [User]
+	where @FK_Profile_name = FK_Profile_name or User_aktiv = @User_Aktiv
 end
 go
 
