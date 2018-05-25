@@ -75,6 +75,14 @@ namespace Dating_App.Model
             set { _Post_Code = value; }
         }
 
+        private int _Post_Code1;
+
+        public int Postcode1
+        {
+            get { return _Post_Code1; }
+            set { _Post_Code1 = value; }
+        }
+
         private string _Status;
 
         public string Status
@@ -169,9 +177,9 @@ namespace Dating_App.Model
             return MDBC.getReccomendedUsers(user);
         }
 
-        public List<User> search(User user)
+        public List<User> search(MatchingSeeking MS)
         {
-            return MDBC.search(user);
+            return MDBC.search(MS);
         }
 
     }
