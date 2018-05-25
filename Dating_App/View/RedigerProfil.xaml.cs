@@ -51,6 +51,7 @@ namespace Dating_App.View
         private void LogAf_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
         {
             (Application.Current.MainWindow.FindName("Frame") as Frame).Content = null;
+            
         }
 
         private void Profil_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
