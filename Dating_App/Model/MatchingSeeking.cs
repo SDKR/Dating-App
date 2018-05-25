@@ -17,5 +17,10 @@ namespace Dating_App.Model
             return MDBC.getReccomendedUsers(user);
         }
 
+        public List<User> search(User user)
+        {
+            return MDBC.search(user);
+        }
+
     }
 }

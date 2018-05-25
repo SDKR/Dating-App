@@ -74,5 +74,12 @@ namespace Dating_App.DBConnect
             return User_list;
         }
 
+        public List<User> search(User user)
+        {
+            //SKRIV HER LOLZ DJLSJA
+            List<User> uer = new List<User>();
+            return uer;
+        }
+
     }
 }
