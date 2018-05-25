@@ -20,5 +20,34 @@
         <DataGrid HorizontalAlignment="Left" Height="526" Margin="36,246,0,0" VerticalAlignment="Top" Width="451"/>
         <Label Content="Resultater for din søgning" HorizontalAlignment="Left" Margin="36,197,0,0" VerticalAlignment="Top" Width="451" Height="44" Background="#FFD4CDC5" HorizontalContentAlignment="Center" FontSize="22" FontFamily="Lucida Calligraphy"/>
         <Image HorizontalAlignment="Left" Height="306" Margin="860,559,0,-75" VerticalAlignment="Top" Width="330" Source="datingPicture.jpg"/>
+        <Label Content="Fornavn" HorizontalAlignment="Left" Margin="517,196,0,0" VerticalAlignment="Top" Width="77"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="517,227,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="248"/>
+        <Label Content="Efternavn" HorizontalAlignment="Left" Margin="517,255,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="517,285,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="248"/>
+        <Label Content="Højde" HorizontalAlignment="Left" Margin="517,313,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="517,343,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="53"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="603,343,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="53"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="517,398,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="53"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="603,398,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="53"/>
+        <Label Content="Vægt" HorizontalAlignment="Left" Margin="517,371,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="517,452,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fødselsdag" HorizontalAlignment="Left" Margin="517,426,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="663,452,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="517,507,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Køn" HorizontalAlignment="Left" Margin="517,481,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.224,0"/>
+        <ComboBox HorizontalAlignment="Left" Margin="517,560,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Søger" HorizontalAlignment="Left" Margin="517,534,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.641,-0.344"/>
+        <Label Content="Status" HorizontalAlignment="Left" Margin="517,587,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="517,613,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Interesseret I" HorizontalAlignment="Left" Margin="517,640,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="517,666,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Øjenfarve" HorizontalAlignment="Left" Margin="520,693,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="517,719,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Hårfarve" HorizontalAlignment="Left" Margin="898,196,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="898,219,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Børn" HorizontalAlignment="Left" Margin="898,255,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="898,286,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="898,314,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="898,344,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Page>
