@@ -36,21 +36,61 @@
             <TextBox Name="BeskrivDigSelv_ProfilPage_TextBox" HorizontalAlignment="Left" Height="308" Margin="37,446,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontFamily="Lucida Calligraphy" FontSize="16"/>
             <TextBox Name="FornavnData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="570,160,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
             <TextBox Name="EfternavnData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="570,190,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
-            <TextBox Name="FødselsdagData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="570,220,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
-            <TextBox Name="KønData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="570,250,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
-            <TextBox Name="StatusData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="570,280,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
-            <TextBox Name="SøgerData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="570,310,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
-            <TextBox Name="InteresseretIData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="570,340,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
             <TextBox Name="HøjdeData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="1020,160,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
             <TextBox Name="VægtData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="1020,190,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
-            <TextBox Name="ØjenfarveData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="1020,220,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
-            <TextBox Name="HårfarveData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="1020,250,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
-            <TextBox Name="BørnData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="1020,280,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
-            <TextBox Name="KropsTypeData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="1020,310,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
             <TextBox Name="PostNummerData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="1020,340,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
-            <Button Name="Gem_PrilePage_Button" Content="Gem" HorizontalAlignment="Left" Margin="728,402,0,0" VerticalAlignment="Top" Width="134" Height="40" FontFamily="Lucida Calligraphy" FontWeight="Bold" Background="#FFF0E3D3"/>
+            <Button Name="Gem_PrilePage_Button" Content="Gem" HorizontalAlignment="Left" Margin="728,402,0,0" VerticalAlignment="Top" Width="134" Height="40" FontFamily="Lucida Calligraphy" FontWeight="Bold" Background="#FFF0E3D3" Click="Gem_PrilePage_Button_Click"/>
             <Label Name="OmMig_RedigerPage_Label" Content="Om User" HorizontalAlignment="Left" Margin="37,402,0,0" VerticalAlignment="Top" Width="300" Height="44" Background="#FFD4CDC5" HorizontalContentAlignment="Center" FontSize="22" FontFamily="Lucida Calligraphy"/>
-
+            <DatePicker Name="fødselsdag_datepicker" HorizontalAlignment="Left" Margin="570,220,0,0" VerticalAlignment="Top" Width="158"/>
+            <ComboBox Name="Køn_combobox" HorizontalAlignment="Left" Margin="570,250,0,0" VerticalAlignment="Top" Width="158">
+                <ComboBoxItem IsSelected="True">Mand</ComboBoxItem>
+                <ComboBoxItem>Kvinde</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="Seeking_Combobox" HorizontalAlignment="Left" Margin="570,310,0,0" VerticalAlignment="Top" Width="158">
+                <ComboBoxItem IsSelected="True">Date</ComboBoxItem>
+                <ComboBoxItem>Ægteskab</ComboBoxItem>
+                <ComboBoxItem>Bolleven</ComboBoxItem>
+                <ComboBoxItem>Kæreste</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="Status_Combobox" HorizontalAlignment="Left" Margin="570,280,0,0" VerticalAlignment="Top" Width="158">
+                <ComboBoxItem IsSelected="True">Single</ComboBoxItem>
+                <ComboBoxItem>Forhold</ComboBoxItem>
+                <ComboBoxItem>Gift</ComboBoxItem>
+                <ComboBoxItem>Kompliceret</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="IntereseretI_Combobox" HorizontalAlignment="Left" Margin="570,343,0,0" VerticalAlignment="Top" Width="158" >
+                <ComboBoxItem IsSelected="True">Mænd</ComboBoxItem>
+                <ComboBoxItem>Kvinder</ComboBoxItem>
+                <ComboBoxItem>Mænd og Kvinder</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="EyeColor_ComboBox" HorizontalAlignment="Left" Margin="1020,220,0,0" VerticalAlignment="Top" Width="127">
+                <ComboBoxItem IsSelected="True">Brune</ComboBoxItem>
+                <ComboBoxItem>Grøne</ComboBoxItem>
+                <ComboBoxItem>Blå</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="HairColor_Combobox" HorizontalAlignment="Left" Margin="1020,250,0,0" VerticalAlignment="Top" Width="127" Text="{Binding _User.Haircolor, UpdateSourceTrigger=PropertyChanged}" >
+                <ComboBoxItem IsSelected="True">Sort</ComboBoxItem>
+                <ComboBoxItem>Lyst</ComboBoxItem>
+                <ComboBoxItem>Mørkt</ComboBoxItem>
+                <ComboBoxItem>Hvidt</ComboBoxItem>
+                <ComboBoxItem>Gråt</ComboBoxItem>
+                <ComboBoxItem>Rødt</ComboBoxItem>
+                <ComboBoxItem>Andet</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="Børn_Combobox" HorizontalAlignment="Left" Margin="1020,280,0,0" VerticalAlignment="Top" Width="127">
+                <ComboBoxItem IsSelected="True">Ja udeboende</ComboBoxItem>
+                <ComboBoxItem>Ja hjemmeboende</ComboBoxItem>
+                <ComboBoxItem>Nej</ComboBoxItem>
+                <ComboBoxItem>Kompliceret</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="KropsType_Combobox" HorizontalAlignment="Left" Margin="1020,310,0,0" VerticalAlignment="Top" Width="127">
+                <ComboBoxItem IsSelected="True">Gennemsnitlig</ComboBoxItem>
+                <ComboBoxItem>Kraftig</ComboBoxItem>
+                <ComboBoxItem>Atletisk</ComboBoxItem>
+                <ComboBoxItem>Spinkel</ComboBoxItem>
+                <ComboBoxItem>Muskuløs</ComboBoxItem>
+                <ComboBoxItem>Buttet</ComboBoxItem>
+            </ComboBox>
         </Grid>
     </Grid>
 </Page>

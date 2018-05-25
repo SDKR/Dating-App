@@ -15,11 +15,13 @@ using System.Windows.Shapes;
 
 namespace Dating_App.View
 {
+    
     /// <summary>
     /// Interaction logic for RedigerProfil.xaml
     /// </summary>
     public partial class RedigerProfil : Page
     {
+        Model.User UserObject = new Model.User();
         public RedigerProfil()
         {
             InitializeComponent();
@@ -29,17 +31,17 @@ namespace Dating_App.View
 
             FornavnData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.First_name;
             EfternavnData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Last_name;
-            FødselsdagData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Date.ToString();
-            KønData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Gender;
-            StatusData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Status;
-            SøgerData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Seeking;
-            InteresseretIData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.SexualOrientation;
+            fødselsdag_datepicker.Text = Dating_App.Model.User.CurrentUser.Date.ToString();
+            Køn_combobox.Text = Dating_App.Model.User.CurrentUser.Gender;
+            Status_Combobox.Text = Dating_App.Model.User.CurrentUser.Status;
+            Seeking_Combobox.Text = Dating_App.Model.User.CurrentUser.Seeking;
+            IntereseretI_Combobox.Text = Dating_App.Model.User.CurrentUser.SexualOrientation;
             HøjdeData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Height.ToString();
             VægtData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Weight.ToString();
-            ØjenfarveData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Eyecolor;
-            HårfarveData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Haircolor;
-            BørnData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Children;
-            KropsTypeData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Body_Type;
+            EyeColor_ComboBox.Text = Dating_App.Model.User.CurrentUser.Eyecolor;
+            HairColor_Combobox.Text = Dating_App.Model.User.CurrentUser.Haircolor;
+            Børn_Combobox.Text = Dating_App.Model.User.CurrentUser.Children;
+            KropsType_Combobox.Text = Dating_App.Model.User.CurrentUser.Body_Type;
             PostNummerData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Postcode.ToString();
             BeskrivDigSelv_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.About_yourself;
         }
@@ -67,6 +69,25 @@ namespace Dating_App.View
         private void Beskeder_SøgPage_Button_Click(object sender, RoutedEventArgs e)
         {
             (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.BeskederPage();
+        }
+
+        private void Gem_PrilePage_Button_Click(object sender, RoutedEventArgs e)
+        {
+            UserObject.First_name = FornavnData_ProfilPage_TextBox.Text;
+            UserObject.Last_name = EfternavnData_ProfilPage_TextBox.Text;
+            UserObject.Date = DateTime.Parse(fødselsdag_datepicker.Text);
+            UserObject.Gender = Køn_combobox.Text;
+            UserObject.Status = Status_Combobox.Text;
+            UserObject.Seeking = Seeking_Combobox.Text;
+            UserObject.SexualOrientation = IntereseretI_Combobox.Text;
+            UserObject.Height = int.Parse(HøjdeData_ProfilPage_TextBox.Text);
+            UserObject.Weight = int.Parse(VægtData_ProfilPage_TextBox.Text);
+            UserObject.Eyecolor = EyeColor_ComboBox.Text;
+            UserObject.Haircolor = HairColor_Combobox.Text;
+            UserObject.Children = Børn_Combobox.Text;
+            UserObject.Body_Type = KropsType_Combobox.Text;
+            UserObject.Postcode = int.Parse(PostNummerData_ProfilPage_TextBox.Text);
+            UserObject.About_yourself = BeskrivDigSelv_ProfilPage_TextBox.Text;
         }
     }
 }
