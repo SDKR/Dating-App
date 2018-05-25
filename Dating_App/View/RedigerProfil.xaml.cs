@@ -91,6 +91,7 @@ namespace Dating_App.View
             UserObject.Postcode = int.Parse(PostNummerData_ProfilPage_TextBox.Text);
             UserObject.About_yourself = BeskrivDigSelv_ProfilPage_TextBox.Text;
             UserObject.Email = Email_Textbox.Text;
+            UserObject.FK_profile_name = Dating_App.Model.User.CurrentUser.Profile_name;
             UserObject.Profile_name = Dating_App.Model.User.CurrentUser.Profile_name;
             UserObject.Password = Password_Textbox.Text;
             UserObject.updateUser(UserObject);

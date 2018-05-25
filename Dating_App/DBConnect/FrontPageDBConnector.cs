@@ -112,6 +112,8 @@ namespace Dating_App.DBConnect
         {
             SqlCommand User_Info_Update = new SqlCommand("spUpdate_User", connection);
             User_Info_Update.CommandType = CommandType.StoredProcedure;
+            User_Info_Update.Parameters.AddWithValue("PK_Profile_name", user.FK_profile_name);
+            User_Info_Update.Parameters.AddWithValue("Password", user.Password);
             User_Info_Update.Parameters.AddWithValue("First_name", user.First_name);
             User_Info_Update.Parameters.AddWithValue("Last_name", user.Last_name);
             User_Info_Update.Parameters.AddWithValue("Birthdate", "2000-04-05");
