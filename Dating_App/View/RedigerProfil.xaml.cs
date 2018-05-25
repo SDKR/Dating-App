@@ -88,6 +88,7 @@ namespace Dating_App.View
             UserObject.Body_Type = KropsType_Combobox.Text;
             UserObject.Postcode = int.Parse(PostNummerData_ProfilPage_TextBox.Text);
             UserObject.About_yourself = BeskrivDigSelv_ProfilPage_TextBox.Text;
+            UserObject.updateUser(UserObject);
         }
     }
 }
