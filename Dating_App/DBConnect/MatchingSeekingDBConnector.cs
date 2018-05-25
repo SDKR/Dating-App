@@ -74,11 +74,54 @@ namespace Dating_App.DBConnect
             return User_list;
         }
 
-        public List<User> search(User user)
+        public List<User> search(MatchingSeeking MS)
         {
-            //SKRIV HER LOLZ DJLSJA
-            List<User> uer = new List<User>();
-            return uer;
+            SqlCommand User_Seach = new SqlCommand("spSearch_User_information", connection);
+            User_Seach.CommandType = CommandType.StoredProcedure;
+            User_Seach.Parameters.AddWithValue("User_Aktiv", MS.bit);
+            User_Seach.Parameters.AddWithValue("First_name", MS.First_name);
+            User_Seach.Parameters.AddWithValue("Last_name", MS.Last_name);
+            User_Seach.Parameters.AddWithValue("Birthdate1", MS.Date);
+            User_Seach.Parameters.AddWithValue("Birthdate2", MS.Date1);
+            User_Seach.Parameters.AddWithValue("Gender", MS.Gender);
+            User_Seach.Parameters.AddWithValue("Seeking", MS.Seeking);
+            User_Seach.Parameters.AddWithValue("FK_Post_Code1", MS.Postcode);
+            User_Seach.Parameters.AddWithValue("FK_Post_Code2", MS.Postcode1);
+            User_Seach.Parameters.AddWithValue("Status", MS.Status);
+            User_Seach.Parameters.AddWithValue("Sexual_orientation", MS.SexualOrientation);
+            User_Seach.Parameters.AddWithValue("Height1", MS.Height);
+            User_Seach.Parameters.AddWithValue("Height2", MS.Height1);
+            User_Seach.Parameters.AddWithValue("Weight1", MS.Weight);
+            User_Seach.Parameters.AddWithValue("Weight2", MS.Weight1);
+            User_Seach.Parameters.AddWithValue("Eyecolor", MS.Eyecolor);
+            User_Seach.Parameters.AddWithValue("Haircolor", MS.Haircolor);
+            User_Seach.Parameters.AddWithValue("Children", MS.Children);
+            User_Seach.Parameters.AddWithValue("Body_Type", MS.Body_Type);
+            User_Seach.Parameters.AddWithValue("FK_Profile_name", MS.FK_profile_name);
+            SqlDataAdapter adapt = new SqlDataAdapter(User_Seach);
+            DataSet ds = new DataSet();
+            adapt.Fill(ds);
+            connection.Close();
+
+            var User_list = ds.Tables[0].AsEnumerable().Select(dataRow => new User
+            {
+                First_name = dataRow.Field<string>("First_Name"),
+                Last_name = dataRow.Field<string>("Last_Name"),
+                Date = dataRow.Field<DateTime>("Birthdate"),
+                Gender = dataRow.Field<string>("Gender"),
+                Seeking = dataRow.Field<string>("Seeking"),
+                Postcode = dataRow.Field<int>("FK_Post_Code"),
+                Status = dataRow.Field<string>("Status"),
+                SexualOrientation = dataRow.Field<string>("Sexual_orientation"),
+                Height = dataRow.Field<int>("Height"),
+                Weight = dataRow.Field<int>("Weight"),
+                Eyecolor = dataRow.Field<string>("Eyecolor"),
+                Haircolor = dataRow.Field<string>("Haircolor"),
+                Children = dataRow.Field<string>("Children"),
+                Body_Type = dataRow.Field<string>("Body_Type"),
+                FK_profile_name = dataRow.Field<string>("FK_Profile_name")
+            }).ToList();
+            return User_list;
         }
 
     }

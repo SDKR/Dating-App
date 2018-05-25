@@ -60,9 +60,7 @@ namespace Dating_App.DBConnect
             k = User_information.ExecuteNonQuery();
             connection.Close();
 
-
             return true;
-       
         }
 
         // Check login information
@@ -105,8 +103,6 @@ namespace Dating_App.DBConnect
           return User_list;
         }
 
-        // Returns list of reccomened users based on age
-
         // Updates user informaiton 
         public void updateUser(User user)
         {
@@ -134,9 +130,6 @@ namespace Dating_App.DBConnect
             connection.Open();
             int k = User_Info_Update.ExecuteNonQuery();
             connection.Close();
-
-            /// KIIM Her skal der laves en update. Der skal opdateres i brugerens information.
         }
-
     }
 }

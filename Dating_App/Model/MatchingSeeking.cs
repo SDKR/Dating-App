@@ -51,6 +51,14 @@ namespace Dating_App.Model
             set { _Date = value; }
         }
 
+        private DateTime _Date1;
+
+        public DateTime Date1
+        {
+            get { return _Date1; }
+            set { _Date1 = value; }
+        }
+
         private string _gender;
 
         public string Gender
