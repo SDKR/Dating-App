@@ -21,11 +21,11 @@
             <Image HorizontalAlignment="Left" Height="306" Margin="860,559,0,-75" VerticalAlignment="Top" Width="330" Source="datingPicture.jpg"/>
             <Label Name="Fornavn_ProfilPage_label" Content="Fornavn" HorizontalAlignment="Left" Margin="380,160,0,0" VerticalAlignment="Top" Width="78" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
             <Label Name="Efternavn_ProfilPage_label" Content="Efternavn" HorizontalAlignment="Left" Margin="380,190,0,0" VerticalAlignment="Top" Width="91" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
-            <Label Name="Fødselsdag_ProfilPage_label" Content="Fødselsdag" HorizontalAlignment="Left" Margin="380,220,0,0" VerticalAlignment="Top" Width="91" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
-            <Label Name="Køn_ProfilPage_label" Content="Køn" HorizontalAlignment="Left" Margin="380,250,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
-            <Label Name="Søger_ProfilPage_label" Content="Søger" HorizontalAlignment="Left" Margin="380,310,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
-            <Label Name="Status_ProfilPage_label" Content="Status" HorizontalAlignment="Left" Margin="380,280,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
-            <Label Name="InteresseretI_ProfilPage_label" Content="Interesseret i" HorizontalAlignment="Left" Margin="380,340,0,0" VerticalAlignment="Top" Width="111" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="Fødselsdag_ProfilPage_label" Content="Fødselsdag" HorizontalAlignment="Left" Margin="380,246,0,0" VerticalAlignment="Top" Width="91" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="Køn_ProfilPage_label" Content="Køn" HorizontalAlignment="Left" Margin="380,278,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="Søger_ProfilPage_label" Content="Søger" HorizontalAlignment="Left" Margin="380,340,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="Status_ProfilPage_label" Content="Status" HorizontalAlignment="Left" Margin="380,308,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <Label Name="InteresseretI_ProfilPage_label" Content="Interesseret i" HorizontalAlignment="Left" Margin="380,371,0,0" VerticalAlignment="Top" Width="111" FontFamily="Lucida Calligraphy" FontWeight="Bold" RenderTransformOrigin="0.533,1.742"/>
             <Label Name="Højde_ProfilPage_label" Content="Højde" HorizontalAlignment="Left" Margin="830,160,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
             <Label Name="Vægt_ProfilPage_label" Content="Vægt" HorizontalAlignment="Left" Margin="830,190,0,0" VerticalAlignment="Top" Width="66" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
             <Label Name="ØjenFarve_ProfilPage_label" Content="Øjenfarve" HorizontalAlignment="Left" Margin="830,220,0,0" VerticalAlignment="Top" Width="83" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
@@ -41,24 +41,24 @@
             <TextBox Name="PostNummerData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="1020,340,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
             <Button Name="Gem_PrilePage_Button" Content="Gem" HorizontalAlignment="Left" Margin="728,422,0,0" VerticalAlignment="Top" Width="134" Height="40" FontFamily="Lucida Calligraphy" FontWeight="Bold" Background="#FFF0E3D3" Click="Gem_PrilePage_Button_Click"/>
             <Label Name="OmMig_RedigerPage_Label" Content="Om User" HorizontalAlignment="Left" Margin="37,402,0,0" VerticalAlignment="Top" Width="300" Height="44" Background="#FFD4CDC5" HorizontalContentAlignment="Center" FontSize="22" FontFamily="Lucida Calligraphy"/>
-            <DatePicker Name="fødselsdag_datepicker" HorizontalAlignment="Left" Margin="570,220,0,0" VerticalAlignment="Top" Width="158"/>
-            <ComboBox Name="Køn_combobox" HorizontalAlignment="Left" Margin="570,250,0,0" VerticalAlignment="Top" Width="158">
+            <DatePicker Name="fødselsdag_datepicker" HorizontalAlignment="Left" Margin="570,248,0,0" VerticalAlignment="Top" Width="158"/>
+            <ComboBox Name="Køn_combobox" HorizontalAlignment="Left" Margin="570,280,0,0" VerticalAlignment="Top" Width="158">
                 <ComboBoxItem IsSelected="True">Mand</ComboBoxItem>
                 <ComboBoxItem>Kvinde</ComboBoxItem>
             </ComboBox>
-            <ComboBox Name="Seeking_Combobox" HorizontalAlignment="Left" Margin="570,310,0,0" VerticalAlignment="Top" Width="158">
+            <ComboBox Name="Seeking_Combobox" HorizontalAlignment="Left" Margin="570,342,0,0" VerticalAlignment="Top" Width="158">
                 <ComboBoxItem IsSelected="True">Date</ComboBoxItem>
                 <ComboBoxItem>Ægteskab</ComboBoxItem>
                 <ComboBoxItem>Bolleven</ComboBoxItem>
                 <ComboBoxItem>Kæreste</ComboBoxItem>
             </ComboBox>
-            <ComboBox Name="Status_Combobox" HorizontalAlignment="Left" Margin="570,280,0,0" VerticalAlignment="Top" Width="158">
+            <ComboBox Name="Status_Combobox" HorizontalAlignment="Left" Margin="570,310,0,0" VerticalAlignment="Top" Width="158">
                 <ComboBoxItem IsSelected="True">Single</ComboBoxItem>
                 <ComboBoxItem>Forhold</ComboBoxItem>
                 <ComboBoxItem>Gift</ComboBoxItem>
                 <ComboBoxItem>Kompliceret</ComboBoxItem>
             </ComboBox>
-            <ComboBox Name="IntereseretI_Combobox" HorizontalAlignment="Left" Margin="570,343,0,0" VerticalAlignment="Top" Width="158" >
+            <ComboBox Name="IntereseretI_Combobox" HorizontalAlignment="Left" Margin="570,374,0,0" VerticalAlignment="Top" Width="158" >
                 <ComboBoxItem IsSelected="True">Mænd</ComboBoxItem>
                 <ComboBoxItem>Kvinder</ComboBoxItem>
                 <ComboBoxItem>Mænd og Kvinder</ComboBoxItem>
@@ -91,8 +91,10 @@
                 <ComboBoxItem>Muskuløs</ComboBoxItem>
                 <ComboBoxItem>Buttet</ComboBoxItem>
             </ComboBox>
-            <TextBox Name="Email_Textbox" HorizontalAlignment="Left" Height="23" Margin="570,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-            <Label x:Name="Email_ProfilPage_label_Copy" Content="Email" HorizontalAlignment="Left" Margin="380,374,0,0" VerticalAlignment="Top" Width="111" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <TextBox Name="Email_Textbox" HorizontalAlignment="Left" Height="23" Margin="1020,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
+            <Label x:Name="Email_ProfilPage_label_Copy" Content="Email" HorizontalAlignment="Left" Margin="830,374,0,0" VerticalAlignment="Top" Width="111" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+            <TextBox Name="Password_Textbox" HorizontalAlignment="Left" Height="23" Margin="570,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+            <Label x:Name="Efternavn_ProfilPage_label_Copy" Content="Password" HorizontalAlignment="Left" Margin="380,220,0,0" VerticalAlignment="Top" Width="91" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         </Grid>
     </Grid>
 </Page>

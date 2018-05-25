@@ -45,6 +45,7 @@ namespace Dating_App.View
             PostNummerData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Postcode.ToString();
             BeskrivDigSelv_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.About_yourself;
             Email_Textbox.Text = Dating_App.Model.User.CurrentUser.Email;
+            Password_Textbox.Text = Dating_App.Model.User.CurrentUser.Password;
         }
 
         private void LogAf_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
@@ -91,6 +92,7 @@ namespace Dating_App.View
             UserObject.About_yourself = BeskrivDigSelv_ProfilPage_TextBox.Text;
             UserObject.Email = Email_Textbox.Text;
             UserObject.Profile_name = Dating_App.Model.User.CurrentUser.Profile_name;
+            UserObject.Password = Password_Textbox.Text;
             UserObject.updateUser(UserObject);
 
         }
