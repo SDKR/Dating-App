@@ -1422,10 +1422,8 @@ end
 go
 
 
-
 DROP PROCEDURE spCreate_User_information
 go
-
 create PROCEDURE spCreate_User_information
 	@First_name nvarchar(50),
 	@Last_name nvarchar(50),
@@ -1454,10 +1452,8 @@ end
 go
 
 
-
 DROP PROCEDURE spSearch_User
 go
-
 CREATE PROCEDURE spSearch_User
 	@FK_Profile_name nvarchar(50),
 	@Gender nvarchar(50),
@@ -1477,9 +1473,9 @@ where b.FK_Profile_name = @FK_Profile_name
 end
 go
 
+
 DROP PROCEDURE spUpdate_User
 go
-
 CREATE PROCEDURE spUpdate_User
 	@First_name nvarchar(50),
 	@Last_name nvarchar(50),
@@ -1497,7 +1493,9 @@ CREATE PROCEDURE spUpdate_User
 	@Children nvarchar(50),
 	@Body_Type nvarchar(50),
 	@About_Yourself nvarchar(400),
-	@FK_Profile_name nvarchar(50)
+	@FK_Profile_name nvarchar(50),
+	@PK_Profile_name nvarchar(50),
+	@Password nvarchar(50)
 	as
 begin
 	set nocount on;
@@ -1519,10 +1517,64 @@ set First_name=(@First_name),
 	Body_Type=(@Body_Type),
 	About_Yourself=(@About_Yourself)
 	where FK_Profile_name = @FK_Profile_name
+	update [User]
+set	[Password] = (@Password)
+	where PK_Profile_name = @PK_Profile_name
 end
 go
 
+DROP PROCEDURE spSearch_User_information
+go
 
+CREATE PROCEDURE spSearch_User_information
+	@First_name nvarchar(50),
+	@Last_name nvarchar(50),
+	@Birthdate1 date,
+	@Birthdate2 date,
+	@Gender nvarchar(50),
+	@Seeking nvarchar(50),
+	@FK_Post_Code1 int,
+	@FK_Post_Code2 int,
+	@Status nvarchar(50),
+	@Sexual_orientation nvarchar(50),
+	@Height1 int,
+	@Height2 int,
+	@Weight1 int,
+	@Weight2 int,
+	@Eyecolor nvarchar(50),
+	@Haircolor nvarchar(50),
+	@Children nvarchar(50),
+	@Body_Type nvarchar(50),
+	@FK_Profile_name nvarchar(50)
+as
+begin
+	select * 
+	from User_Information
+	where First_name = @First_name or @First_name is null
+	and Last_name = @Last_name or @Last_name is null
+	and Birthdate between @Birthdate1 and @Birthdate2 or @Birthdate1 is null and @Birthdate2 is null
+	and Gender = @Gender or @Gender is null
+	and Seeking = @Seeking or @Seeking is null
+	and FK_Post_Code between @FK_Post_Code1 and @FK_Post_Code2 or @FK_Post_Code1 is null and @FK_Post_Code2 is null
+	and [Status] = @Status or @Status is null
+	and Sexual_orientation = @Sexual_orientation or @Sexual_orientation is null
+	and Height between @Height1 and @Height2 or @Height1 is null and @Height2 is null
+	and [Weight] between @Weight1 and @Weight2 or @Weight1 is null and @Weight2 is null
+	and Eyecolor = @Eyecolor or @Eyecolor is null
+	and Haircolor = @Haircolor or @Haircolor is null
+	and Children = @Children or @Children is null
+	and Body_Type = @Body_Type or @Body_Type is null
+	except 
+	select * 
+	from User_Information
+	where @FK_Profile_name = FK_Profile_name
+end
+go
+
+	select * 
+	from User_Information
+	where First_name = 'hans' or First_name is  null
+	and Eyecolor = 'Grønne' or Eyecolor is null
 
 --select b.FK_Profile_name, b.First_name as bTable_First_name, b.Last_name, b.Birthdate, b.Gender,b.Seeking,b.FK_Post_Code,b.Email,b.[Status], b.Sexual_orientation,b.Height,b.[Height],b.[Weight],b.Eyecolor,b.Haircolor,b.Children,b.Body_Type,b.About_Yourself,b.FK_Profile_name 
 --from User_Information a, User_Information b
