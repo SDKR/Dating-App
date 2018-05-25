@@ -47,7 +47,7 @@
         <ComboBox HorizontalAlignment="Left" Margin="898,219,0,0" VerticalAlignment="Top" Width="209" FontFamily="Lucida Calligraphy"/>
         <Label Content="Børn" HorizontalAlignment="Left" Margin="898,255,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Lucida Calligraphy"/>
         <ComboBox HorizontalAlignment="Left" Margin="898,286,0,0" VerticalAlignment="Top" Width="209" FontFamily="Lucida Calligraphy"/>
-        <Label Content="??" HorizontalAlignment="Left" Margin="898,314,0,0" VerticalAlignment="Top" Width="77" FontWeight="Bold" FontFamily="Lucida Calligraphy"/>
+        <Label Content="Krops Type" HorizontalAlignment="Left" Margin="898,314,0,0" VerticalAlignment="Top" Width="77" FontWeight="Bold" FontFamily="Lucida Calligraphy"/>
         <ComboBox HorizontalAlignment="Left" Margin="898,344,0,0" VerticalAlignment="Top" Width="209" FontFamily="Lucida Calligraphy"/>
         <Label Content="-" HorizontalAlignment="Left" Margin="617,339,0,0" VerticalAlignment="Top" Width="48" HorizontalContentAlignment="Center" RenderTransformOrigin="0.488,-0.598" FontFamily="Lucida Calligraphy" FontWeight="Bold" FontSize="16"/>
         <Label Content="-" HorizontalAlignment="Left" Margin="617,394,0,0" VerticalAlignment="Top" Width="48" HorizontalContentAlignment="Center" FontFamily="Lucida Calligraphy" FontWeight="Bold" FontSize="16"/>
