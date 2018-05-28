@@ -23,6 +23,7 @@ namespace Dating_App
     {
         User userobject = new User();
         Messages message = new Messages();
+        MatchingSeeking ms = new MatchingSeeking();
 
         public MainWindow()
         {
@@ -76,6 +77,14 @@ namespace Dating_App
                 MessageBox.Show("Post nummeret kan kun bestå af tal.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
+            List<MatchingSeeking> getPostcode = ms.getPostCodeCity();
+            //var item = from getPostcodes in getPostcode
+            //           where getPostcodes.GetPostCode == int.Parse(PostNummer_TextBox.Text)
+            //           select getPostcodes;
+            //Postnr_label.Content = item;
+
+            //var city = getPostcode.Where(getPostcodes => getPostcodes.GetPostCode == int.Parse(PostNummer_TextBox.Text));
+            //Console.WriteLine(city);
         }
     }
 }
