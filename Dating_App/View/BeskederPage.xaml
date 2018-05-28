@@ -19,18 +19,19 @@
         <Button Name="Beskeder_BeskederPage_Button" Content="Beskeder" HorizontalAlignment="Left" Margin="277,17,0,0" VerticalAlignment="Top" Width="102" Height="28" FontSize="16" FontStyle="Italic" Background="#FFBCB5AC" BorderThickness="0,0,0,0" FontFamily="Lucida Calligraphy" Foreground="#FF5A0303"/>
         <DataGrid Name="Indbakke_datagrid" HorizontalAlignment="Left" Height="526" Margin="36,246,0,0" VerticalAlignment="Top" Width="451" AutoGenerateColumns="False" HorizontalGridLinesBrush="#FFBDB5B5" VerticalGridLinesBrush="#FFF0EDED" FontFamily="Lucida Calligraphy" FontSize="14">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Afsender" Binding="{Binding Sender}"/>
-                <DataGridTextColumn Header="Besked" Binding="{Binding Message}" Width="*"/>
+                <DataGridTextColumn Header="Afsender" Binding="{Binding Sender}" Width="*"/>
+                <DataGridTextColumn Header="Besked" Binding="{Binding Message}" Width="250"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Indbakke" HorizontalAlignment="Left" Margin="36,197,0,0" VerticalAlignment="Top" Width="451" Height="44" Background="#FFD4CDC5" HorizontalContentAlignment="Center" FontSize="22" FontFamily="Lucida Calligraphy"/>
-        <Image HorizontalAlignment="Left" Height="306" Margin="860,559,0,-75" VerticalAlignment="Top" Width="330" Source="datingPicture.jpg"/>
+        <Image HorizontalAlignment="Left" Height="306" Margin="860,554,0,-70" VerticalAlignment="Top" Width="330" Source="datingPicture.jpg"/>
         <TextBox Name="Besked_Textox" HorizontalAlignment="Left" Height="223" Margin="626,317,0,0" TextWrapping="Wrap" Text="Besked" VerticalAlignment="Top" Width="451" FontFamily="Lucida Calligraphy" FontSize="14"/>
         <Label Content="Ny Besked" HorizontalAlignment="Left" Margin="626,197,0,0" VerticalAlignment="Top" Width="451" Height="44" Background="#FFD4CDC5" HorizontalContentAlignment="Center" FontSize="22" FontFamily="Lucida Calligraphy"/>
-        <TextBox Name="NyBesked_Textbox" HorizontalAlignment="Left" Height="23" Margin="626,246,0,0" TextWrapping="Wrap" Text="Profil navn" VerticalAlignment="Top" Width="222" FontFamily="Lucida Calligraphy" FontSize="14"/>
+        <TextBox Name="NyBesked_Textbox" HorizontalAlignment="Left" Height="23" Margin="626,246,0,0" TextWrapping="Wrap" Text="Profil navn" VerticalAlignment="Top" Width="370" FontFamily="Lucida Calligraphy" FontSize="14" KeyUp="NyBesked_Textbox_KeyUp" />
         <Button Name="Send_BeskedPage_Button" Content="Send" HorizontalAlignment="Left" Margin="626,559,0,0" VerticalAlignment="Top" Width="124" Height="35" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontWeight="Bold" FontSize="14" Click="Send_BeskedPage_Button_Click"/>
         <ComboBox Name="Chat_person_Combobox" HorizontalAlignment="Left" Margin="36,162,0,0" VerticalAlignment="Top" Width="451" SelectedItem="{Binding Profile_name}" DropDownClosed="Chat_person_Combobox_DropDownClosed">
 
         </ComboBox>
+        <Image Name="ProfilBillede_Image" HorizontalAlignment="Left" Height="76" Margin="1001,241,0,0" VerticalAlignment="Top" Width="76"/>
     </Grid>
 </Page>

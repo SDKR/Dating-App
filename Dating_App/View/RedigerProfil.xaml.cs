@@ -127,7 +127,7 @@ namespace Dating_App.View
                     ImageString = fldlg.SafeFileName;
                     ImageName = fldlg.FileName;
                     ImageSourceConverter isc = new ImageSourceConverter();
-                    image.SetValue(Image.SourceProperty, isc.ConvertFromString(ImageName));
+                    image1.SetValue(Image.SourceProperty, isc.ConvertFromString(ImageName));
                 }
                 fldlg = null;
             }
@@ -184,6 +184,24 @@ namespace Dating_App.View
             }
         }
 
-       
+
+        private void Deaktiver_Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Er du sikker på du vil Deaktivere din bruger?", "Bekræft", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+
+                    UserObject.deactivateUser(Dating_App.Model.User.CurrentUser);
+                    (Application.Current.MainWindow.FindName("Frame") as Frame).Content = null;
+
+
+                    break;
+
+                case MessageBoxResult.No:
+
+                    break;
+            }
+        }
     }
 }
