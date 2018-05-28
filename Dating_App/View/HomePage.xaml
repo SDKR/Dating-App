@@ -22,7 +22,7 @@
         <DataGrid Name="ForslagTilDig_Datagrid" HorizontalGridLinesBrush="#FFBDB5B5" VerticalGridLinesBrush="#FFF0EDED" HorizontalAlignment="Left" Height="312" Margin="37,446,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lucida Calligraphy"/>
         <Image HorizontalAlignment="Left" Height="306" Margin="860,554,0,-70" VerticalAlignment="Top" Width="330" Source="datingPicture.jpg"/>
 
-        <DataGrid Name="CurrentChat" HorizontalGridLinesBrush="#FFBDB5B5" VerticalGridLinesBrush="#FFF0EDED"  HorizontalAlignment="Left" Height="312" Margin="409,242,0,0" VerticalAlignment="Top" Width="668" ItemsSource="{Binding CurrentConversationList}" AutoGenerateColumns="False">
+        <DataGrid Name="CurrentChat" HorizontalGridLinesBrush="#FFBDB5B5" VerticalGridLinesBrush="#FFF0EDED"  HorizontalAlignment="Left" Height="312" Margin="409,242,0,0" VerticalAlignment="Top" Width="668" ItemsSource="{Binding CurrentConversationList}" AutoGenerateColumns="False" FontFamily="Lucida Calligraphy">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Profil navn" Binding="{Binding Profile_name}"/>
                 <DataGridTextColumn Header="Besked" Binding="{Binding Message}" Width="*"/>

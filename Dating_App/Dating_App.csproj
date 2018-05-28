@@ -65,6 +65,7 @@
     <Compile Include="Model\Images.cs" />
     <Compile Include="Model\MatchingSeeking.cs" />
     <Compile Include="Model\Messages.cs" />
+    <Compile Include="Model\ToDoList.cs" />
     <Compile Include="View\BeskederPage.xaml.cs">
       <DependentUpon>BeskederPage.xaml</DependentUpon>
     </Compile>
