@@ -35,6 +35,7 @@ namespace Dating_App.View
         public RedigerProfil()
         {
             InitializeComponent();
+            LoadPicture();
 
             UserName_RedigerProfil_label.Content = Dating_App.Model.User.CurrentUser.Profile_name;
             OmMig_RedigerPage_Label.Content = "Om " + Dating_App.Model.User.CurrentUser.Profile_name;
@@ -151,9 +152,11 @@ namespace Dating_App.View
             {
                 MessageBox.Show("Fejl");
             }
+
+            LoadPicture();
         }
 
-        private void LoadPicture(object sender, RoutedEventArgs e)
+        public void LoadPicture()
         {
             DataSet ds = imageObj.getImage(Dating_App.Model.User.CurrentUser.Profile_name);
             DataTable dataTable = ds.Tables[0];
@@ -176,12 +179,11 @@ namespace Dating_App.View
                     ms.Seek(0, SeekOrigin.Begin);
                     bi.StreamSource = ms;
                     bi.EndInit();
-                    image1.Source = bi;
-                    // skift image1 til navnet på dit image dims i wpf
-
+                    ProfilBillede_RedigerProfilPage_Image.Source = bi;
                 }
             }
-
         }
+
+       
     }
 }

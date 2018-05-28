@@ -47,10 +47,9 @@
                 <ComboBoxItem>Kvinde</ComboBoxItem>
             </ComboBox>
             <ComboBox Name="Seeking_Combobox" HorizontalAlignment="Left" Margin="570,342,0,0" VerticalAlignment="Top" Width="158">
-                <ComboBoxItem IsSelected="True">Date</ComboBoxItem>
-                <ComboBoxItem>Ægteskab</ComboBoxItem>
-                <ComboBoxItem>Bolleven</ComboBoxItem>
-                <ComboBoxItem>Kæreste</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Venner</ComboBoxItem>
+                <ComboBoxItem>Sexpartner</ComboBoxItem>
+                <ComboBoxItem>Forhold</ComboBoxItem>
             </ComboBox>
             <ComboBox Name="Status_Combobox" HorizontalAlignment="Left" Margin="570,310,0,0" VerticalAlignment="Top" Width="158">
                 <ComboBoxItem IsSelected="True">Single</ComboBoxItem>
@@ -99,7 +98,6 @@
             <Button x:Name="SavePicture" Content="Save DickPics" HorizontalAlignment="Left" Margin="506,462,0,0" VerticalAlignment="Top" Width="75" Click="BtnSaveImage_Click"/>
             <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="380,506,0,0" VerticalAlignment="Top" Width="100" Stretch="Fill"/>
             <Image x:Name="image1" HorizontalAlignment="Left" Height="274" Margin="528,506,0,0" VerticalAlignment="Top" Width="334"/>
-            <Button x:Name="LoadPic" Content="SE MIN DILLER!" HorizontalAlignment="Left" Margin="618,466,0,0" VerticalAlignment="Top" Width="146" Click="LoadPicture" Height="18" />
         </Grid>
     </Grid>
 </Page>

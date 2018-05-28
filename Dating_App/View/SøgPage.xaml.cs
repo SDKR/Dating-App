@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Dating_App.Model;
 
 namespace Dating_App.View
 {
@@ -20,6 +21,7 @@ namespace Dating_App.View
     /// </summary>
     public partial class SøgPage : Page
     {
+        MatchingSeeking ms = new MatchingSeeking();
         public SøgPage()
         {
             InitializeComponent();
@@ -48,6 +50,30 @@ namespace Dating_App.View
         private void Beskeder_SøgPage_Button_Click(object sender, RoutedEventArgs e)
         {
             (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.BeskederPage();
+        }
+
+        private void Søg_Button_Click(object sender, RoutedEventArgs e)
+        {
+            ms.First_name = Fornavn_textbox.Text;
+            ms.Last_name = Efternavn_textbox.Text;
+            ms.Height = int.Parse(HøjdeMin_Textbox.Text);
+            ms.Height1 = int.Parse(HøjdeMax_Textbox.Text);
+            ms.Weight = int.Parse(VægtMin_Textbox.Text);
+            ms.Weight1 = int.Parse(VægtMax_Textbox.Text);
+            ms.Date = DateTime.Parse(FødselsdagMin_Datepicker.Text);
+            ms.Date1 = DateTime.Parse(FødeelsdagMax_datepicker.Text);
+            ms.Gender = Køn_combobox.Text;
+            ms.Seeking = Søger_combobox.Text;
+            ms.Status = Status_Combobox.Text;
+            ms.SexualOrientation = IntereseretI_Combobox.Text;
+            ms.Eyecolor = Øjenfarve_combobox.Text;
+            ms.Haircolor = Hårfarve_combobox.Text;
+            ms.Children = Børn_Combobox.Text;
+            ms.Body_Type = Kropstype_Combobox.Text;
+
+            
+            ResultaterForSøgning_datagrid.ItemsSource = ms.search(ms);
+
         }
     }
 }

@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Dating_App.Model;
+using System.Data;
+using System.IO;
 
 namespace Dating_App.View
 {
@@ -23,13 +25,15 @@ namespace Dating_App.View
     {
         MatchingSeeking MS = new MatchingSeeking();
         Messages Chat = new Messages();
+        Images imageObj = new Images();
+
         public HomePage()
         {
             InitializeComponent();
             Velkommen_Label.Content = "Velkommen " + Dating_App.Model.User.CurrentUser.First_name;
             ForslagTilDig_Datagrid.ItemsSource = MS.getReccomendedUsers(Dating_App.Model.User.CurrentUser);
             CurrentChat.ItemsSource = Chat.CurrentConversationList(Dating_App.Model.User.CurrentUser);
-
+            LoadPicture();
         }
 
        
@@ -57,6 +61,33 @@ namespace Dating_App.View
         private void Beskeder_HomePage_Button_Click(object sender, RoutedEventArgs e)
         {
             (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.BeskederPage();
+        }
+        public void LoadPicture()
+        {
+            DataSet ds = imageObj.getImage(Dating_App.Model.User.CurrentUser.Profile_name);
+            DataTable dataTable = ds.Tables[0];
+            foreach (DataRow row in dataTable.Rows)
+            {
+                if (row[0].ToString() != null)
+                {
+                    //Store binary data read from the database in a byte array
+                    byte[] blob = (byte[])row[2];
+                    MemoryStream stream = new MemoryStream();
+                    stream.Write(blob, 0, blob.Length);
+                    stream.Position = 0;
+
+                    System.Drawing.Image img = System.Drawing.Image.FromStream(stream);
+                    BitmapImage bi = new BitmapImage();
+                    bi.BeginInit();
+
+                    MemoryStream ms = new MemoryStream();
+                    img.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                    ms.Seek(0, SeekOrigin.Begin);
+                    bi.StreamSource = ms;
+                    bi.EndInit();
+                    ProfilBillede_HomePage_Image.Source = bi;
+                }
+            }
         }
     }
 }
