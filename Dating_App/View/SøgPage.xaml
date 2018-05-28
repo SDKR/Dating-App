@@ -56,21 +56,21 @@
             <ComboBoxItem>Sexpartner</ComboBoxItem>
             <ComboBoxItem>Forhold</ComboBoxItem>
         </ComboBox>
+    
         <Label Content="Søger" HorizontalAlignment="Left" Margin="517,534,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.641,-0.344" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         <Label Content="Status" HorizontalAlignment="Left" Margin="517,587,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
             <ComboBox Name="Status_Combobox" HorizontalAlignment="Left" Margin="517,613,0,0" VerticalAlignment="Top" Width="248" FontFamily="Lucida Calligraphy">
-                <ComboBoxItem IsSelected="False">Single</ComboBoxItem>
-
-                <ComboBoxItem>Forhold</ComboBoxItem>
+            <ComboBoxItem IsSelected="False">Single</ComboBoxItem>
+            <ComboBoxItem>Forhold</ComboBoxItem>
                 <ComboBoxItem>Gift</ComboBoxItem>
                 <ComboBoxItem>Kompliceret</ComboBoxItem>
             </ComboBox>
+    
             <Label Content="Seksualitet" HorizontalAlignment="Left" Margin="517,640,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         <ComboBox Name="IntereseretI_Combobox" HorizontalAlignment="Left" Margin="517,666,0,0" VerticalAlignment="Top" Width="248" FontFamily="Lucida Calligraphy">
             <ComboBoxItem IsSelected="False">Heteroseksuel</ComboBoxItem>
             <ComboBoxItem>Homoseksuel</ComboBoxItem>
             <ComboBoxItem>Biseksuel</ComboBoxItem>
-            
         </ComboBox>
         <Label Content="Øjenfarve" HorizontalAlignment="Left" Margin="520,693,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         <ComboBox Name="Øjenfarve_combobox" HorizontalAlignment="Left" Margin="517,719,0,0" VerticalAlignment="Top" Width="248" FontFamily="Lucida Calligraphy">
@@ -79,28 +79,29 @@
             <ComboBoxItem>Blå</ComboBoxItem>
         </ComboBox>
         <Label Content="Hårfarve" HorizontalAlignment="Left" Margin="898,196,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
-                    <ComboBox Name="Hårfarve_combobox" HorizontalAlignment="Left" Margin="898,219,0,0" VerticalAlignment="Top" Width="209" FontFamily="Lucida Calligraphy">
-                        <ComboBoxItem IsSelected="False">Sort</ComboBoxItem>
-
-                        <ComboBoxItem>Lyst</ComboBoxItem>
-                        <ComboBoxItem>Mørkt</ComboBoxItem>
-                        <ComboBoxItem>Hvidt</ComboBoxItem>
-                        <ComboBoxItem>Gråt</ComboBoxItem>
-                        <ComboBoxItem>Rødt</ComboBoxItem>
-                        <ComboBoxItem>Andet</ComboBoxItem>
-                    </ComboBox>
-                    <Label Content="Børn" HorizontalAlignment="Left" Margin="898,255,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Lucida Calligraphy"/>
-        <ComboBox Name="Børn_Combobox" HorizontalAlignment="Left" Margin="898,286,0,0" VerticalAlignment="Top" Width="209" FontFamily="Lucida Calligraphy">
-            <ComboBoxItem IsSelected="False">Ja udeboende</ComboBoxItem>
-
-            <ComboBoxItem>Ja hjemmeboende</ComboBoxItem>
-            <ComboBoxItem>Ja udeboende</ComboBoxItem>
-            <ComboBoxItem>Nej</ComboBoxItem>
+        <ComboBox Name="Hårfarve_combobox" HorizontalAlignment="Left" Margin="898,219,0,0" VerticalAlignment="Top" Width="209" FontFamily="Lucida Calligraphy">
+            <ComboBoxItem IsSelected="False">Sort</ComboBoxItem>
+            <ComboBoxItem>Lyst</ComboBoxItem>
+            <ComboBoxItem>Mørkt</ComboBoxItem>
+            <ComboBoxItem>Hvidt</ComboBoxItem>
+            <ComboBoxItem>Gråt</ComboBoxItem>
+            <ComboBoxItem>Rødt</ComboBoxItem>
+            <ComboBoxItem>Andet</ComboBoxItem>
+            <ComboBoxItem></ComboBoxItem>
         </ComboBox>
-        <Label Content="Krops Type" HorizontalAlignment="Left" Margin="898,314,0,0" VerticalAlignment="Top" Width="97" FontWeight="Bold" FontFamily="Lucida Calligraphy"/>
+        
+        <Label Content="Børn" HorizontalAlignment="Left" Margin="898,255,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Lucida Calligraphy"/>
+            <ComboBox Name="Børn_Combobox" HorizontalAlignment="Left" Margin="898,286,0,0" VerticalAlignment="Top" Width="209" FontFamily="Lucida Calligraphy">
+                <ComboBoxItem IsSelected="False">Ja udeboende</ComboBoxItem>
+                <ComboBoxItem>Ja hjemmeboende</ComboBoxItem>
+                <ComboBoxItem>Ja udeboende</ComboBoxItem>
+                <ComboBoxItem>Nej</ComboBoxItem>
+            </ComboBox>
+
+                <Label Content="Krops Type" HorizontalAlignment="Left" Margin="898,314,0,0" VerticalAlignment="Top" Width="97" FontWeight="Bold" FontFamily="Lucida Calligraphy"/>
         <ComboBox Name="Kropstype_Combobox" HorizontalAlignment="Left" Margin="898,344,0,0" VerticalAlignment="Top" Width="209" FontFamily="Lucida Calligraphy">
-                                        <ComboBoxItem IsSelected="False">Gennemsnitlig</ComboBoxItem>
-                                        <ComboBoxItem>Kraftig</ComboBoxItem>
+            <ComboBoxItem IsSelected="False">Gennemsnitlig</ComboBoxItem>
+            <ComboBoxItem>Kraftig</ComboBoxItem>
             <ComboBoxItem>Atletisk</ComboBoxItem>
             <ComboBoxItem>Spinkel</ComboBoxItem>
             <ComboBoxItem>Muskuløs</ComboBoxItem>

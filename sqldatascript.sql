@@ -1552,20 +1552,20 @@ as
 begin
 	select * 
 	from User_Information with(INDEX(User_information_Index_))
-	where First_name Like @First_name or @First_name is null
-	and Last_name Like @Last_name or @Last_name is null
-	and Birthdate between @Birthdate1 and @Birthdate2 or @Birthdate1 is null and @Birthdate2 is null
-	and Gender = @Gender or @Gender is null
-	and Seeking = @Seeking or @Seeking is null
+	where (First_name = @First_name or @First_name = '')
+	and (Last_name = @Last_name or @Last_name = '')
+	and (Birthdate between @Birthdate1 and @Birthdate2 or @Birthdate1 = '' and @Birthdate2 = '')
+	and (Gender = @Gender or @Gender = '')
+	and (Seeking = @Seeking or @Seeking = '')
 	--and FK_Post_Code between @FK_Post_Code1 and @FK_Post_Code2 or @FK_Post_Code1 is null and @FK_Post_Code2 is null
-	and [Status] = @Status or @Status is null
-	and Sexual_orientation = @Sexual_orientation or @Sexual_orientation is null
-	and Height between @Height1 and @Height2 or @Height1 is null and @Height2 is null
-	and [Weight] between @Weight1 and @Weight2 or @Weight1 is null and @Weight2 is null
-	and Eyecolor = @Eyecolor or @Eyecolor is null
-	and Haircolor = @Haircolor or @Haircolor is null
-	and Children = @Children or @Children is null
-	and Body_Type = @Body_Type or @Body_Type is null
+	and ([Status] = @Status or @Status = '')
+	and (Sexual_orientation = @Sexual_orientation or @Sexual_orientation = '')
+	and (Height between @Height1 and @Height2 or @Height1 = '' and @Height2 = '')
+	and ([Weight] between @Weight1 and @Weight2 or @Weight1 = '' and @Weight2 = '')
+	and (Eyecolor = @Eyecolor or @Eyecolor = '')
+	and (Haircolor = @Haircolor or @Haircolor = '')
+	and (Children = @Children or @Children = '')
+	and (Body_Type = @Body_Type or @Body_Type = '')
 	and (select [User].User_aktiv from [User] where [User].PK_Profile_name = [User_Information].FK_Profile_name) = 1
 	and not FK_Profile_name = @FK_Profile_name
 end
