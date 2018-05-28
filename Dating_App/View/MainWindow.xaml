@@ -9,7 +9,10 @@
         xmlns:ViewModels="clr-namespace:Dating_App.ViewModel"
         xmlns:viewmodel="clr-namespace:Dating_App.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="820" Width="1200">
+        Title="MainWindow" Height="820" Width="1200"
+        WindowStartupLocation="Manual"
+        Left="150" Top="10">
+    
 
     <Window.DataContext>
         <viewmodel:Presenter></viewmodel:Presenter>

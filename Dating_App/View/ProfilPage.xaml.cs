@@ -96,5 +96,10 @@ namespace Dating_App.View
                 }
             }
         }
+
+        private void Rediger_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
+        {
+            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.RedigerProfil();
+        }
     }
 }

@@ -19,8 +19,8 @@
         <Button Name="Beskeder_BeskederPage_Button" Content="Beskeder" HorizontalAlignment="Left" Margin="277,17,0,0" VerticalAlignment="Top" Width="102" Height="28" FontSize="16" FontStyle="Italic" Background="#FFBCB5AC" BorderThickness="0,0,0,0" FontFamily="Lucida Calligraphy" Foreground="#FF5A0303"/>
         <DataGrid Name="Indbakke_datagrid" HorizontalAlignment="Left" Height="526" Margin="36,246,0,0" VerticalAlignment="Top" Width="451" AutoGenerateColumns="False" HorizontalGridLinesBrush="#FFBDB5B5" VerticalGridLinesBrush="#FFF0EDED" FontFamily="Lucida Calligraphy" FontSize="14">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Afsender" Binding="{Binding Sender}"/>
-                <DataGridTextColumn Header="Besked" Binding="{Binding Message}" Width="*"/>
+                <DataGridTextColumn Header="Afsender" Binding="{Binding Sender}" Width="*"/>
+                <DataGridTextColumn Header="Besked" Binding="{Binding Message}" Width="250"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Indbakke" HorizontalAlignment="Left" Margin="36,197,0,0" VerticalAlignment="Top" Width="451" Height="44" Background="#FFD4CDC5" HorizontalContentAlignment="Center" FontSize="22" FontFamily="Lucida Calligraphy"/>
