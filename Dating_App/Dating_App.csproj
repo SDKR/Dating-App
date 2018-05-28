@@ -37,6 +37,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -58,8 +59,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DBConnect\ImageDBConnector.cs" />
     <Compile Include="DBConnect\MatchingSeekingDBConnector.cs" />
     <Compile Include="DBConnect\MessageDBConnector.cs" />
+    <Compile Include="Model\Images.cs" />
     <Compile Include="Model\MatchingSeeking.cs" />
     <Compile Include="Model\Messages.cs" />
     <Compile Include="View\BeskederPage.xaml.cs">

@@ -56,8 +56,8 @@ create table [Message](
 
 create table Picture(
 	PK_Picture_ID int identity PRIMARY KEY not null,
-	FK_InfoID int not null,
-	FOREIGN KEY (FK_InfoID) REFERENCES User_Information(PK_InfoID),
+	FK_InfoID nvarchar(50) not null,
+	FOREIGN KEY (FK_InfoID) REFERENCES [User](PK_Profile_name),
 	Picture image not null
 )
 go

@@ -131,5 +131,6 @@ namespace Dating_App.DBConnect
             int k = User_Info_Update.ExecuteNonQuery();
             connection.Close();
         }
+
     }
 }
