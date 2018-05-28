@@ -124,5 +124,24 @@ namespace Dating_App.DBConnect
             return User_list;
         }
 
+        public List<MatchingSeeking> getPostCodeCity()
+        {
+            SqlCommand cmd = new SqlCommand("select * from Postcode_City", connection);
+            connection.Open();
+            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adapt.Fill(ds);
+            connection.Close();
+
+            var MS_list = ds.Tables[0].AsEnumerable().Select(dataRow => new MatchingSeeking
+            {
+                GetPostCode = dataRow.Field<int>("PK_Post_code"),
+                City = dataRow.Field<string>("City"),
+
+            }).ToList();
+
+            return MS_list;
+        }
+
     }
 }
