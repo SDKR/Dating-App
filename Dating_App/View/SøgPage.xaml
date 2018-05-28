@@ -34,38 +34,39 @@
         <Label Content="Fødselsdag" HorizontalAlignment="Left" Margin="517,426,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         <DatePicker Name="FødeelsdagMax_datepicker" HorizontalAlignment="Left" Margin="665,452,0,0" VerticalAlignment="Top" Width="100" FontFamily="Lucida Calligraphy"/>
         <ComboBox Name="Køn_combobox" HorizontalAlignment="Left" Margin="517,507,0,0" VerticalAlignment="Top" Width="248" FontFamily="Lucida Calligraphy">
-            <ComboBoxItem IsSelected="True">Mand</ComboBoxItem>
+            <ComboBoxItem IsSelected="False">Mand</ComboBoxItem>
             <ComboBoxItem>Kvinde</ComboBoxItem>
         </ComboBox>
         <Label Content="Køn" HorizontalAlignment="Left" Margin="517,481,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.224,0" FontWeight="Bold" FontFamily="Lucida Calligraphy"/>
         <ComboBox Name="Søger_combobox" HorizontalAlignment="Left" Margin="517,560,0,0" VerticalAlignment="Top" Width="248" FontFamily="Lucida Calligraphy">
-            <ComboBoxItem IsSelected="True">Venner</ComboBoxItem>
+            <ComboBoxItem IsSelected="False">Venner</ComboBoxItem>
             <ComboBoxItem>Sexpartner</ComboBoxItem>
             <ComboBoxItem>Forhold</ComboBoxItem>
         </ComboBox>
         <Label Content="Søger" HorizontalAlignment="Left" Margin="517,534,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.641,-0.344" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         <Label Content="Status" HorizontalAlignment="Left" Margin="517,587,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         <ComboBox Name="Status_Combobox" HorizontalAlignment="Left" Margin="517,613,0,0" VerticalAlignment="Top" Width="248" FontFamily="Lucida Calligraphy">
-            <ComboBoxItem IsSelected="True">Single</ComboBoxItem>
+            <ComboBoxItem IsSelected="False">Single</ComboBoxItem>
             <ComboBoxItem>Forhold</ComboBoxItem>
             <ComboBoxItem>Gift</ComboBoxItem>
             <ComboBoxItem>Kompliceret</ComboBoxItem>
         </ComboBox>
-        <Label Content="Interesseret I" HorizontalAlignment="Left" Margin="517,640,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+        <Label Content="Seksualitet" HorizontalAlignment="Left" Margin="517,640,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         <ComboBox Name="IntereseretI_Combobox" HorizontalAlignment="Left" Margin="517,666,0,0" VerticalAlignment="Top" Width="248" FontFamily="Lucida Calligraphy">
-            <ComboBoxItem IsSelected="True">Mænd</ComboBoxItem>
-            <ComboBoxItem>Kvinder</ComboBoxItem>
-            <ComboBoxItem>Mænd og Kvinder</ComboBoxItem>
+            <ComboBoxItem IsSelected="False">Heteroseksuel</ComboBoxItem>
+            <ComboBoxItem>Homoseksuel</ComboBoxItem>
+            <ComboBoxItem>Biseksuel</ComboBoxItem>
+            
         </ComboBox>
         <Label Content="Øjenfarve" HorizontalAlignment="Left" Margin="520,693,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         <ComboBox Name="Øjenfarve_combobox" HorizontalAlignment="Left" Margin="517,719,0,0" VerticalAlignment="Top" Width="248" FontFamily="Lucida Calligraphy">
-            <ComboBoxItem IsSelected="True">Brune</ComboBoxItem>
+            <ComboBoxItem IsSelected="False">Brune</ComboBoxItem>
             <ComboBoxItem>Grøne</ComboBoxItem>
             <ComboBoxItem>Blå</ComboBoxItem>
         </ComboBox>
         <Label Content="Hårfarve" HorizontalAlignment="Left" Margin="898,196,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
         <ComboBox Name="Hårfarve_combobox" HorizontalAlignment="Left" Margin="898,219,0,0" VerticalAlignment="Top" Width="209" FontFamily="Lucida Calligraphy">
-            <ComboBoxItem IsSelected="True">Sort</ComboBoxItem>
+            <ComboBoxItem IsSelected="False">Sort</ComboBoxItem>
             <ComboBoxItem>Lyst</ComboBoxItem>
             <ComboBoxItem>Mørkt</ComboBoxItem>
             <ComboBoxItem>Hvidt</ComboBoxItem>
@@ -75,19 +76,20 @@
         </ComboBox>
         <Label Content="Børn" HorizontalAlignment="Left" Margin="898,255,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Lucida Calligraphy"/>
         <ComboBox Name="Børn_Combobox" HorizontalAlignment="Left" Margin="898,286,0,0" VerticalAlignment="Top" Width="209" FontFamily="Lucida Calligraphy">
-            <ComboBoxItem IsSelected="True">Ja udeboende</ComboBoxItem>
+            <ComboBoxItem IsSelected="False">Ja udeboende</ComboBoxItem>
             <ComboBoxItem>Ja hjemmeboende</ComboBoxItem>
+            <ComboBoxItem>Ja udeboende</ComboBoxItem>
             <ComboBoxItem>Nej</ComboBoxItem>
-            <ComboBoxItem>Kompliceret</ComboBoxItem>
         </ComboBox>
         <Label Content="Krops Type" HorizontalAlignment="Left" Margin="898,314,0,0" VerticalAlignment="Top" Width="97" FontWeight="Bold" FontFamily="Lucida Calligraphy"/>
         <ComboBox Name="Kropstype_Combobox" HorizontalAlignment="Left" Margin="898,344,0,0" VerticalAlignment="Top" Width="209" FontFamily="Lucida Calligraphy">
-            <ComboBoxItem IsSelected="True">Gennemsnitlig</ComboBoxItem>
+            <ComboBoxItem IsSelected="False">Gennemsnitlig</ComboBoxItem>
             <ComboBoxItem>Kraftig</ComboBoxItem>
             <ComboBoxItem>Atletisk</ComboBoxItem>
             <ComboBoxItem>Spinkel</ComboBoxItem>
             <ComboBoxItem>Muskuløs</ComboBoxItem>
             <ComboBoxItem>Buttet</ComboBoxItem>
+            <ComboBoxItem></ComboBoxItem>
         </ComboBox>
         <Label Content="-" HorizontalAlignment="Left" Margin="617,339,0,0" VerticalAlignment="Top" Width="48" HorizontalContentAlignment="Center" RenderTransformOrigin="0.488,-0.598" FontFamily="Lucida Calligraphy" FontWeight="Bold" FontSize="16"/>
         <Label Content="-" HorizontalAlignment="Left" Margin="617,394,0,0" VerticalAlignment="Top" Width="48" HorizontalContentAlignment="Center" FontFamily="Lucida Calligraphy" FontWeight="Bold" FontSize="16"/>

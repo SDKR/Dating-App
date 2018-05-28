@@ -54,14 +54,62 @@ namespace Dating_App.View
 
         private void Søg_Button_Click(object sender, RoutedEventArgs e)
         {
+            if (HøjdeMin_Textbox.Text == "")
+            {
+                ms.Height = 0;
+            }
+            else
+            {
+                ms.Height = int.Parse(HøjdeMin_Textbox.Text);
+            }
+
+            if (HøjdeMax_Textbox.Text == "")
+            {
+                ms.Height1 = 2147483647;
+            }
+            else
+            {
+                ms.Height1 = int.Parse(HøjdeMax_Textbox.Text);
+            }
+
+            if (VægtMin_Textbox.Text == "")
+            {
+                ms.Weight = 0;
+            }
+            else
+            {
+                ms.Weight = int.Parse(VægtMin_Textbox.Text);
+            }
+
+            if (VægtMax_Textbox.Text == "")
+            {
+                ms.Weight1 = 2147483647;
+            }
+            else
+            {
+                ms.Weight1 = int.Parse(VægtMax_Textbox.Text);
+            }
+
+            if (FødselsdagMin_Datepicker.Text == "")
+            {
+                ms.Date = Convert.ToDateTime("1800-01-01");
+            }
+            else
+            {
+                ms.Date = DateTime.Parse(FødselsdagMin_Datepicker.Text);
+            }
+
+            if (FødeelsdagMax_datepicker.Text == "")
+            {
+                ms.Date1 =  Convert.ToDateTime("9000-01-01");
+            }
+            else
+            {
+                ms.Date1 = DateTime.Parse(FødeelsdagMax_datepicker.Text);
+            }
+
             ms.First_name = Fornavn_textbox.Text;
             ms.Last_name = Efternavn_textbox.Text;
-            ms.Height = int.Parse(HøjdeMin_Textbox.Text);
-            ms.Height1 = int.Parse(HøjdeMax_Textbox.Text);
-            ms.Weight = int.Parse(VægtMin_Textbox.Text);
-            ms.Weight1 = int.Parse(VægtMax_Textbox.Text);
-            ms.Date = DateTime.Parse(FødselsdagMin_Datepicker.Text);
-            ms.Date1 = DateTime.Parse(FødeelsdagMax_datepicker.Text);
             ms.Gender = Køn_combobox.Text;
             ms.Seeking = Søger_combobox.Text;
             ms.Status = Status_Combobox.Text;
@@ -70,8 +118,8 @@ namespace Dating_App.View
             ms.Haircolor = Hårfarve_combobox.Text;
             ms.Children = Børn_Combobox.Text;
             ms.Body_Type = Kropstype_Combobox.Text;
+            ms.FK_profile_name = Dating_App.Model.User.CurrentUser.Profile_name;
 
-            
             ResultaterForSøgning_datagrid.ItemsSource = ms.search(ms);
 
         }

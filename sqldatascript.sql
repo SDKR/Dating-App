@@ -79,7 +79,8 @@ INSERT INTO [User] VALUES
 ('LipsPotatoChips', 'Password',getdate(), 1),
 ('RascalRoger', 'Password',getdate(), 1),
 ('RazzleDazzle', 'Password',getdate(), 1),
-('NotASnobRob', 'Password',getdate(), 1)
+('NotASnobRob', 'Password',getdate(), 1),
+('kimbruger69', 'Password',getdate(),1)
 go
 --('LoverBoy69', 'Password',getdate(), 1),
 --('DaGift2Womens', 'Password',getdate(), 1),
@@ -1334,23 +1335,24 @@ go
 --  go
 
 insert into User_Information values
-('Hans','Lassen','1992-02-22','Mand','Sexpartner',1100,'Hanslassen@gmail.com','Gift','Homoseksuel',180,90,'Grønne','Brunt','Ja, udebornde','Muskuløs','Jeg vil udforske min sexualitiy i mit kedelig gifte liv.','Frækfyr42'),
-('Erna','Eriksen','1980-03-24','Kvinde','Forhold',1700,'minernamail@hotmail.com','Skildt','Heteroseksuel',165,80,'Brunne','Lyst','Nej','Slank','Søger en mand som gerne vil have børn.','smukkesøde17'),
-('Frank','Ludzlow','1942-01-21','Mand','Venner',1900,'mingamlemail@hotmail.com','Skildt','Biseksuel',170,85,'Blå','Gråt','Ja, udeboende','Buttet','Søger nogle venner som jeg kan tale med.','Flottefyr'),
-('Inger','Packard','1966-09-14','Kvinde','Sexpartner',2000,'ingermanglersex@gmail.com','Skildt','Heteroseksuel',175,115,'Brunt','Gråt','Nej','Buttet','Leder efter som er med på lidt vildt og frækt','SweetKristy'),
+('Hans','Lassen','1992-02-22','Mand','Sexpartner',1100,'Hanslassen@gmail.com','Gift','Homoseksuel',180,90,'Grøne','Mørkt','Ja udeboende','Muskuløs','Jeg vil udforske min sexualitiy i mit kedelig gifte liv.','Frækfyr42'),
+('Erna','Eriksen','1980-03-24','Kvinde','Forhold',1700,'minernamail@hotmail.com','Skildt','Heteroseksuel',165,80,'Brune','Lyst','Nej','Slank','Søger en mand som gerne vil have børn.','smukkesøde17'),
+('Frank','Ludzlow','1942-01-21','Mand','Venner',1900,'mingamlemail@hotmail.com','Skildt','Biseksuel',170,85,'Blå','Gråt','Ja udeboende','Buttet','Søger nogle venner som jeg kan tale med.','Flottefyr'),
+('Inger','Packard','1966-09-14','Kvinde','Sexpartner',2000,'ingermanglersex@gmail.com','Skildt','Heteroseksuel',175,115,'Mørkt','Gråt','Nej','Buttet','Leder efter som er med på lidt vildt og frækt','SweetKristy'),
 ('Freja','Gade','1988-11-11','Kvinde','Sexpartner',2100,'Frejafræk@gmail.com','Single','Heteroseksuel',165,73,'Blå','Sort','Nej','Atletisk','Kunne godt tænke mig en som vil udforske min krop','KristyHoney'),
-('Angel','Berg','1992-10-14','Kvinde','Forhold',2200,'flottemus@gmail.com','Single','Heteroseksuel',160,76,'Grønne','Brunt','Nej','Gennemsnitlig','Hej','BubblySnowflake'),
-('Emma','Bundgård','1969-12-24','Kvinde','Venner',2300,'Emmabundgård@gmail.com','Skildt','Heteroseksuel',153,73,'Brunne','Sort','Nej','Gennemsnitlig',' ','AngelicPrincessKristy'),
+('Angel','Berg','1992-10-14','Kvinde','Forhold',2200,'flottemus@gmail.com','Single','Heteroseksuel',160,76,'Grøne','Mørkt','Nej','Gennemsnitlig','Hej','BubblySnowflake'),
+('Emma','Bundgård','1969-12-24','Kvinde','Venner',2300,'Emmabundgård@gmail.com','Skildt','Heteroseksuel',153,73,'Brune','Sort','Nej','Gennemsnitlig',' ','AngelicPrincessKristy'),
 ('Ida','Jensen','1993-09-22','Kvinde','Forhold',1200,'idajensen@gmail.com','Single','Heteroseksuel',154,66,'Blå','Sort','Nej','Gennemsnitlig','Leder efter en kærste der vil opleve ting med mig','FairyPrincessKristy'),
-('Anna','Iversen','1997-08-12','Kvinde','Venner',1400,'Annaiversen@gmail.com','Single','Homoseksuel',157,68,'Brunne','Lyst','Nej','Gennemsnitlig','Hej mit navn er anna og jeg kunne godt tænke mig nogle homoseksuel venner at hænge ud med','BabyKristyButterfly'),
-('Alfred','Dahl','1996-06-11','Mand','Sexpartner',2400,'alfreddahl@gmail.com','I forhold','Heteroseksuel',166,76,'Brunne','Lyst','Nej','Gennemsnitlig','Davs kunne godt tænke mig at få lidt mere gang i den.','BamboozledByPaperClips'),
+('Anna','Iversen','1997-08-12','Kvinde','Venner',1400,'Annaiversen@gmail.com','Single','Homoseksuel',157,68,'Brune','Lyst','Nej','Gennemsnitlig','Hej mit navn er anna og jeg kunne godt tænke mig nogle homoseksuel venner at hænge ud med','BabyKristyButterfly'),
+('Alfred','Dahl','1996-06-11','Mand','Sexpartner',2400,'alfreddahl@gmail.com','Forhold','Heteroseksuel',166,76,'Brune','Lyst','Nej','Gennemsnitlig','Davs kunne godt tænke mig at få lidt mere gang i den.','BamboozledByPaperClips'),
 ('Palle','Laan','1991-09-22','Mand','Forhold',2500,'pallelaan@gmail.com','Single','Biseksuel',167,88,'Grønne','Sort','Nej','Gennemsnitlig','Leder efter en partner','SmartyPants'),
-('Anton','Overtraak','1993-07-15','Mand','Sexpartner',2600,'antonovertræk@gmail.com','Single','Homoseksuel',188,98,'Brunne','Lyst','Nej','Gennemsnitlig','Hej, din flottefyr ;)','NerdyNinjaHugs'),
-('Elias','Anderassen','1989-03-19','Mand','Forhold',2700,'eliasanderassen@gmail.com','Single','Heteroseksuel',176,96,'Grønne','Andet','Nej','Gennemsnitlig','Hej, jeg er på udkig efter at dele min hverdage med og har det godt sammen med','LaughingMyAssOff'),
+('Anton','Overtraak','1993-07-15','Mand','Sexpartner',2600,'antonovertræk@gmail.com','Single','Homoseksuel',188,98,'Brune','Lyst','Nej','Gennemsnitlig','Hej, din flottefyr ;)','NerdyNinjaHugs'),
+('Elias','Anderassen','1989-03-19','Mand','Forhold',2700,'eliasanderassen@gmail.com','Single','Heteroseksuel',176,96,'Grøne','Andet','Nej','Gennemsnitlig','Hej, jeg er på udkig efter at dele min hverdage med og har det godt sammen med','LaughingMyAssOff'),
 ('Clare','Jakobsen','1987-04-13','Kvinde','Forhold',2800,'clarejakobsen@gmail.com','Single','Heteroseksuel',174,54,'Blå','Andet','Nej','Spinkel','Leder efter en sød dreng :)','LipsPotatoChips'),
-('Malthe','Bjerregård','1986-01-11','Mand','Venner',2900,'malthebjerregård@gmail.com','Gift','Heteroseksuel',172,87,'Blå','Andet','Ja, Hjemmeboende','Kraftig','Davs der ude, leder efter nogle man kan sidde og hav en bejer med og på samme tid se lidt sport','RascalRoger'),
-('Emil','Carlsen','1987-07-02','Mand','Forhold',3000,'emilcarlsen@gmail.com','Single','Heteroseksuel',169,85,'Brunne','Gråt','Nej','Buttet','Leder en sød dame jeg gerne vil stifte en familie med.','RazzleDazzle'),
-('Alma','Ahmad','1984-08-03','Kvinde','Forhold',3100,'almaahmad@gmail.com','Single','Heteroseksuel',164,81,'Brunne','Sort','Nej','Kraftig','Hej mit navn er alma og jeg vil gerne have børn ja.','NotASnobRob')
+('Malthe','Bjerregård','1986-01-11','Mand','Venner',2900,'malthebjerregård@gmail.com','Gift','Heteroseksuel',172,87,'Blå','Andet','Ja Hjemmeboende','Kraftig','Davs der ude, leder efter nogle man kan sidde og hav en bejer med og på samme tid se lidt sport','RascalRoger'),
+('Emil','Carlsen','1987-07-02','Mand','Forhold',3000,'emilcarlsen@gmail.com','Single','Heteroseksuel',169,85,'Brune','Gråt','Nej','Buttet','Leder en sød dame jeg gerne vil stifte en familie med.','RazzleDazzle'),
+('Alma','Ahmad','1984-08-03','Kvinde','Forhold',3100,'almaahmad@gmail.com','Single','Heteroseksuel',164,81,'Brune','Rødt','Nej','Kraftig','Hej mit navn er alma og jeg vil gerne have børn ja.','NotASnobRob'),
+('Hans','Just','2018-05-28','Mand','Venner',2650,'kimemail@gmail.com','Single','Heteroseksuel',181,96,'Brune','Sort','Ja udeboende','Gennemsnitlig','hej','kimbruger69')
 go
 
 insert into Picture(FK_InfoID, Picture) Values
@@ -1400,10 +1402,6 @@ select * from [Postcode_City]
 select * from [User_Information]
 select * from [Picture]
 select * from [Message]
-
---create index User_information_Index_
---on dbo.User_Information (Birthdate,Gender,Seeking,Status,Sexual_orientation,Children);
---go
 
 DROP PROCEDURE spCreate_New_User
 go
@@ -1523,19 +1521,22 @@ set	[Password] = (@Password)
 end
 go
 
+create index User_information_Index_
+on dbo.User_Information (First_name,Last_name,Birthdate,Gender,Seeking,Status,Sexual_orientation,Height,Weight,Eyecolor,Haircolor,Children,FK_Profile_name);
+go
+
 DROP PROCEDURE spSearch_User_information
 go
 
 CREATE PROCEDURE spSearch_User_information
-	@User_Aktiv int,
 	@First_name nvarchar(50),
 	@Last_name nvarchar(50),
 	@Birthdate1 date,
 	@Birthdate2 date,
 	@Gender nvarchar(50),
 	@Seeking nvarchar(50),
-	@FK_Post_Code1 int,
-	@FK_Post_Code2 int,
+	--@FK_Post_Code1 int,
+	--@FK_Post_Code2 int,
 	@Status nvarchar(50),
 	@Sexual_orientation nvarchar(50),
 	@Height1 int,
@@ -1550,13 +1551,13 @@ CREATE PROCEDURE spSearch_User_information
 as
 begin
 	select * 
-	from User_Information
-	where First_name = @First_name or @First_name is null
-	and Last_name = @Last_name or @Last_name is null
+	from User_Information with(INDEX(User_information_Index_))
+	where First_name Like @First_name or @First_name is null
+	and Last_name Like @Last_name or @Last_name is null
 	and Birthdate between @Birthdate1 and @Birthdate2 or @Birthdate1 is null and @Birthdate2 is null
 	and Gender = @Gender or @Gender is null
 	and Seeking = @Seeking or @Seeking is null
-	and FK_Post_Code between @FK_Post_Code1 and @FK_Post_Code2 or @FK_Post_Code1 is null and @FK_Post_Code2 is null
+	--and FK_Post_Code between @FK_Post_Code1 and @FK_Post_Code2 or @FK_Post_Code1 is null and @FK_Post_Code2 is null
 	and [Status] = @Status or @Status is null
 	and Sexual_orientation = @Sexual_orientation or @Sexual_orientation is null
 	and Height between @Height1 and @Height2 or @Height1 is null and @Height2 is null
@@ -1565,17 +1566,10 @@ begin
 	and Haircolor = @Haircolor or @Haircolor is null
 	and Children = @Children or @Children is null
 	and Body_Type = @Body_Type or @Body_Type is null
-	except 
-	select * 
-	from User_Information, [User]
-	where @FK_Profile_name = FK_Profile_name or User_aktiv = @User_Aktiv
+	and (select [User].User_aktiv from [User] where [User].PK_Profile_name = [User_Information].FK_Profile_name) = 1
+	and not FK_Profile_name = @FK_Profile_name
 end
 go
-
-	select * 
-	from User_Information
-	where First_name = 'hans' or First_name is  null
-	and Eyecolor = 'Grønne' or Eyecolor is null
 
 --select b.FK_Profile_name, b.First_name as bTable_First_name, b.Last_name, b.Birthdate, b.Gender,b.Seeking,b.FK_Post_Code,b.Email,b.[Status], b.Sexual_orientation,b.Height,b.[Height],b.[Weight],b.Eyecolor,b.Haircolor,b.Children,b.Body_Type,b.About_Yourself,b.FK_Profile_name 
 --from User_Information a, User_Information b
@@ -1588,11 +1582,9 @@ go
 --from User_Information a, User_Information b
 --where b.FK_Profile_name = 'Frækfyr42'
 
-
 --a.Sexual_orientation = b.Sexual_orientation
 --and user = Sexual_orientation
 --and Gender = Gender
-
 
 -- Få alle schemanames Objectnames indexnames med keys og indexs
 --
