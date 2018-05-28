@@ -39,15 +39,20 @@ namespace Dating_App
 
         private void LogInd_Button_Click(object sender, RoutedEventArgs e)
         {
-
             User user = new User();
             userobject.Profile_name = Brugernavn_Textbox.Text;
             userobject.Password = Password_PasswordBox.Password;
-            user = userobject.login(userobject)[0];
 
-            Dating_App.Model.User.CurrentUser = user;
-
-            Frame.Content = new Dating_App.View.HomePage();
+            if (userobject.login(userobject).Count != 0)
+            {
+                user = userobject.login(userobject)[0];
+                Dating_App.Model.User.CurrentUser = user;
+                Frame.Content = new Dating_App.View.HomePage();
+            }
+            else
+            {
+                MessageBox.Show("Bruger findes ikke");
+            }
 
         }
 
@@ -83,8 +88,13 @@ namespace Dating_App
             //           select getPostcodes;
             //Postnr_label.Content = item;
 
-            //var city = getPostcode.Where(getPostcodes => getPostcodes.GetPostCode == int.Parse(PostNummer_TextBox.Text));
-            //Console.WriteLine(city);
+            var city = getPostcode.Where(getPostcodes => getPostcodes.GetPostCode == int.Parse(PostNummer_TextBox.Text));
+            Console.WriteLine(city);
+
+            foreach (var item in city)
+            {
+                Console.WriteLine(item.City);
+            }
         }
     }
 }

@@ -192,6 +192,9 @@ namespace Dating_App.View
             {
                 case MessageBoxResult.Yes:
 
+                    UserObject.deactivateUser(Dating_App.Model.User.CurrentUser);
+                    (Application.Current.MainWindow.FindName("Frame") as Frame).Content = null;
+
 
                     break;
 

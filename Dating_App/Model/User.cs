@@ -282,6 +282,11 @@ namespace Dating_App.Model
 
         }
 
+        public void deactivateUser(User user)
+        {
+            FPDB.deactivateUser(user);
+        }
+
         public List<User> login(User user)
         {
             return FPDB.login(user);
