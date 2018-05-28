@@ -179,6 +179,24 @@ namespace Dating_App.Model
             set { _FK_Profile_name = value; }
         }
 
+        private int _GetPostCode;
+
+        public int GetPostCode
+        {
+            get { return _GetPostCode; }
+            set { _GetPostCode = value; }
+        }
+
+        private string _City;
+
+        public string City
+        {
+            get { return _City; }
+            set { _City = value; }
+        }
+
+
+
         // Takes a user and returns reccomened users based on age.
         public List<User> getReccomendedUsers(User user)
         {
@@ -188,6 +206,11 @@ namespace Dating_App.Model
         public List<User> search(MatchingSeeking MS)
         {
             return MDBC.search(MS);
+        }
+
+        public List<MatchingSeeking> getPostCodeCity()
+        {
+            return MDBC.getPostCodeCity();
         }
 
     }
