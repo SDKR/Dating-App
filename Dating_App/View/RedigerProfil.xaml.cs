@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Dating_App.Model;
+using System.Data;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace Dating_App.View
 {
@@ -22,6 +27,11 @@ namespace Dating_App.View
     public partial class RedigerProfil : Page
     {
         Model.User UserObject = new Model.User();
+        Images imageObj = new Images();
+
+        string ImageString; // strName
+        string ImageName; // imageName
+
         public RedigerProfil()
         {
             InitializeComponent();
@@ -96,6 +106,81 @@ namespace Dating_App.View
             UserObject.Profile_name = Dating_App.Model.User.CurrentUser.Profile_name;
             UserObject.Password = Password_Textbox.Text;
             UserObject.updateUser(UserObject);
+
+        }
+
+        /*
+         * Select / Save profile image
+         */
+
+            // select picture from local pc Using filediaglog
+        private void btnBrowse_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                FileDialog fldlg = new OpenFileDialog();
+                fldlg.InitialDirectory = Environment.SpecialFolder.MyPictures.ToString();
+                fldlg.Filter = "Image File (*.jpg;*.bmp;*.png)|*.jpg;*.bmp;*.png";
+                fldlg.ShowDialog();
+                {
+                    ImageString = fldlg.SafeFileName;
+                    ImageName = fldlg.FileName;
+                    ImageSourceConverter isc = new ImageSourceConverter();
+                    image.SetValue(Image.SourceProperty, isc.ConvertFromString(ImageName));
+                }
+                fldlg = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        // Save selected picture to database
+        private void BtnSaveImage_Click(object sender, RoutedEventArgs e)
+        {
+            imageObj.ImageName = ImageName;
+            imageObj.ImageString = ImageString;
+            imageObj.UserProfile = Dating_App.Model.User.CurrentUser.Profile_name;
+
+            if (imageObj.saveImage(imageObj))
+            {
+                MessageBox.Show("Billedet er gemt");
+            }
+            else
+            {
+                MessageBox.Show("Fejl");
+            }
+        }
+
+        private void LoadPicture(object sender, RoutedEventArgs e)
+        {
+            DataSet ds = imageObj.getImage(Dating_App.Model.User.CurrentUser.Profile_name);
+            DataTable dataTable = ds.Tables[0];
+            foreach (DataRow row in dataTable.Rows)
+            {
+                if (row[0].ToString() != null)
+                {
+                    //Store binary data read from the database in a byte array
+                    byte[] blob = (byte[])row[2];
+                    MemoryStream stream = new MemoryStream();
+                    stream.Write(blob, 0, blob.Length);
+                    stream.Position = 0;
+
+                    System.Drawing.Image img = System.Drawing.Image.FromStream(stream);
+                    BitmapImage bi = new BitmapImage();
+                    bi.BeginInit();
+
+                    MemoryStream ms = new MemoryStream();
+                    img.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                    ms.Seek(0, SeekOrigin.Begin);
+                    bi.StreamSource = ms;
+                    bi.EndInit();
+                    image1.Source = bi;
+                    // skift image1 til navnet på dit image dims i wpf
+
+                }
+            }
 
         }
     }
