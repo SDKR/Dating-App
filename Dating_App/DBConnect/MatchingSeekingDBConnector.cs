@@ -78,15 +78,14 @@ namespace Dating_App.DBConnect
         {
             SqlCommand User_Seach = new SqlCommand("spSearch_User_information", connection);
             User_Seach.CommandType = CommandType.StoredProcedure;
-            User_Seach.Parameters.AddWithValue("User_Aktiv", MS.bit);
             User_Seach.Parameters.AddWithValue("First_name", MS.First_name);
             User_Seach.Parameters.AddWithValue("Last_name", MS.Last_name);
             User_Seach.Parameters.AddWithValue("Birthdate1", MS.Date);
             User_Seach.Parameters.AddWithValue("Birthdate2", MS.Date1);
             User_Seach.Parameters.AddWithValue("Gender", MS.Gender);
             User_Seach.Parameters.AddWithValue("Seeking", MS.Seeking);
-            User_Seach.Parameters.AddWithValue("FK_Post_Code1", MS.Postcode);
-            User_Seach.Parameters.AddWithValue("FK_Post_Code2", MS.Postcode1);
+            //User_Seach.Parameters.AddWithValue("@FK_Post_Code1", 2650);
+            //User_Seach.Parameters.AddWithValue("@FK_Post_Code2", 2650);
             User_Seach.Parameters.AddWithValue("Status", MS.Status);
             User_Seach.Parameters.AddWithValue("Sexual_orientation", MS.SexualOrientation);
             User_Seach.Parameters.AddWithValue("Height1", MS.Height);
