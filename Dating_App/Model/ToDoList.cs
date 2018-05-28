@@ -11,17 +11,11 @@ namespace Dating_App.Model
 
 
         // Lav en lækker Chat(True/false)
-        // Lav en ny Page til "View Profil"
+        // <DONE> Lav en ny Page til "View Profil" <DONE>
         // Tjek for Crash
         // "Like Buttom"
         // Orden og columns i datagrids
         // <DONE> Indsæt Billede ved Beskeder_Page (Profilnavn_TB) <DONE>
-
-
-
-
-
-
 
 
 
