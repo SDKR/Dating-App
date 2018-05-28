@@ -10,7 +10,7 @@ namespace Dating_App.Model
     {
 
 
-        // Lav en lækker Chat(True/false)
+        // <DONE> Lav en lækker Chat(True/false)<DONE>
         // <DONE> Lav en ny Page til "View Profil" <DONE>
         // Tjek for Crash
         // "Like Buttom"
