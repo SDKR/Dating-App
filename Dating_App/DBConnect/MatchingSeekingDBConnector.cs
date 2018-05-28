@@ -80,7 +80,6 @@ namespace Dating_App.DBConnect
             User_Seach.CommandType = CommandType.StoredProcedure;
             User_Seach.Parameters.AddWithValue("First_name", MS.First_name);
             User_Seach.Parameters.AddWithValue("Last_name", MS.Last_name);
-            Console.WriteLine(MS.Last_name);
             User_Seach.Parameters.AddWithValue("Birthdate1", MS.Date);
             User_Seach.Parameters.AddWithValue("Birthdate2", MS.Date1);
             User_Seach.Parameters.AddWithValue("Gender", MS.Gender);

@@ -55,6 +55,15 @@ namespace Dating_App.Model
             set { _message = value; }
         }
 
+        private bool _MyMessage;
+
+        public bool MyMessage
+        {
+            get { return _MyMessage; }
+            set { _MyMessage = value; }
+        }
+
+
         /*
          * Message Methods 
          */
@@ -62,7 +71,22 @@ namespace Dating_App.Model
         // Returns The entire conversation between two given users
         public List<Messages> getConversation (string user1, string user2)
         {
-            return MDBC.getMessages(user1, user2);
+
+            List<Messages> modify = MDBC.getMessages(user1, user2);
+
+            foreach (var item in modify)
+            {
+                if (item.Sender == user1)
+                {
+                    item.MyMessage = true;
+                }
+                else
+                {
+                    item.MyMessage = false;
+                }
+            }
+
+            return modify;
         }
 
         // Saves message and returns boolean to say wether it was successful
