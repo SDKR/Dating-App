@@ -184,6 +184,21 @@ namespace Dating_App.View
             }
         }
 
-       
+
+        private void Deaktiver_Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Er du sikker på du vil Deaktivere din bruger?", "Bekræft", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+
+
+                    break;
+
+                case MessageBoxResult.No:
+
+                    break;
+            }
+        }
     }
 }
