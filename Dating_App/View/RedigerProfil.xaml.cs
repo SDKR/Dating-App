@@ -127,7 +127,7 @@ namespace Dating_App.View
                     ImageString = fldlg.SafeFileName;
                     ImageName = fldlg.FileName;
                     ImageSourceConverter isc = new ImageSourceConverter();
-                    image.SetValue(Image.SourceProperty, isc.ConvertFromString(ImageName));
+                    image1.SetValue(Image.SourceProperty, isc.ConvertFromString(ImageName));
                 }
                 fldlg = null;
             }
