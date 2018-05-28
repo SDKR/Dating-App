@@ -25,7 +25,7 @@
         <DataGrid Name="CurrentChat" HorizontalGridLinesBrush="#FFBDB5B5" VerticalGridLinesBrush="#FFF0EDED"  HorizontalAlignment="Left" Height="312" Margin="409,242,0,0" VerticalAlignment="Top" Width="668" ItemsSource="{Binding CurrentConversationList}" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Profil navn" Binding="{Binding Profile_name}"/>
-                <DataGridTextColumn Header="Konto nr." Binding="{Binding }"/>
+                <DataGridTextColumn Header="Besked" Binding="{Binding Message}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Chat" HorizontalAlignment="Left" Margin="409,201,0,0" VerticalAlignment="Top" Width="668" Height="41" Background="#FFD4CDC5" FontFamily="Lucida Calligraphy" FontSize="22" HorizontalContentAlignment="Center"/>
