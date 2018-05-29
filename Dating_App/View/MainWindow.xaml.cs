@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Dating_App.Model;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Dating_App
 {
@@ -24,10 +27,12 @@ namespace Dating_App
         User userobject = new User();
         Messages message = new Messages();
         MatchingSeeking ms = new MatchingSeeking();
+        DataSet ds = new DataSet();
 
         public MainWindow()
         {
             InitializeComponent();
+            Conn_Til_ComboBox();
             Birthday_DatePicker.SelectedDate = DateTime.Today;
         }
 
@@ -75,22 +80,41 @@ namespace Dating_App
             }
         }
 
-        private void PostNummer_TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        public void Conn_Til_ComboBox()
         {
-            // Not used 
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
+            SqlDataAdapter data = new SqlDataAdapter("select PK_Post_code, City from Postcode_City", connection);
+            data.Fill(ds, "Postcode_City");
+            PostNummer_ComboBox.ItemsSource = ds.Tables[0].DefaultView;
+            PostNummer_ComboBox.DisplayMemberPath = ds.Tables[0].Columns["PK_Post_code"].ToString();
+            PostNummer_ComboBox.SelectedValue = ds.Tables[0].Columns["PK_Post_code"].ToString();
         }
 
-        private void PostNummer_TextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (!Char.IsDigit((char)KeyInterop.VirtualKeyFromKey(e.Key)) & e.Key != Key.Back | e.Key == Key.Space)
-            {
-                e.Handled = true;
-                MessageBox.Show("Post nummeret kan kun bestå af tal.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+        //private void PostNummer_TextBox_KeyUp(object sender, KeyEventArgs e)
+        //{
+        //    if (!Char.IsDigit((char)KeyInterop.VirtualKeyFromKey(e.Key)) & e.Key != Key.Back | e.Key == Key.Space)
+        //    {
+        //        e.Handled = true;
+        //        MessageBox.Show("Post nummeret kan kun bestå af tal.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+        //    }
 
+        //    List<MatchingSeeking> getPostcode = ms.getPostCodeCity();
+
+        //    var city = getPostcode.Where(getPostcodes => getPostcodes.GetPostCode == int.Parse(PostNummer_ComboBox.Text));
+        //    Console.WriteLine(city);
+
+        //    foreach (var item in city)
+        //    {
+        //        Postnr_label.Content = item.City;
+        //    }
+        //}
+
+
+        private void PostNummer_ComboBox_DropDownClosed(object sender, EventArgs e)
+        {
             List<MatchingSeeking> getPostcode = ms.getPostCodeCity();
 
-            var city = getPostcode.Where(getPostcodes => getPostcodes.GetPostCode == int.Parse(PostNummer_TextBox.Text));
+            var city = getPostcode.Where(getPostcodes => getPostcodes.GetPostCode == int.Parse(PostNummer_ComboBox.Text));
             Console.WriteLine(city);
 
             foreach (var item in city)
