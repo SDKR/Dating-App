@@ -56,11 +56,11 @@ namespace Dating_App.DBConnect
             }
         }
 
-        public int likeCounter(User user)
+        public int likeCounter(string profilename)
         {
             // Get account balance
             SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("Select COUNT(Liked) from Likes where Liked = " + user.Profile_name + "group by Liked ", sqlConn);
+            SqlCommand cmd = new SqlCommand("Select COUNT(Liked) from Likes where Liked = '" + profilename + "'group by Liked ", sqlConn);
 
             try
             {
@@ -82,12 +82,12 @@ namespace Dating_App.DBConnect
 
         }
 
-        public List<Like> getMyLikes(User user)
+        public List<Like> getMyLikes(string profilename)
         {
             //SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
             //SqlCommand cmd = new SqlCommand("Select Liked, [Like_By], Creation_Date from Likes where Liked = " + user.Profile_name + " ", sqlConn);
 
-            SqlCommand cmd = new SqlCommand("Select Liked, [Like_By], Creation_Date from Likes where Liked = " + user.Profile_name + " ", connection);
+            SqlCommand cmd = new SqlCommand("Select Liked, Like_By, Creation_Date from Likes where Liked = '" + profilename + "' ", connection);
             connection.Open();
             SqlDataAdapter adapt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -96,17 +96,15 @@ namespace Dating_App.DBConnect
 
             var Like_list = ds.Tables[0].AsEnumerable().Select(dataRow => new Like
             {
-                PK_Like_ID = dataRow.Field<int>("PK_Like_ID"),
+                //PK_Like_ID = dataRow.Field<int>("PK_Like_ID"),
                 Liker = dataRow.Field<string>("Liked"),
-                Like_by = dataRow.Field<string>("[Like_By]"),
-                CreationTime = dataRow.Field<DateTime>("Creation_Date"),
+                Like_by = dataRow.Field<string>("Like_By"),
+                CreationTime = dataRow.Field<DateTime>("Creation_Date")
 
             }).ToList();
 
             return Like_list;
 
         }
-    }
-
     }
 }

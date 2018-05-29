@@ -9,7 +9,7 @@
          WindowStartupLocation="Manual"
         Left="500" Top="100">
     <Grid Margin="0,0,-6.4,-0.6">
-        <DataGrid HorizontalAlignment="Left" Height="371" VerticalAlignment="Top" Width="400" AlternationCount="2">
+        <DataGrid Name="Datagrid" HorizontalAlignment="Left" Height="371" VerticalAlignment="Top" Width="400" AlternationCount="2" AutoGenerateColumns="False">
             <DataGrid.RowStyle>
                 <Style TargetType="{x:Type DataGridRow}">
                     <Style.Triggers>
@@ -23,8 +23,8 @@
                 </Style>
             </DataGrid.RowStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Profil navn"/>
-                <DataGridTextColumn Header="Dato" Width="*" FontFamily="Lucida Calligraphy" FontSize="14"/>
+                <DataGridTextColumn Header="Profil navn" Binding="{Binding Liked}"/>
+                <DataGridTextColumn Header="Dato" Width="*" Binding="{Binding Creation_Date}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

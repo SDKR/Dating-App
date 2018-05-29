@@ -27,10 +27,14 @@ namespace Dating_App.View
         User selecteduser = new User();
         Images imageObj = new Images();
         ProfileViewPage PVP = new ProfileViewPage();
+        Like like = new Like();
+
 
         public SøgPage()
         {
             InitializeComponent();
+
+
         }
 
         private void Rediger_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
@@ -154,8 +158,10 @@ namespace Dating_App.View
             PVP.KropsTypeData_ProfilPage_label.Content = selecteduser.Body_Type;
             PVP.PostNummerData_ProfilPage_label.Content = selecteduser.Postcode;
             PVP.BeskrivDigSelv_ProfilPage_TextBox.Text = selecteduser.About_yourself;
+            PVP.SynesGodtOm_Label.Content = like.likeCounter(selecteduser.FK_profile_name);
 
             LoadPicture();
+
 
             (Application.Current.MainWindow.FindName("Frame") as Frame).Content = PVP;
         }
