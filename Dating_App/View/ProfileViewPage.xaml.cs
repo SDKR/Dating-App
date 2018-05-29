@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Dating_App.Model;
 
 namespace Dating_App.View
 {
@@ -20,9 +21,12 @@ namespace Dating_App.View
     /// </summary>
     public partial class ProfileViewPage : Page
     {
+        Like like = new Like();
+        SeSynesGodtOm_Window SW = new SeSynesGodtOm_Window();
         public ProfileViewPage()
         {
             InitializeComponent();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -32,7 +36,7 @@ namespace Dating_App.View
 
         private void SeSynesGodtOm_Button_Click(object sender, RoutedEventArgs e)
         {
-            SeSynesGodtOm_Window SW = new SeSynesGodtOm_Window();
+            SW.Datagrid.ItemsSource = like.getMyLikes(Username_ProfilPage_Label.Content.ToString());
             SW.Show();
         }
     }

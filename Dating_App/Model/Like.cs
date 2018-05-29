@@ -44,9 +44,9 @@ namespace Dating_App.Model
 
         LikeDBConnector LDB = new LikeDBConnector();
 
-        public List<Like> getMyLikes(User user)
+        public List<Like> getMyLikes(string profilename)
         {
-            return LDB.getMyLikes(user);
+            return LDB.getMyLikes(profilename);
         }
 
         public Boolean LikeSomeone(string liked, string liked_By)
@@ -54,9 +54,9 @@ namespace Dating_App.Model
             return LDB.likeSomeone(liked, liked_By);
         }
 
-        public int likeCounter(User user)
+        public int likeCounter(string profilename)
         {
-            return LDB.likeCounter(user);
+            return LDB.likeCounter(profilename);
         }
 
     }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Dating_App.Model;
 
 namespace Dating_App.View
 {
@@ -19,9 +20,11 @@ namespace Dating_App.View
     /// </summary>
     public partial class SeSynesGodtOm_Window : Window
     {
+        Like like = new Like();
         public SeSynesGodtOm_Window()
         {
             InitializeComponent();
+           
         }
     }
 }
