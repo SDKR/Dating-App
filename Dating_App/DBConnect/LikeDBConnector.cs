@@ -107,8 +107,4 @@ namespace Dating_App.DBConnect
 
         }
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 6c2a1b6f8d336e8c31038bff5453cc4c5ff5ed7e
 }

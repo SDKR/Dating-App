@@ -42,7 +42,6 @@ namespace Dating_App.View
 
             UserName_RedigerProfil_label.Content = Dating_App.Model.User.CurrentUser.Profile_name;
             OmMig_RedigerPage_Label.Content = "Om " + Dating_App.Model.User.CurrentUser.Profile_name;
-
             FornavnData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.First_name;
             EfternavnData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Last_name;
             fødselsdag_datepicker.Text = Dating_App.Model.User.CurrentUser.Date.ToString();
@@ -212,12 +211,10 @@ namespace Dating_App.View
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
             SqlDataAdapter data = new SqlDataAdapter("select PK_Post_code, City from Postcode_City", connection);
             data.Fill(ds, "Postcode_City");
-        }
-        private void PostNummerData_ProfilPage_Combobox_DropDownOpened(object sender, EventArgs e)
-        {
             PostNummerData_ProfilPage_Combobox.ItemsSource = ds.Tables[0].DefaultView;
             PostNummerData_ProfilPage_Combobox.DisplayMemberPath = ds.Tables[0].Columns["PK_Post_code"].ToString();
             PostNummerData_ProfilPage_Combobox.SelectedValue = ds.Tables[0].Columns["PK_Post_code"].ToString();
+            PostNummerData_ProfilPage_Combobox.SelectedIndex = Dating_App.Model.User.CurrentUser.Postcode;
         }
     }
 }

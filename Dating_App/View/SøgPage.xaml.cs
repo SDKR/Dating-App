@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Dating_App.Model;
 using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 using System.IO;
 
 namespace Dating_App.View
@@ -28,11 +30,12 @@ namespace Dating_App.View
         Images imageObj = new Images();
         ProfileViewPage PVP = new ProfileViewPage();
         Like like = new Like();
-
+        DataSet ds = new DataSet();
 
         public SøgPage()
         {
             InitializeComponent();
+            Conn_Til_ComboBox();
 
 
         }
@@ -60,6 +63,21 @@ namespace Dating_App.View
         private void Beskeder_SøgPage_Button_Click(object sender, RoutedEventArgs e)
         {
             (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.BeskederPage();
+        }
+
+        public void Conn_Til_ComboBox()
+        {
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
+            SqlDataAdapter data = new SqlDataAdapter("select PK_Post_code, City from Postcode_City", connection);
+            data.Fill(ds, "Postcode_City");
+            PostnrMin_ComboBox.ItemsSource = ds.Tables[0].DefaultView;
+            PostnrMin_ComboBox.DisplayMemberPath = ds.Tables[0].Columns["PK_Post_code"].ToString();
+            PostnrMin_ComboBox.SelectedValue = ds.Tables[0].Columns["PK_Post_code"].ToString();
+
+            PostnrMax_ComboBox.ItemsSource = ds.Tables[0].DefaultView;
+            PostnrMax_ComboBox.DisplayMemberPath = ds.Tables[0].Columns["PK_Post_code"].ToString();
+            PostnrMax_ComboBox.SelectedValue = ds.Tables[0].Columns["PK_Post_code"].ToString();
+
         }
 
         private void Søg_Button_Click(object sender, RoutedEventArgs e)
@@ -100,6 +118,24 @@ namespace Dating_App.View
                 ms.Weight1 = int.Parse(VægtMax_Textbox.Text);
             }
 
+            if (PostnrMin_ComboBox.Text == "")
+            {
+                ms.Postcode = 1000;
+            }
+            else
+            {
+                ms.Postcode = int.Parse(PostnrMin_ComboBox.Text);
+            }
+
+            if (PostnrMax_ComboBox.Text == "")
+            {
+                ms.Postcode1 = 9990;
+            }
+            else
+            {
+                ms.Postcode1 = int.Parse(PostnrMax_ComboBox.Text);
+            }
+
             if (FødselsdagMin_Datepicker.Text == "")
             {
                 ms.Date = Convert.ToDateTime("1800-01-01");
@@ -123,6 +159,7 @@ namespace Dating_App.View
             ms.Gender = Køn_combobox.Text;
             ms.Seeking = Søger_combobox.Text;
             ms.Status = Status_Combobox.Text;
+            ms.Postcode1 = int.Parse(PostnrMax_ComboBox.Text);
             ms.SexualOrientation = IntereseretI_Combobox.Text;
             ms.Eyecolor = Øjenfarve_combobox.Text;
             ms.Haircolor = Hårfarve_combobox.Text;
