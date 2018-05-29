@@ -17,19 +17,20 @@ namespace Dating_App.DBConnect
         public List<User> getReccomendedUsers(User user)
         {
             string biseksuelsnyd = "";
+            string usergendervikerikke = "";
             if (user.SexualOrientation == "Heteroseksuel" && user.Gender == "Mand")
             {
-                user.Gender = "Kvinde";
+                usergendervikerikke = "Kvinde";
                 biseksuelsnyd = "Biseksuel";
             }
             else if (user.SexualOrientation == "Heteroseksuel" && user.Gender == "Kvinde")
             {
-                user.Gender = "Mand";
+                usergendervikerikke = "Mand";
                 biseksuelsnyd = "Biseksuel";
             }
             else if (user.SexualOrientation == "Biseksuel")
             {
-                user.Gender = "nd";
+                usergendervikerikke = "nd";
                 biseksuelsnyd = "Heterosesuel";
             }
             else if (user.SexualOrientation == "Homoseksuel")
@@ -40,7 +41,7 @@ namespace Dating_App.DBConnect
             SqlCommand cmd = new SqlCommand("spSearch_User", connection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("FK_Profile_name", user.Profile_name);
-            cmd.Parameters.AddWithValue("Gender", user.Gender);
+            cmd.Parameters.AddWithValue("Gender", usergendervikerikke);
             cmd.Parameters.AddWithValue("Sexual_orientationSynd", biseksuelsnyd);
             connection.Open();
             SqlDataAdapter adapt = new SqlDataAdapter(cmd);

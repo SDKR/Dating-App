@@ -62,6 +62,14 @@ create table Picture(
 )
 go
 
+create table Likes(
+	PK_Like_ID int identity PRIMARY KEY not null,
+	Liked nvarchar(50) not null,
+	FOREIGN KEY (Liked) REFERENCES [User](PK_Profile_name),
+	[Like_By] nvarchar(50) not null
+	FOREIGN KEY (Like_By) REFERENCES [User](PK_Profile_name),
+)
+
 INSERT INTO [User] VALUES
 ('Frækfyr42','Password',getdate(), 1),
 ('smukkesøde17', 'Password',getdate(), 1),
@@ -79,9 +87,39 @@ INSERT INTO [User] VALUES
 ('LipsPotatoChips', 'Password',getdate(), 1),
 ('RascalRoger', 'Password',getdate(), 1),
 ('RazzleDazzle', 'Password',getdate(), 1),
-('NotASnobRob', 'Password',getdate(), 1),
-('kimbruger69', 'Password',getdate(),1)
+('NotASnobRob', 'Password',getdate(), 1)
 go
+
+INSERT INTO Likes VALUES
+('Frækfyr42','smukkesøde17'),
+('smukkesøde17','Frækfyr42'),
+('Frækfyr42','FairyPrincessKristy'),
+('smukkesøde17','FairyPrincessKristy'),
+('Frækfyr42','RascalRoger'),
+('smukkesøde17','RascalRoger'),
+('smukkesøde17','NotASnobRob'),
+('smukkesøde17','LipsPotatoChips'),
+('FairyPrincessKristy','Frækfyr42'),
+('FairyPrincessKristy','smukkesøde17'),
+('FairyPrincessKristy','RascalRoger'),
+('FairyPrincessKristy','NotASnobRob'),
+('FairyPrincessKristy','LipsPotatoChips'),
+('RascalRoger','Frækfyr42'),
+('Frækfyr42','NotASnobRob'),
+('RascalRoger','Frækfyr42'),
+('RascalRoger','smukkesøde17'),
+('RascalRoger','FairyPrincessKristy'),
+('RascalRoger','NotASnobRob'),
+('RascalRoger','LipsPotatoChips'),
+('NotASnobRob','Frækfyr42'),
+('NotASnobRob','smukkesøde17'),
+('NotASnobRob','FairyPrincessKristy'),
+('LipsPotatoChips','Frækfyr42'),
+('LipsPotatoChips','smukkesøde17'),
+('LipsPotatoChips','FairyPrincessKristy'),
+('LipsPotatoChips','RascalRoger')
+go
+
 --('LoverBoy69', 'Password',getdate(), 1),
 --('DaGift2Womens', 'Password',getdate(), 1),
 --('justTHE1fourU', 'Password',getdate(), 1),
@@ -1351,8 +1389,7 @@ insert into User_Information values
 ('Clare','Jakobsen','1987-04-13','Kvinde','Forhold',2800,'clarejakobsen@gmail.com','Single','Heteroseksuel',174,54,'Blå','Andet','Nej','Spinkel','Leder efter en sød dreng :)','LipsPotatoChips'),
 ('Malthe','Bjerregård','1986-01-11','Mand','Venner',2900,'malthebjerregård@gmail.com','Gift','Heteroseksuel',172,87,'Blå','Andet','Ja Hjemmeboende','Kraftig','Davs der ude, leder efter nogle man kan sidde og hav en bejer med og på samme tid se lidt sport','RascalRoger'),
 ('Emil','Carlsen','1987-07-02','Mand','Forhold',3000,'emilcarlsen@gmail.com','Single','Heteroseksuel',169,85,'Brune','Gråt','Nej','Buttet','Leder en sød dame jeg gerne vil stifte en familie med.','RazzleDazzle'),
-('Alma','Ahmad','1984-08-03','Kvinde','Forhold',3100,'almaahmad@gmail.com','Single','Heteroseksuel',164,81,'Brune','Rødt','Nej','Kraftig','Hej mit navn er alma og jeg vil gerne have børn ja.','NotASnobRob'),
-('Hans','Just','2018-05-28','Mand','Venner',2650,'kimemail@gmail.com','Single','Heteroseksuel',181,96,'Brune','Sort','Ja udeboende','Gennemsnitlig','hej','kimbruger69')
+('Alma','Ahmad','1984-08-03','Kvinde','Forhold',3100,'almaahmad@gmail.com','Single','Heteroseksuel',164,81,'Brune','Rødt','Nej','Kraftig','Hej mit navn er alma og jeg vil gerne have børn ja.','NotASnobRob')
 go
 
 insert into Picture(FK_InfoID, Picture) Values
@@ -1396,6 +1433,9 @@ insert into [Message] Values
 ('SmartyPants','smukkesøde17','Hej Erna, det vil jeg meget gerne. Jeg tænkte på om vi måske skulle mødes over en kopkaffe så vi bedre kan lære hinanden at kende.'),
 ('AngelicPrincessKristy','BabyKristyButterfly','hej')
 go
+
+select PK_Post_code, City
+from Postcode_City
 
 select * from [User]
 select * from [Postcode_City]
@@ -1570,6 +1610,10 @@ begin
 	and not FK_Profile_name = @FK_Profile_name
 end
 go
+
+DROP PROCEDURE sp
+go
+
 
 --select b.FK_Profile_name, b.First_name as bTable_First_name, b.Last_name, b.Birthdate, b.Gender,b.Seeking,b.FK_Post_Code,b.Email,b.[Status], b.Sexual_orientation,b.Height,b.[Height],b.[Weight],b.Eyecolor,b.Haircolor,b.Children,b.Body_Type,b.About_Yourself,b.FK_Profile_name 
 --from User_Information a, User_Information b

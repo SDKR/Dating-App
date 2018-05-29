@@ -21,6 +21,7 @@ namespace Dating_App.Model
         // fix fødselsdag på opret siden <Fixed? Tjek efter jannik har kigget på det>
         // redigerPage Combobox( skal udfyldes med data)
         // datagrids indhold rund omkring
+        // fix combobox postnummer til dropdown
 
     }
 }

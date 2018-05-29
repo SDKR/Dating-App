@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Dating_App.Model;
 using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 using System.IO;
 using System.Drawing.Imaging;
 
@@ -53,7 +55,7 @@ namespace Dating_App.View
             HairColor_Combobox.Text = Dating_App.Model.User.CurrentUser.Haircolor;
             Børn_Combobox.Text = Dating_App.Model.User.CurrentUser.Children;
             KropsType_Combobox.Text = Dating_App.Model.User.CurrentUser.Body_Type;
-            PostNummerData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Postcode.ToString();
+            PostNummerData_ProfilPage_Combobox.Text = Dating_App.Model.User.CurrentUser.Postcode.ToString();
             BeskrivDigSelv_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.About_yourself;
             Email_Textbox.Text = Dating_App.Model.User.CurrentUser.Email;
             Password_Textbox.Text = Dating_App.Model.User.CurrentUser.Password;
@@ -100,7 +102,7 @@ namespace Dating_App.View
             UserObject.Haircolor = HairColor_Combobox.Text;
             UserObject.Children = Børn_Combobox.Text;
             UserObject.Body_Type = KropsType_Combobox.Text;
-            UserObject.Postcode = int.Parse(PostNummerData_ProfilPage_TextBox.Text);
+            UserObject.Postcode = int.Parse(PostNummerData_ProfilPage_Combobox.Text);
             UserObject.About_yourself = BeskrivDigSelv_ProfilPage_TextBox.Text;
             UserObject.Email = Email_Textbox.Text;
             UserObject.FK_profile_name = Dating_App.Model.User.CurrentUser.Profile_name;
@@ -202,6 +204,14 @@ namespace Dating_App.View
 
                     break;
             }
+        }
+
+        private void PostNummerData_ProfilPage_TextBox_PreviewKeyUp(object sender, KeyEventArgs e)
+        {
+            //SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
+            //SqlDataAdapter data = new SqlDataAdapter("select PK_Post_code, City from Postcode_City", connection);
+            //DataSet ds = new DataSet();
+            //data.Fill(ds,)
         }
     }
 }
