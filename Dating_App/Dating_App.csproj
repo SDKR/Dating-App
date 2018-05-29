@@ -63,11 +63,14 @@
     <Compile Include="DBConnect\LikeDBConnector.cs" />
     <Compile Include="DBConnect\MatchingSeekingDBConnector.cs" />
     <Compile Include="DBConnect\MessageDBConnector.cs" />
+    <Compile Include="HomePage.xaml.cs" />
+    <Compile Include="Like.cs" />
     <Compile Include="Model\Images.cs" />
     <Compile Include="Model\Like.cs" />
     <Compile Include="Model\MatchingSeeking.cs" />
     <Compile Include="Model\Messages.cs" />
     <Compile Include="Model\ToDoList.cs" />
+    <Compile Include="ProfileViewPage.xaml.cs" />
     <Compile Include="View\BeskederPage.xaml.cs">
       <DependentUpon>BeskederPage.xaml</DependentUpon>
     </Compile>
