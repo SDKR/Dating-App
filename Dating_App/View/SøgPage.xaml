@@ -30,6 +30,7 @@
                     </Style.Triggers>
                 </Style>
             </DataGrid.RowStyle>
+            
         </DataGrid>
         <Label Content="Resultater for din søgning" HorizontalAlignment="Left" Margin="36,202,0,0" VerticalAlignment="Top" Width="451" Height="44" Background="#FFD4CDC5" HorizontalContentAlignment="Center" FontSize="22" FontFamily="Lucida Calligraphy"/>
         <Image HorizontalAlignment="Left" Height="306" Margin="860,559,0,-75" VerticalAlignment="Top" Width="330" Source="datingPicture.jpg"/>

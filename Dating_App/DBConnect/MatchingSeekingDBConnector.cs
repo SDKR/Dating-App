@@ -105,6 +105,7 @@ namespace Dating_App.DBConnect
 
             var User_list = ds.Tables[0].AsEnumerable().Select(dataRow => new User
             {
+                FK_profile_name = dataRow.Field<string>("FK_Profile_name"),
                 First_name = dataRow.Field<string>("First_Name"),
                 Last_name = dataRow.Field<string>("Last_Name"),
                 Date = dataRow.Field<DateTime>("Birthdate"),
@@ -119,7 +120,7 @@ namespace Dating_App.DBConnect
                 Haircolor = dataRow.Field<string>("Haircolor"),
                 Children = dataRow.Field<string>("Children"),
                 Body_Type = dataRow.Field<string>("Body_Type"),
-                FK_profile_name = dataRow.Field<string>("FK_Profile_name")
+                
             }).ToList();
             return User_list;
         }
