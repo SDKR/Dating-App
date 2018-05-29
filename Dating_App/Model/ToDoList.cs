@@ -16,8 +16,8 @@ namespace Dating_App.Model
         // "Like Buttom"
         // Orden og columns i datagrids
         // <DONE> Indsæt Billede ved Beskeder_Page (Profilnavn_TB) <DONE>
-
-
+        // redigerPage Combobox( skal udfyldes med data)
+        // datagrids indhold rund omkring
 
     }
 }
