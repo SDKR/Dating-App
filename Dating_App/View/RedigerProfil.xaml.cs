@@ -49,7 +49,7 @@ namespace Dating_App.View
             Køn_combobox.Text = Dating_App.Model.User.CurrentUser.Gender;
             Status_Combobox.Text = Dating_App.Model.User.CurrentUser.Status;
             Seeking_Combobox.Text = Dating_App.Model.User.CurrentUser.Seeking;
-            IntereseretI_Combobox.Text = Dating_App.Model.User.CurrentUser.SexualOrientation;
+            Seksualitet_Combobox.Text = Dating_App.Model.User.CurrentUser.SexualOrientation;
             HøjdeData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Height.ToString();
             VægtData_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.Weight.ToString();
             EyeColor_ComboBox.Text = Dating_App.Model.User.CurrentUser.Eyecolor;
@@ -96,7 +96,7 @@ namespace Dating_App.View
             UserObject.Gender = Køn_combobox.Text;
             UserObject.Status = Status_Combobox.Text;
             UserObject.Seeking = Seeking_Combobox.Text;
-            UserObject.SexualOrientation = IntereseretI_Combobox.Text;
+            UserObject.SexualOrientation = Seksualitet_Combobox.Text;
             UserObject.Height = int.Parse(HøjdeData_ProfilPage_TextBox.Text);
             UserObject.Weight = int.Parse(VægtData_ProfilPage_TextBox.Text);
             UserObject.Eyecolor = EyeColor_ComboBox.Text;

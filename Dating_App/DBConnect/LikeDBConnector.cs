@@ -108,5 +108,4 @@ namespace Dating_App.DBConnect
         }
     }
 
-    }
 }
