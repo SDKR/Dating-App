@@ -165,8 +165,12 @@ namespace Dating_App.View
             ms.Body_Type = Kropstype_Combobox.Text;
             ms.FK_profile_name = Dating_App.Model.User.CurrentUser.Profile_name;
 
-            ResultaterForSøgning_datagrid.ItemsSource = ms.search(ms);
 
+            List<User> ms1 = new List<User>();
+            ms1 = ms.search(ms);
+            ms = null;
+            ResultaterForSøgning_datagrid.ItemsSource = ms1;
+            //ResultaterForSøgning_datagrid.UpdateLayout();
         }
 
         private void ResultaterForSøgning_datagrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
