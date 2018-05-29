@@ -14,16 +14,9 @@ namespace Dating_App.Model
         // "Like Buttom"
         // Orden og columns i datagrids
         // <DONE> Indsæt Billede ved Beskeder_Page (Profilnavn_TB) <DONE>
-        // Sørg for at man kan søge på tomme felter i søgefunktionen.
-        //Søge efter postnumre
+        // Sørg for at man kan søge på tomme felter i søgefunktionen. <DONE!>
+        // Søge efter postnumre <DONE!>
         // <DONE>fix fødselsdag på opret siden <Fixed? Tjek efter jannik har kigget på det><DONE>
-        // redigerPage Combobox( skal udfyldes med data)
-
-        // datagrids indhold rundt omkring
-        // fix combobox postnummer til dropdown
-
-
-
-
+        // redigerPage Combobox( skal udfyldes med data) <DONE!>
     }
 }
