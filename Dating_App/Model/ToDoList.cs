@@ -18,6 +18,7 @@ namespace Dating_App.Model
         // <DONE> Indsæt Billede ved Beskeder_Page (Profilnavn_TB) <DONE>
         // redigerPage Combobox( skal udfyldes med data)
         // datagrids indhold rund omkring
+        // fix combobox postnummer til dropdown
 
     }
 }
