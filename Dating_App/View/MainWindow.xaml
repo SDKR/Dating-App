@@ -8,6 +8,7 @@
         xmlns:Views="clr-namespace:Dating_App.View"
         xmlns:ViewModels="clr-namespace:Dating_App.ViewModel"
         xmlns:viewmodel="clr-namespace:Dating_App.ViewModel"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="820" Width="1200"
         WindowStartupLocation="Manual"
@@ -37,7 +38,7 @@
         <TextBox Name="Efternavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,340,0,0" TextWrapping="Wrap" Text="{Binding _User.Last_name, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Top" Width="196" PreviewKeyDown="Efternavn_TextBox_PreviewKeyDown"/>
         <DatePicker Name="Birthday_DatePicker" HorizontalAlignment="Left" Margin="34,390,0,0" VerticalAlignment="Top" Width="196" SelectedDate="{Binding _User.Date, UpdateSourceTrigger=PropertyChanged}" />
 
-        <ComboBox Name="Seeking_Combobox" HorizontalAlignment="Left" Margin="34,490,0,0" VerticalAlignment="Top" Width="196" Text="{Binding _User.Seeking, UpdateSourceTrigger=PropertyChanged}" >
+            <ComboBox Name="Seeking_Combobox" HorizontalAlignment="Left" Margin="34,490,0,0" VerticalAlignment="Top" Width="196" Text="{Binding _User.Seeking, UpdateSourceTrigger=PropertyChanged}" >
             <ComboBoxItem IsSelected="True">Venner</ComboBoxItem>
             <ComboBoxItem>Sexpartner</ComboBoxItem>
             <ComboBoxItem>Forhold</ComboBoxItem>

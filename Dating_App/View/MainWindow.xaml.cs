@@ -28,6 +28,7 @@ namespace Dating_App
         public MainWindow()
         {
             InitializeComponent();
+            Birthday_DatePicker.SelectedDate = DateTime.Today;
         }
 
         

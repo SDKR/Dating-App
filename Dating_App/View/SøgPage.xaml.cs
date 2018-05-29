@@ -154,6 +154,7 @@ namespace Dating_App.View
             PVP.KropsTypeData_ProfilPage_label.Content = selecteduser.Body_Type;
             PVP.PostNummerData_ProfilPage_label.Content = selecteduser.Postcode;
             PVP.BeskrivDigSelv_ProfilPage_TextBox.Text = selecteduser.About_yourself;
+
             LoadPicture();
 
             (Application.Current.MainWindow.FindName("Frame") as Frame).Content = PVP;

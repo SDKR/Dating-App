@@ -19,8 +19,8 @@ namespace Dating_App.Model
         // Sørg for at man kan søge på tomme felter i søgefunktionen.
         //Søge efter postnumre
         // fix fødselsdag på opret siden <Fixed? Tjek efter jannik har kigget på det>
-
-
+        // redigerPage Combobox( skal udfyldes med data)
+        // datagrids indhold rund omkring
 
     }
 }
