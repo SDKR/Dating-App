@@ -112,8 +112,8 @@
         <Label Content="-" HorizontalAlignment="Left" Margin="617,360,0,0" VerticalAlignment="Top" Width="48" HorizontalContentAlignment="Center" FontFamily="Lucida Calligraphy" FontWeight="Bold" FontSize="16" RenderTransformOrigin="-0.404,0.413" Height="23"/>
         <Label Content="-" HorizontalAlignment="Left" Margin="617,405,0,0" VerticalAlignment="Top" Width="48" HorizontalContentAlignment="Center" FontFamily="Lucida Calligraphy" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.463,-0.091"/>
         <Button Name="Søg_Button" Content="Søg" HorizontalAlignment="Left" Margin="899,409,0,0" VerticalAlignment="Top" Width="209" Height="42" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontWeight="Bold" Click="Søg_Button_Click"/>
-        <TextBox Name="PostnrMin_Textbox" HorizontalAlignment="Left" Height="23" Margin="517,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
-        <TextBox Name="PostnrMax_Textbox" HorizontalAlignment="Left" Height="23" Margin="665,465,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100"/>
+        <TextBox Name="PostnrMin_Textbox" HorizontalAlignment="Left" Height="23" Margin="517,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" FontFamily="Lucida Calligraphy"/>
+        <TextBox Name="PostnrMax_Textbox" HorizontalAlignment="Left" Height="23" Margin="665,465,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" FontFamily="Lucida Calligraphy"/>
         <Label Content="-" HorizontalAlignment="Left" Margin="617,465,0,0" VerticalAlignment="Top" Width="48" HorizontalContentAlignment="Center" FontFamily="Lucida Calligraphy" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.488,-0.162" Height="23"/>
         <Label Content="Post nr." HorizontalAlignment="Left" Margin="517,439,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
     </Grid>
