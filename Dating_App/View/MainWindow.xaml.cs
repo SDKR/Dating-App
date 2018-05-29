@@ -76,6 +76,29 @@ namespace Dating_App
 
         private void PostNummer_TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
+            //if (!Char.IsDigit((char)KeyInterop.VirtualKeyFromKey(e.Key)) & e.Key != Key.Back | e.Key == Key.Space)
+            //{
+            //    e.Handled = true;
+            //    MessageBox.Show("Post nummeret kan kun bestå af tal.", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+            //}
+
+            //List<MatchingSeeking> getPostcode = ms.getPostCodeCity();
+            ////var item = from getPostcodes in getPostcode
+            ////           where getPostcodes.GetPostCode == int.Parse(PostNummer_TextBox.Text)
+            ////           select getPostcodes;
+            ////Postnr_label.Content = item;
+
+            //var city = getPostcode.Where(getPostcodes => getPostcodes.GetPostCode == int.Parse(PostNummer_TextBox.Text));
+            //Console.WriteLine(city);
+
+            //foreach (var item in city)
+            //{
+            //    Postnr_label.Content = item.City;
+            //}
+        }
+
+        private void PostNummer_TextBox_KeyUp(object sender, KeyEventArgs e)
+        {
             if (!Char.IsDigit((char)KeyInterop.VirtualKeyFromKey(e.Key)) & e.Key != Key.Back | e.Key == Key.Space)
             {
                 e.Handled = true;
@@ -83,17 +106,13 @@ namespace Dating_App
             }
 
             List<MatchingSeeking> getPostcode = ms.getPostCodeCity();
-            //var item = from getPostcodes in getPostcode
-            //           where getPostcodes.GetPostCode == int.Parse(PostNummer_TextBox.Text)
-            //           select getPostcodes;
-            //Postnr_label.Content = item;
 
             var city = getPostcode.Where(getPostcodes => getPostcodes.GetPostCode == int.Parse(PostNummer_TextBox.Text));
             Console.WriteLine(city);
 
             foreach (var item in city)
             {
-                Console.WriteLine(item.City);
+                Postnr_label.Content = item.City;
             }
         }
     }
