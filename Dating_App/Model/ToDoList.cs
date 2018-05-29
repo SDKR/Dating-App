@@ -18,9 +18,9 @@ namespace Dating_App.Model
         // <DONE> Indsæt Billede ved Beskeder_Page (Profilnavn_TB) <DONE>
         // Sørg for at man kan søge på tomme felter i søgefunktionen.
         //Søge efter postnumre
-        // fix fødselsdag på opret siden <Fixed? Tjek efter jannik har kigget på det>
+        // <DONE>fix fødselsdag på opret siden <Fixed? Tjek efter jannik har kigget på det><DONE>
         // redigerPage Combobox( skal udfyldes med data)
-        // datagrids indhold rund omkring
+        // datagrids indhold rundt omkring
         // fix combobox postnummer til dropdown
 
     }
