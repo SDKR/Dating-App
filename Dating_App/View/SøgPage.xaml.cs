@@ -118,24 +118,6 @@ namespace Dating_App.View
                 ms.Weight1 = int.Parse(VægtMax_Textbox.Text);
             }
 
-            if (PostnrMin_ComboBox.Text == "")
-            {
-                ms.Postcode = 1000;
-            }
-            else
-            {
-                ms.Postcode = int.Parse(PostnrMin_ComboBox.Text);
-            }
-
-            if (PostnrMax_ComboBox.Text == "")
-            {
-                ms.Postcode1 = 9990;
-            }
-            else
-            {
-                ms.Postcode1 = int.Parse(PostnrMax_ComboBox.Text);
-            }
-
             if (FødselsdagMin_Datepicker.Text == "")
             {
                 ms.Date = Convert.ToDateTime("1800-01-01");
@@ -154,6 +136,23 @@ namespace Dating_App.View
                 ms.Date1 = DateTime.Parse(FødeelsdagMax_datepicker.Text);
             }
 
+            if (PostnrMin_ComboBox.Text == "")
+            {
+                ms.Postcode = 1000;
+            }
+            else
+            {
+                ms.Postcode = int.Parse(PostnrMin_ComboBox.Text);
+            }
+
+            if (PostnrMax_ComboBox.Text == "")
+            {
+                ms.Postcode1 = 9990;
+            }
+            else
+            {
+                ms.Postcode1 = int.Parse(PostnrMax_ComboBox.Text);
+            }
             ms.First_name = Fornavn_textbox.Text;
             ms.Last_name = Efternavn_textbox.Text;
             ms.Gender = Køn_combobox.Text;

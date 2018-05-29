@@ -1374,7 +1374,7 @@ go
 --  go
 
 insert into User_Information values
-('Hans','Lassen','1992-02-22','Mand','Sexpartner',1100,'Hanslassen@gmail.com','Gift','Homoseksuel',180,90,'Grøne','Mørkt','Ja udeboende','Muskuløs','Jeg vil udforske min sexualitiy i mit kedelig gifte liv.','Frækfyr42'),
+('Hans','Lassen','1992-02-22','Mand','Sexpartner',1000,'Hanslassen@gmail.com','Gift','Homoseksuel',180,90,'Grøne','Mørkt','Ja udeboende','Muskuløs','Jeg vil udforske min sexualitiy i mit kedelig gifte liv.','Frækfyr42'),
 ('Erna','Eriksen','1980-03-24','Kvinde','Forhold',1700,'minernamail@hotmail.com','Skildt','Heteroseksuel',165,80,'Brune','Lyst','Nej','Slank','Søger en mand som gerne vil have børn.','smukkesøde17'),
 ('Frank','Ludzlow','1942-01-21','Mand','Venner',1900,'mingamlemail@hotmail.com','Skildt','Biseksuel',170,85,'Blå','Gråt','Ja udeboende','Buttet','Søger nogle venner som jeg kan tale med.','Flottefyr'),
 ('Inger','Packard','1966-09-14','Kvinde','Sexpartner',2000,'ingermanglersex@gmail.com','Skildt','Heteroseksuel',175,115,'Mørkt','Gråt','Nej','Buttet','Leder efter som er med på lidt vildt og frækt','SweetKristy'),
@@ -1576,8 +1576,8 @@ CREATE PROCEDURE spSearch_User_information
 	@Birthdate2 date,
 	@Gender nvarchar(50),
 	@Seeking nvarchar(50),
-	--@FK_Post_Code1 int,
-	--@FK_Post_Code2 int,
+	@FK_Post_Code1 int,
+	@FK_Post_Code2 int,
 	@Status nvarchar(50),
 	@Sexual_orientation nvarchar(50),
 	@Height1 int,
@@ -1598,7 +1598,7 @@ begin
 	and (Birthdate between @Birthdate1 and @Birthdate2 or @Birthdate1 = '' and @Birthdate2 = '')
 	and (Gender = @Gender or @Gender = '')
 	and (Seeking = @Seeking or @Seeking = '')
-	--and FK_Post_Code between @FK_Post_Code1 and @FK_Post_Code2 or @FK_Post_Code1 is null and @FK_Post_Code2 is null
+	and FK_Post_Code between @FK_Post_Code1 and @FK_Post_Code2 or @FK_Post_Code1 is null and @FK_Post_Code2 is null
 	and ([Status] = @Status or @Status = '')
 	and (Sexual_orientation = @Sexual_orientation or @Sexual_orientation = '')
 	and (Height between @Height1 and @Height2 or @Height1 = '' and @Height2 = '')
