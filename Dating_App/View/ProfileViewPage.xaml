@@ -52,8 +52,9 @@
         <TextBox HorizontalAlignment="Left" Height="257" Margin="380,446,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266"/>
         <Label x:Name="OmMig_ProfilPage_Label_Copy" Content="Besked" HorizontalAlignment="Left" Margin="380,402,0,0" VerticalAlignment="Top" Width="266" Height="44" Background="#FFD4CDC5" HorizontalContentAlignment="Center" FontSize="22" FontFamily="Lucida Calligraphy"/>
         <Button Name="SendBesked_Button" Content="Send" HorizontalAlignment="Left" Margin="383,708,0,0" VerticalAlignment="Top" Width="263" Height="46" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontSize="14" FontWeight="Bold"/>
-        <Button Content="Synes godt om" HorizontalAlignment="Left" Margin="687,402,0,0" VerticalAlignment="Top" Width="329" Height="88" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontSize="36" FontWeight="Bold"/>
-        <Label Name="SynesGodtOm_Label" HorizontalAlignment="Left" Margin="1021,416,0,0" VerticalAlignment="Top" Height="61" Width="154" FontFamily="Lucida Calligraphy" FontSize="36" HorizontalContentAlignment="Center"/>
+        <Button Content="Synes godt om" HorizontalAlignment="Left" Margin="502,12,0,0" VerticalAlignment="Top" Width="144" Height="29" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" FontSize="16" FontWeight="Bold" Click="Button_Click" Foreground="#FF5A0303"/>
+        <Label Name="SynesGodtOm_Label" HorizontalAlignment="Left" Margin="651,12,0,0" VerticalAlignment="Top" Height="30" Width="103" FontFamily="Lucida Calligraphy" FontSize="14" HorizontalContentAlignment="Center" Foreground="#FF5A0303" FontWeight="Bold"/>
+        <Button Name="SeSynesGodtOm_Button" Content="Se synes godt om" HorizontalAlignment="Left" Margin="759,13,0,0" VerticalAlignment="Top" Width="137" Height="29" Background="#FFF0E3D3" FontFamily="Lucida Calligraphy" Foreground="#FF5A0303" Click="SeSynesGodtOm_Button_Click" />
 
     </Grid>
 </Page>

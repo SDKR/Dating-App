@@ -26,6 +26,9 @@ namespace Dating_App.View
         MatchingSeeking MS = new MatchingSeeking();
         Messages Chat = new Messages();
         Images imageObj = new Images();
+        ProfileViewPage PVP = new ProfileViewPage();
+        User selecteduser = new User();
+        
 
         public HomePage()
         {
@@ -88,6 +91,35 @@ namespace Dating_App.View
                     ProfilBillede_HomePage_Image.Source = bi;
                 }
             }
+        }
+
+        private void ForslagTilDig_Datagrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            PVP.Username_ProfilPage_Label.Content = selecteduser.FK_profile_name;
+            PVP.FornavnData_ProfilPage_label.Content = selecteduser.First_name;
+            PVP.EfternavnData_ProfilPage_label.Content = selecteduser.Last_name;
+            PVP.FødselsdagData_ProfilPage_label.Content = selecteduser.Date;
+            PVP.KønData_ProfilPage_label.Content = selecteduser.Gender;
+            PVP.StatusData_ProfilPage_label.Content = selecteduser.Status;
+            PVP.SøgerData_ProfilPage_label.Content = selecteduser.Seeking;
+            PVP.InteresseretIData_ProfilPage_label.Content = selecteduser.SexualOrientation;
+            PVP.HøjdeData_ProfilPage_label.Content = selecteduser.Height;
+            PVP.VægtData_ProfilPage_label.Content = selecteduser.Weight;
+            PVP.ØjenfarveData_ProfilPage_label.Content = selecteduser.Eyecolor;
+            PVP.HårfarveData_ProfilPage_label.Content = selecteduser.Haircolor;
+            PVP.BørnData_ProfilPage_label.Content = selecteduser.Children;
+            PVP.KropsTypeData_ProfilPage_label.Content = selecteduser.Body_Type;
+            PVP.PostNummerData_ProfilPage_label.Content = selecteduser.Postcode;
+            PVP.BeskrivDigSelv_ProfilPage_TextBox.Text = selecteduser.About_yourself;
+
+            LoadPicture();
+
+            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = PVP;
+        }
+
+        private void ForslagTilDig_Datagrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selecteduser = (User)ForslagTilDig_Datagrid.SelectedItem;
         }
     }
 }
