@@ -8,8 +8,6 @@ namespace Dating_App.Model
 {
     class ToDoList
     {
-
-
         // <DONE> Lav en lækker Chat(True/false)<DONE>
         // <DONE> Lav en ny Page til "View Profil" <DONE>
         // Tjek for Crash
@@ -20,8 +18,12 @@ namespace Dating_App.Model
         //Søge efter postnumre
         // <DONE>fix fødselsdag på opret siden <Fixed? Tjek efter jannik har kigget på det><DONE>
         // redigerPage Combobox( skal udfyldes med data)
+<<<<<<< HEAD
         // datagrids indhold rundt omkring
         // fix combobox postnummer til dropdown
 
+=======
+        // datagrids indhold rund omkring
+>>>>>>> 2542c87c87f495e032921badbe07cbbb7297a2c2
     }
 }

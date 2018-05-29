@@ -38,7 +38,7 @@
             <TextBox Name="EfternavnData_ProfilPage_TextBox" Text="" MaxLength="50" HorizontalAlignment="Left" Margin="570,190,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
             <TextBox Name="HøjdeData_ProfilPage_TextBox" MaxLength="8" Text="" HorizontalAlignment="Left" Margin="1020,160,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
             <TextBox Name="VægtData_ProfilPage_TextBox" Text="" MaxLength="8" HorizontalAlignment="Left" Margin="1020,190,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
-            <ComboBox Name="PostNummerData_ProfilPage_Combobox" Text="" HorizontalAlignment="Left" Margin="1020,340,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy" DropDownOpened="PostNummerData_ProfilPage_Combobox_DropDownOpened"/>
+            <ComboBox Name="PostNummerData_ProfilPage_Combobox" Text="" HorizontalAlignment="Left" Margin="1020,340,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
             <Button Name="Gem_PrilePage_Button" Content="Gem Oplysninger" HorizontalAlignment="Left" Margin="702,422,0,0" VerticalAlignment="Top" Width="223" Height="40" FontFamily="Lucida Calligraphy" FontWeight="Bold" Background="#FFF0E3D3" Click="Gem_PrilePage_Button_Click"/>
             <Label Name="OmMig_RedigerPage_Label" Content="Om User" HorizontalAlignment="Left" Margin="37,402,0,0" VerticalAlignment="Top" Width="300" Height="44" Background="#FFD4CDC5" HorizontalContentAlignment="Center" FontSize="22" FontFamily="Lucida Calligraphy"/>
             <DatePicker Name="fødselsdag_datepicker" HorizontalAlignment="Left" Margin="570,250,0,0" VerticalAlignment="Top" Width="158"/>

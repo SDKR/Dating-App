@@ -85,8 +85,8 @@ namespace Dating_App.DBConnect
             User_Seach.Parameters.AddWithValue("Birthdate2", MS.Date1);
             User_Seach.Parameters.AddWithValue("Gender", MS.Gender);
             User_Seach.Parameters.AddWithValue("Seeking", MS.Seeking);
-            //User_Seach.Parameters.AddWithValue("@FK_Post_Code1", 2650);
-            //User_Seach.Parameters.AddWithValue("@FK_Post_Code2", 2650);
+            User_Seach.Parameters.AddWithValue("@FK_Post_Code1", MS.Postcode);
+            User_Seach.Parameters.AddWithValue("@FK_Post_Code2", MS.Postcode1);
             User_Seach.Parameters.AddWithValue("Status", MS.Status);
             User_Seach.Parameters.AddWithValue("Sexual_orientation", MS.SexualOrientation);
             User_Seach.Parameters.AddWithValue("Height1", MS.Height);
