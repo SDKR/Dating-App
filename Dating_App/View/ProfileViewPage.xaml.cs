@@ -39,5 +39,35 @@ namespace Dating_App.View
             SW.Datagrid.ItemsSource = like.getMyLikes(Username_ProfilPage_Label.Content.ToString());
             SW.Show();
         }
+
+        private void Hjem_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
+        {
+            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.HomePage();
+        }
+
+        private void LogAf_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
+        {
+            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = null;
+        }
+
+        private void Profil_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
+        {
+            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.ProfilPage();
+        }
+
+        private void Søg_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
+        {
+            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.SøgPage();
+        }
+
+        private void Beskeder_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
+        {
+            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.BeskederPage();
+        }
+
+        private void Rediger_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
+        {
+            (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.RedigerProfil();
+        }
     }
 }

@@ -17,7 +17,7 @@
         <Button Name="Profil_SøgPage_Button" Content="Profil" HorizontalAlignment="Left" Margin="138,17,0,0" VerticalAlignment="Top" Width="57" Height="28" FontSize="16" FontStyle="Italic" Background="#FFBCB5AC" BorderThickness="0,0,0,0" FontFamily="Lucida Calligraphy" Foreground="#FF5A0303" Click="Profil_HomePage_Button_Click"  />
         <Button Name="Søg_SøgPage_Button" Content="Søg" HorizontalAlignment="Left" Margin="215,17,0,0" VerticalAlignment="Top" Width="57" Height="28" FontSize="16" FontStyle="Italic" Background="#FFBCB5AC" BorderThickness="0,0,0,0" FontFamily="Lucida Calligraphy" Foreground="#FF5A0303"  />
         <Button Name="Beskeder_SøgPage_Button" Content="Beskeder" HorizontalAlignment="Left" Margin="277,17,0,0" VerticalAlignment="Top" Width="102" Height="28" FontSize="16" FontStyle="Italic" Background="#FFBCB5AC" BorderThickness="0,0,0,0" FontFamily="Lucida Calligraphy" Foreground="#FF5A0303" Click="Beskeder_SøgPage_Button_Click"  />
-        <DataGrid Name="ResultaterForSøgning_datagrid" HorizontalAlignment="Left" Height="526" Margin="36,246,0,0" VerticalAlignment="Top" Width="451" FontFamily="Lucida Calligraphy" SelectionChanged="ResultaterForSøgning_datagrid_SelectionChanged" MouseDoubleClick="ResultaterForSøgning_datagrid_MouseDoubleClick" AlternationCount="2">
+        <DataGrid Name="ResultaterForSøgning_datagrid" HorizontalAlignment="Left" Height="526" Margin="36,246,0,0" VerticalAlignment="Top" Width="451" FontFamily="Lucida Calligraphy" SelectionChanged="ResultaterForSøgning_datagrid_SelectionChanged" MouseDoubleClick="ResultaterForSøgning_datagrid_MouseDoubleClick" AlternationCount="2" AutoGenerateColumns="False">
             <DataGrid.RowStyle>
                 <Style TargetType="{x:Type DataGridRow}">
                     <Style.Triggers>
@@ -30,6 +30,8 @@
                     </Style.Triggers>
                 </Style>
             </DataGrid.RowStyle>
+            <DataGridTextColumn Header="Profil navn" Binding="{Binding FK_Profile_name}"/>
+            
         </DataGrid>
         <Label Content="Resultater for din søgning" HorizontalAlignment="Left" Margin="36,202,0,0" VerticalAlignment="Top" Width="451" Height="44" Background="#FFD4CDC5" HorizontalContentAlignment="Center" FontSize="22" FontFamily="Lucida Calligraphy"/>
         <Image HorizontalAlignment="Left" Height="306" Margin="860,559,0,-75" VerticalAlignment="Top" Width="330" Source="datingPicture.jpg"/>
