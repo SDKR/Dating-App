@@ -200,6 +200,7 @@ namespace Dating_App.View
             PVP.SynesGodtOm_Label.Content = like.likeCounter(selecteduser.FK_profile_name);
 
             LoadPicture();
+            PVP.fixpic(selecteduser.FK_profile_name);
 
 
             (Application.Current.MainWindow.FindName("Frame") as Frame).Content = PVP;
