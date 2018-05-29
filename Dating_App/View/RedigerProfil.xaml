@@ -34,10 +34,10 @@
             <Label Name="KropsType_ProfilPage_label" Content="Krops Type" HorizontalAlignment="Left" Margin="830,310,0,0" VerticalAlignment="Top" Width="95" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
             <Label Name="PostNummer_ProfilPage_label" Content="Post Nummer" HorizontalAlignment="Left" Margin="830,340,0,0" VerticalAlignment="Top" Width="110" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
             <TextBox Name="BeskrivDigSelv_ProfilPage_TextBox" HorizontalAlignment="Left" Height="308" Margin="37,446,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" FontFamily="Lucida Calligraphy" FontSize="16"/>
-            <TextBox Name="FornavnData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="570,160,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
-            <TextBox Name="EfternavnData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="570,190,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
-            <TextBox Name="HøjdeData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="1020,160,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
-            <TextBox Name="VægtData_ProfilPage_TextBox" Text="" HorizontalAlignment="Left" Margin="1020,190,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="FornavnData_ProfilPage_TextBox" Text="" MaxLength="50" HorizontalAlignment="Left" Margin="570,160,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="EfternavnData_ProfilPage_TextBox" Text="" MaxLength="50" HorizontalAlignment="Left" Margin="570,190,0,0" VerticalAlignment="Top" Width="158" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="HøjdeData_ProfilPage_TextBox" MaxLength="8" Text="" HorizontalAlignment="Left" Margin="1020,160,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
+            <TextBox Name="VægtData_ProfilPage_TextBox" Text="" MaxLength="8" HorizontalAlignment="Left" Margin="1020,190,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy"/>
             <ComboBox Name="PostNummerData_ProfilPage_Combobox" Text="" HorizontalAlignment="Left" Margin="1020,340,0,0" VerticalAlignment="Top" Width="127" FontFamily="Lucida Calligraphy" IsReadOnly ="True"  DropDownOpened="PostNummerData_ProfilPage_Combobox_DropDownOpened"/>
             <Button Name="Gem_PrilePage_Button" Content="Gem Oplysninger" HorizontalAlignment="Left" Margin="702,422,0,0" VerticalAlignment="Top" Width="223" Height="40" FontFamily="Lucida Calligraphy" FontWeight="Bold" Background="#FFF0E3D3" Click="Gem_PrilePage_Button_Click"/>
             <Label Name="OmMig_RedigerPage_Label" Content="Om User" HorizontalAlignment="Left" Margin="37,402,0,0" VerticalAlignment="Top" Width="300" Height="44" Background="#FFD4CDC5" HorizontalContentAlignment="Center" FontSize="22" FontFamily="Lucida Calligraphy"/>
@@ -92,7 +92,7 @@
             </ComboBox>
             <TextBox Name="Email_Textbox" HorizontalAlignment="Left" Height="23" Margin="1020,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
             <Label x:Name="Email_ProfilPage_label_Copy" Content="Email" HorizontalAlignment="Left" Margin="830,370,0,0" VerticalAlignment="Top" Width="111" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
-            <TextBox Name="Password_Textbox" HorizontalAlignment="Left" Height="23" Margin="570,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+            <TextBox Name="Password_Textbox" HorizontalAlignment="Left" MaxLength="50" Height="23" Margin="570,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
             <Label x:Name="Efternavn_ProfilPage_label_Copy" Content="Password" HorizontalAlignment="Left" Margin="380,220,0,0" VerticalAlignment="Top" Width="91" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
             <Button x:Name="btnBrowse" Content="Hent Billede" HorizontalAlignment="Left" Margin="380,476,0,0" VerticalAlignment="Top" Width="111" Click="btnBrowse_Click" Background="#FFF0E3D3" Height="36" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
             <Button x:Name="SavePicture" Content="Gem Billede" HorizontalAlignment="Left" Margin="556,476,0,0" VerticalAlignment="Top" Width="109" Click="BtnSaveImage_Click" Background="#FFF0E3D3" Height="36" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>

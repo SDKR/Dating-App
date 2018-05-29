@@ -60,12 +60,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DBConnect\ImageDBConnector.cs" />
+    <Compile Include="DBConnect\LikeDBConnector.cs" />
     <Compile Include="DBConnect\MatchingSeekingDBConnector.cs" />
     <Compile Include="DBConnect\MessageDBConnector.cs" />
+    <Compile Include="HomePage.xaml.cs" />
+    <Compile Include="Like.cs" />
     <Compile Include="Model\Images.cs" />
+    <Compile Include="Model\Like.cs" />
     <Compile Include="Model\MatchingSeeking.cs" />
     <Compile Include="Model\Messages.cs" />
     <Compile Include="Model\ToDoList.cs" />
+    <Compile Include="ProfileViewPage.xaml.cs" />
     <Compile Include="View\BeskederPage.xaml.cs">
       <DependentUpon>BeskederPage.xaml</DependentUpon>
     </Compile>
@@ -77,6 +82,9 @@
     </Compile>
     <Compile Include="View\RedigerProfil.xaml.cs">
       <DependentUpon>RedigerProfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SeSynesGodtOm_Window.xaml.cs">
+      <DependentUpon>SeSynesGodtOm_Window.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SøgPage.xaml.cs">
       <DependentUpon>SøgPage.xaml</DependentUpon>
@@ -118,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\RedigerProfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SeSynesGodtOm_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

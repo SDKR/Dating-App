@@ -68,6 +68,7 @@ create table Likes(
 	FOREIGN KEY (Liked) REFERENCES [User](PK_Profile_name),
 	[Like_By] nvarchar(50) not null
 	FOREIGN KEY (Like_By) REFERENCES [User](PK_Profile_name),
+	Creation_Date datetime not null,
 )
 
 INSERT INTO [User] VALUES
@@ -91,33 +92,33 @@ INSERT INTO [User] VALUES
 go
 
 INSERT INTO Likes VALUES
-('Frækfyr42','smukkesøde17'),
-('smukkesøde17','Frækfyr42'),
-('Frækfyr42','FairyPrincessKristy'),
-('smukkesøde17','FairyPrincessKristy'),
-('Frækfyr42','RascalRoger'),
-('smukkesøde17','RascalRoger'),
-('smukkesøde17','NotASnobRob'),
-('smukkesøde17','LipsPotatoChips'),
-('FairyPrincessKristy','Frækfyr42'),
-('FairyPrincessKristy','smukkesøde17'),
-('FairyPrincessKristy','RascalRoger'),
-('FairyPrincessKristy','NotASnobRob'),
-('FairyPrincessKristy','LipsPotatoChips'),
-('RascalRoger','Frækfyr42'),
-('Frækfyr42','NotASnobRob'),
-('RascalRoger','Frækfyr42'),
-('RascalRoger','smukkesøde17'),
-('RascalRoger','FairyPrincessKristy'),
-('RascalRoger','NotASnobRob'),
-('RascalRoger','LipsPotatoChips'),
-('NotASnobRob','Frækfyr42'),
-('NotASnobRob','smukkesøde17'),
-('NotASnobRob','FairyPrincessKristy'),
-('LipsPotatoChips','Frækfyr42'),
-('LipsPotatoChips','smukkesøde17'),
-('LipsPotatoChips','FairyPrincessKristy'),
-('LipsPotatoChips','RascalRoger')
+('Frækfyr42','smukkesøde17', getdate()),
+('smukkesøde17','Frækfyr42', getdate()),
+('Frækfyr42','FairyPrincessKristy', getdate()),
+('smukkesøde17','FairyPrincessKristy', getdate()),
+('Frækfyr42','RascalRoger', getdate()),
+('smukkesøde17','RascalRoger', getdate()),
+('smukkesøde17','NotASnobRob', getdate()),
+('smukkesøde17','LipsPotatoChips', getdate()),
+('FairyPrincessKristy','Frækfyr42', getdate()),
+('FairyPrincessKristy','smukkesøde17', getdate()),
+('FairyPrincessKristy','RascalRoger', getdate()),
+('FairyPrincessKristy','NotASnobRob', getdate()),
+('FairyPrincessKristy','LipsPotatoChips', getdate()),
+('RascalRoger','Frækfyr42', getdate()),
+('Frækfyr42','NotASnobRob', getdate()),
+('RascalRoger','Frækfyr42', getdate()),
+('RascalRoger','smukkesøde17', getdate()),
+('RascalRoger','FairyPrincessKristy', getdate()),
+('RascalRoger','NotASnobRob', getdate()),
+('RascalRoger','LipsPotatoChips', getdate()),
+('NotASnobRob','Frækfyr42', getdate()),
+('NotASnobRob','smukkesøde17', getdate()),
+('NotASnobRob','FairyPrincessKristy', getdate()),
+('LipsPotatoChips','Frækfyr42', getdate()),
+('LipsPotatoChips','smukkesøde17', getdate()),
+('LipsPotatoChips','FairyPrincessKristy', getdate()),
+('LipsPotatoChips','RascalRoger', getdate())
 go
 
 --('LoverBoy69', 'Password',getdate(), 1),
