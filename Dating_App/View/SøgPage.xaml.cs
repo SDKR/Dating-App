@@ -159,7 +159,6 @@ namespace Dating_App.View
             ms.Gender = Køn_combobox.Text;
             ms.Seeking = Søger_combobox.Text;
             ms.Status = Status_Combobox.Text;
-            ms.Postcode1 = int.Parse(PostnrMax_ComboBox.Text);
             ms.SexualOrientation = IntereseretI_Combobox.Text;
             ms.Eyecolor = Øjenfarve_combobox.Text;
             ms.Haircolor = Hårfarve_combobox.Text;
