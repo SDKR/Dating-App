@@ -246,6 +246,7 @@ namespace Dating_App.Model
 
         public User(string Profilename, string Password, string Firstname, string lastname, DateTime birthdate, string gender, string seeking, int postcode, string email, string status, string sexualorientation, int height, int weight, string eyecolor, string haircolor, string children, string BodyType, string aboutyourself, int FK_ID)
         {
+            Console.WriteLine(birthdate);
             //this._PK_ID = PK_ID;
             this._Profile_name = Profilename;
             this._Password = Password;

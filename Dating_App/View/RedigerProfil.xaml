@@ -55,7 +55,7 @@
                 <ComboBoxItem IsSelected="True">Single</ComboBoxItem>
                 <ComboBoxItem>Forhold</ComboBoxItem>
                 <ComboBoxItem>Gift</ComboBoxItem>
-                <ComboBoxItem>Kompliceret</ComboBoxItem>
+                <ComboBoxItem>Skildt</ComboBoxItem>
             </ComboBox>
             <ComboBox Name="IntereseretI_Combobox" HorizontalAlignment="Left" Margin="570,370,0,0" VerticalAlignment="Top" Width="158" >
                 <ComboBoxItem IsSelected="True">Mænd</ComboBoxItem>
