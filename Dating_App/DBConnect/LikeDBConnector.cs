@@ -14,6 +14,8 @@ namespace Dating_App.DBConnect
     class LikeDBConnector
     {
 
+        SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
+
         public Boolean likeSomeone(string liked, string likedBy)
         {
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString))
@@ -79,6 +81,32 @@ namespace Dating_App.DBConnect
             }
 
         }
+
+        public List<Like> getMyLikes(User user)
+        {
+            //SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
+            //SqlCommand cmd = new SqlCommand("Select Liked, [Like_By], Creation_Date from Likes where Liked = " + user.Profile_name + " ", sqlConn);
+
+            SqlCommand cmd = new SqlCommand("Select Liked, [Like_By], Creation_Date from Likes where Liked = " + user.Profile_name + " ", connection);
+            connection.Open();
+            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adapt.Fill(ds);
+            connection.Close();
+
+            var Like_list = ds.Tables[0].AsEnumerable().Select(dataRow => new Like
+            {
+                PK_Like_ID = dataRow.Field<int>("PK_Like_ID"),
+                Liker = dataRow.Field<string>("Liked"),
+                Like_by = dataRow.Field<string>("[Like_By]"),
+                CreationTime = dataRow.Field<DateTime>("Creation_Date"),
+
+            }).ToList();
+
+            return Like_list;
+
+        }
+    }
 
     }
 }

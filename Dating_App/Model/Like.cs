@@ -46,7 +46,7 @@ namespace Dating_App.Model
 
         public List<Like> getMyLikes(User user)
         {
-            return 
+            return LDB.getMyLikes(user);
         }
 
         public Boolean LikeSomeone(string liked, string liked_By)
