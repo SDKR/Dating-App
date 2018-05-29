@@ -38,11 +38,15 @@ namespace Dating_App.DBConnect
             int k = cmd.ExecuteNonQuery();
             connection.Close();
 
+            Console.WriteLine(user.Date);
+            DateTime BirthdateConvertion = DateTime.Parse(user.Date.ToString());
+            Console.WriteLine(BirthdateConvertion);
+
             SqlCommand User_information = new SqlCommand("spCreate_User_information", connection);
             User_information.CommandType = CommandType.StoredProcedure;
             User_information.Parameters.AddWithValue("First_name", user.First_name);
             User_information.Parameters.AddWithValue("Last_name", user.Last_name);
-            User_information.Parameters.AddWithValue("Birthdate", "2000-04-05");
+            User_information.Parameters.AddWithValue("Birthdate", BirthdateConvertion);
             User_information.Parameters.AddWithValue("Gender", user.Gender);
             User_information.Parameters.AddWithValue("Seeking", user.Seeking);
             User_information.Parameters.AddWithValue("FK_Post_Code", user.Postcode);

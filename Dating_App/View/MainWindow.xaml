@@ -36,9 +36,9 @@
         <Label Content="Kodeord" HorizontalAlignment="Left" Margin="896,0,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Lucida Calligraphy"/>
         <TextBox Name="Fornavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Text="{Binding _User.First_name, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="Fornavn_TextBox_PreviewKeyDown"/>
         <TextBox Name="Efternavn_TextBox" HorizontalAlignment="Left" Height="23" Margin="34,340,0,0" TextWrapping="Wrap" Text="{Binding _User.Last_name, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Top" Width="196" PreviewKeyDown="Efternavn_TextBox_PreviewKeyDown"/>
-        <DatePicker Name="Birthday_DatePicker" HorizontalAlignment="Left" Margin="34,390,0,0" VerticalAlignment="Top" Width="196" Text="{Binding _User.Date, UpdateSourceTrigger=PropertyChanged}"/>
+        <DatePicker Name="Birthday_DatePicker" HorizontalAlignment="Left" Margin="34,390,0,0" VerticalAlignment="Top" Width="196" SelectedDate="{Binding _User.Date, UpdateSourceTrigger=PropertyChanged}" />
 
-        <ComboBox Name="Seeking_Combobox" HorizontalAlignment="Left" Margin="34,490,0,0" VerticalAlignment="Top" Width="196" Text="{Binding _User.Seeking, UpdateSourceTrigger=PropertyChanged}" >
+            <ComboBox Name="Seeking_Combobox" HorizontalAlignment="Left" Margin="34,490,0,0" VerticalAlignment="Top" Width="196" Text="{Binding _User.Seeking, UpdateSourceTrigger=PropertyChanged}" >
             <ComboBoxItem IsSelected="True">Venner</ComboBoxItem>
             <ComboBoxItem>Sexpartner</ComboBoxItem>
             <ComboBoxItem>Forhold</ComboBoxItem>
@@ -115,7 +115,7 @@
             <ComboBoxItem>Kvinder</ComboBoxItem>
             <ComboBoxItem>Mænd og Kvinder</ComboBoxItem>
         </ComboBox>
-        <Label Name="Postnr_label" Content="John" HorizontalAlignment="Left" Margin="359,390,0,0" VerticalAlignment="Top" Width="112" Height="23" FontFamily="Lucida Calligraphy"/>
+        <Label Name="Postnr_label" Content="" HorizontalAlignment="Left" Margin="359,390,0,0" VerticalAlignment="Top" Width="112" Height="23" FontFamily="Lucida Calligraphy"/>
 
         <Frame Name="Frame" NavigationUIVisibility="Hidden" Margin="0,0,-0.4,0.4"/>
        
