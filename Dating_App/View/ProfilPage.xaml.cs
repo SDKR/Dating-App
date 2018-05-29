@@ -24,6 +24,8 @@ namespace Dating_App.View
     public partial class ProfilPage : Page
     {
         Images imageObj = new Images();
+        Like like = new Like();
+        SeSynesGodtOm_Window SW = new SeSynesGodtOm_Window();
         public ProfilPage()
         {
             InitializeComponent();
@@ -47,6 +49,8 @@ namespace Dating_App.View
             KropsTypeData_ProfilPage_label.Content = Dating_App.Model.User.CurrentUser.Body_Type;
             PostNummerData_ProfilPage_label.Content = Dating_App.Model.User.CurrentUser.Postcode;
             BeskrivDigSelv_ProfilPage_TextBox.Text = Dating_App.Model.User.CurrentUser.About_yourself;
+
+            SynesGodtOm_Label.Content = like.likeCounter(Dating_App.Model.User.CurrentUser.Profile_name.ToString());
         }
 
         private void LogAf_Button_Click(object sender, RoutedEventArgs e)
@@ -100,6 +104,12 @@ namespace Dating_App.View
         private void Rediger_ProfilPage_Button_Click(object sender, RoutedEventArgs e)
         {
             (Application.Current.MainWindow.FindName("Frame") as Frame).Content = new Dating_App.View.RedigerProfil();
+        }
+
+        private void SeSynesGodtOm_Button_Click(object sender, RoutedEventArgs e)
+        {
+            SW.Datagrid.ItemsSource = like.getMyLikes(Username_ProfilPage_Label.Content.ToString());
+            SW.Show();
         }
     }
 }
