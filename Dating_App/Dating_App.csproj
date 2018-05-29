@@ -78,6 +78,9 @@
     <Compile Include="View\RedigerProfil.xaml.cs">
       <DependentUpon>RedigerProfil.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SeSynesGodtOm_Window.xaml.cs">
+      <DependentUpon>SeSynesGodtOm_Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SøgPage.xaml.cs">
       <DependentUpon>SøgPage.xaml</DependentUpon>
     </Compile>
@@ -118,6 +121,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\RedigerProfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SeSynesGodtOm_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
