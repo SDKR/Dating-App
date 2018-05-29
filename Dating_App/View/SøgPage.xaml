@@ -32,6 +32,10 @@
             </DataGrid.RowStyle>
             <DataGrid.Columns>
             <DataGridTextColumn Header="Profil navn" Binding="{Binding FK_profile_name}"/>
+                <DataGridTextColumn Header="Fødselsdag" Binding="{Binding Date, StringFormat=dd-MM-yyyy}"/>
+                <DataGridTextColumn Header="Post nr." Binding="{Binding Postcode}"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
+                <DataGridTextColumn Header="Interesseret i" Binding="{Binding SexualOrientation}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Resultater for din søgning" HorizontalAlignment="Left" Margin="36,202,0,0" VerticalAlignment="Top" Width="451" Height="44" Background="#FFD4CDC5" HorizontalContentAlignment="Center" FontSize="22" FontFamily="Lucida Calligraphy"/>
