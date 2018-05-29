@@ -37,6 +37,7 @@ namespace Dating_App.View
         public RedigerProfil()
         {
             InitializeComponent();
+            Conn_Til_ComboBox();
             LoadPicture();
 
             UserName_RedigerProfil_label.Content = Dating_App.Model.User.CurrentUser.Profile_name;
@@ -205,13 +206,19 @@ namespace Dating_App.View
                     break;
             }
         }
-
-        private void PostNummerData_ProfilPage_TextBox_PreviewKeyUp(object sender, KeyEventArgs e)
+        DataSet ds = new DataSet();
+        public void Conn_Til_ComboBox()
         {
-            //SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
-            //SqlDataAdapter data = new SqlDataAdapter("select PK_Post_code, City from Postcode_City", connection);
-            //DataSet ds = new DataSet();
-            //data.Fill(ds,)
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
+            SqlDataAdapter data = new SqlDataAdapter("select PK_Post_code, City from Postcode_City", connection);
+            data.Fill(ds, "Postcode_City");
+        }
+        private void PostNummerData_ProfilPage_Combobox_DropDownOpened(object sender, EventArgs e)
+        {
+            PostNummerData_ProfilPage_Combobox.ItemsSource = ds.Tables[0].DefaultView;
+            PostNummerData_ProfilPage_Combobox.DisplayMemberPath = ds.Tables[0].Columns["PK_Post_code"].ToString();
+            PostNummerData_ProfilPage_Combobox.SelectedValue = ds.Tables[0].Columns["PK_Post_code"].ToString();
         }
     }
 }
+
